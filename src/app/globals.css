@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAFAFA;
+  --foreground: #1A1A1A;
+  --primary: #0770E3;
+  --primary-dark: #0558B8;
+  --primary-light: #EBF4FF;
+  --grey-900: #111111;
+  --grey-800: #1A1A1A;
+  --grey-700: #333333;
+  --grey-600: #555555;
+  --grey-500: #717171;
+  --grey-400: #999999;
+  --grey-300: #D4D4D4;
+  --grey-200: #E8E8E8;
+  --grey-100: #F2F2F2;
+  --grey-50: #FAFAFA;
+  --white: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-grey-900: var(--grey-900);
+  --color-grey-800: var(--grey-800);
+  --color-grey-700: var(--grey-700);
+  --color-grey-600: var(--grey-600);
+  --color-grey-500: var(--grey-500);
+  --color-grey-400: var(--grey-400);
+  --color-grey-300: var(--grey-300);
+  --color-grey-200: var(--grey-200);
+  --color-grey-100: var(--grey-100);
+  --color-grey-50: var(--grey-50);
+  --font-sans: "Archivo", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Archivo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nextjs-portal {
+  display: none !important;
+}
+
+/* Logo ticker */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logo-ticker {
+  animation: scroll 35s linear infinite;
+}
+
+.logo-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Button styles */
+.btn-primary {
+  height: 42px;
+  background: linear-gradient(180deg, #3A3A3A 0%, #111111 100%);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.01em;
+}
+.btn-primary:hover {
+  background: linear-gradient(180deg, #444444 0%, #1A1A1A 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  height: 42px;
+  background: linear-gradient(180deg, #3B9AE8 0%, #0770E3 100%);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.01em;
+}
+.btn-secondary:hover {
+  background: linear-gradient(180deg, #4BA5F0 0%, #0880F5 100%);
+  box-shadow: 0 4px 12px rgba(7, 112, 227, 0.25);
+}
+
+/* Bullet animation for use cases */
+@keyframes bullet-pulse-one {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  4% { opacity: 0.5; transform: scale(0.85); }
+  8% { opacity: 1; transform: scale(1); }
+}
+
+.bullet-pulse {
+  animation: bullet-pulse-one 12s ease-in-out infinite;
+}
+
+/* Section fade-in */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.7s ease-out forwards;
+}
+
+@keyframes shimmer-dots {
+  0%, 100% { opacity: 0.14; }
+  50% { opacity: 0.22; }
+}
+
+.animate-shimmer-dots {
+  animation: shimmer-dots 4s ease-in-out infinite;
+}
+
+/* Heading tracking */
+h1, h2, h3 {
+  letter-spacing: -0.025em;
+}
