@@ -55,14 +55,14 @@ export default function UseCasesPage() {
     <>
       {/* Hero */}
       <section className="bg-grey-50 py-24 lg:py-32">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
             Use Cases
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-grey-900 leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-grey-900 leading-tight mb-6 max-w-3xl">
             Trusted AI for the workflows that matter most
           </h1>
-          <p className="text-lg md:text-xl text-grey-500 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-grey-500 leading-relaxed max-w-2xl">
             From close-cycle automation to real-time account intelligence,
             Cimba turns manual processes into governed, repeatable workflows.
           </p>
