@@ -1,5 +1,16 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Tech stack
+
+| Layer      | Technology |
+|-----------|------------|
+| Framework | **Next.js** 16 (App Router) |
+| UI        | **React** 19 |
+| Styling   | **Tailwind CSS** v4 |
+| Language  | **TypeScript** 5 |
+
+The project is configured for deployment on [Vercel](https://vercel.com) (see below).
+
 ## Getting Started
 
 First, run the development server:
@@ -31,6 +42,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repo to GitHub and go to [vercel.com/new](https://vercel.com/new).
+2. Import **joebrokka-coder/Cimba-Website** (or your fork). Vercel will detect Next.js automatically.
+3. Use the default settings: **Build Command** `npm run build`, **Output Directory** `.next`. No environment variables are required for the default build.
+4. Deploy. Each push to `main` will trigger a new production deployment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The repo includes `vercel.json` so the framework and build are explicit. Non-app folders (`cursor-talk-to-figma-mcp`, `documents`) are excluded from the TypeScript build so they do not affect the Vercel build.
