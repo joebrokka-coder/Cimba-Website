@@ -175,64 +175,64 @@ export default function WhyCimbaPage() {
           <div className="grid lg:grid-cols-12 gap-px bg-grey-200">
 
             {/* Section header */}
-            <div className="lg:col-span-12 bg-grey-900 p-10 sm:p-14 lg:px-16 lg:pt-16 lg:pb-8">
+            <div className="lg:col-span-12 bg-bento-dark p-10 sm:p-14 lg:px-16 lg:pt-16 lg:pb-8">
               <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
                 The gap
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight max-w-2xl">
+              <h2 className="text-3xl sm:text-4xl font-bold text-grey-900 leading-tight max-w-2xl">
                 Why standalone AI falls short
               </h2>
             </div>
 
             {/* Lack of Business Context */}
-            <div className="lg:col-span-4 bg-grey-900 p-10 sm:p-12">
-              <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-                <BrainCircuit size={20} className="text-white/60" />
+            <div className="lg:col-span-4 bg-bento-dark p-10 sm:p-12">
+              <div className="w-11 h-11 rounded-xl bg-grey-300 flex items-center justify-center mb-6">
+                <BrainCircuit size={20} className="text-grey-600" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-xl font-bold text-grey-900 mb-3">
                 Lack of Business Context
               </h3>
-              <p className="text-[15px] text-grey-300 leading-relaxed mb-4">
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
                 Standalone AI tools do not understand how your business
                 actually operates.
               </p>
-              <p className="text-[14px] text-grey-500 leading-relaxed">
+              <p className="text-[14px] text-grey-600 leading-relaxed">
                 Without defined metrics, logic, and domain knowledge, responses
                 can miss important details or assumptions.
               </p>
             </div>
 
             {/* Inconsistent Results */}
-            <div className="lg:col-span-4 bg-grey-900 p-10 sm:p-12">
-              <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-                <Shuffle size={20} className="text-white/60" />
+            <div className="lg:col-span-4 bg-bento-dark p-10 sm:p-12">
+              <div className="w-11 h-11 rounded-xl bg-grey-300 flex items-center justify-center mb-6">
+                <Shuffle size={20} className="text-grey-600" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-xl font-bold text-grey-900 mb-3">
                 Inconsistent Results
               </h3>
-              <p className="text-[15px] text-grey-300 leading-relaxed mb-4">
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
                 AI tools often produce different answers to the same question
                 depending on how it is asked.
               </p>
-              <p className="text-[14px] text-grey-500 leading-relaxed">
+              <p className="text-[14px] text-grey-600 leading-relaxed">
                 For teams that rely on consistent analysis and reporting, this
                 creates uncertainty.
               </p>
             </div>
 
             {/* Limited Governance */}
-            <div className="lg:col-span-4 bg-grey-900 p-10 sm:p-12">
-              <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-                <ShieldOff size={20} className="text-white/60" />
+            <div className="lg:col-span-4 bg-bento-dark p-10 sm:p-12">
+              <div className="w-11 h-11 rounded-xl bg-grey-300 flex items-center justify-center mb-6">
+                <ShieldOff size={20} className="text-grey-600" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-xl font-bold text-grey-900 mb-3">
                 Limited Governance
               </h3>
-              <p className="text-[15px] text-grey-300 leading-relaxed mb-4">
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
                 Most AI tools prioritize flexibility and exploration, instead
                 of transparency and repeatability.
               </p>
-              <p className="text-[14px] text-grey-500 leading-relaxed">
+              <p className="text-[14px] text-grey-600 leading-relaxed">
                 But enterprise teams need clear controls, transparency, and
                 repeatability when insights inform real decisions.
               </p>

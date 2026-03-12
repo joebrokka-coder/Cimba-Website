@@ -338,23 +338,23 @@ export default function ProductPage() {
                   i === 0
                     ? "bg-primary"
                     : i === 1
-                    ? "bg-grey-900"
+                    ? "bg-bento-dark"
                     : "bg-white"
                 }`}
               >
                 <div
                   className={`w-11 h-11 rounded-xl flex items-center justify-center mb-6 ${
-                    i < 2 ? "bg-white/10" : "bg-grey-100"
+                    i === 0 ? "bg-white/10" : i === 1 ? "bg-grey-300" : "bg-grey-100"
                   }`}
                 >
                   <block.icon
                     size={20}
-                    className={i < 2 ? "text-white" : "text-primary"}
+                    className={i === 0 ? "text-white" : i === 1 ? "text-grey-700" : "text-primary"}
                   />
                 </div>
                 <h3
                   className={`text-xl font-bold mb-3 ${
-                    i < 2 ? "text-white" : "text-grey-900"
+                    i === 0 ? "text-white" : "text-grey-900"
                   }`}
                 >
                   {block.title}
@@ -364,7 +364,7 @@ export default function ProductPage() {
                     i === 0
                       ? "text-white/90"
                       : i === 1
-                      ? "text-grey-300"
+                      ? "text-grey-700"
                       : "text-grey-700"
                   }`}
                 >
@@ -374,8 +374,6 @@ export default function ProductPage() {
                   className={`text-[14px] leading-relaxed ${
                     i === 0
                       ? "text-white/75"
-                      : i === 1
-                      ? "text-grey-500"
                       : "text-grey-500"
                   }`}
                 >
@@ -393,22 +391,22 @@ export default function ProductPage() {
                     ? "bg-white"
                     : i === 1
                     ? "bg-primary"
-                    : "bg-grey-900"
+                    : "bg-bento-dark"
                 }`}
               >
                 <div
                   className={`w-11 h-11 rounded-xl flex items-center justify-center mb-6 ${
-                    i === 0 ? "bg-grey-100" : "bg-white/10"
+                    i === 0 ? "bg-grey-100" : i === 1 ? "bg-white/10" : "bg-grey-300"
                   }`}
                 >
                   <block.icon
                     size={20}
-                    className={i === 0 ? "text-primary" : "text-white"}
+                    className={i === 0 ? "text-primary" : i === 1 ? "text-white" : "text-grey-700"}
                   />
                 </div>
                 <h3
                   className={`text-xl font-bold mb-3 ${
-                    i === 0 ? "text-grey-900" : "text-white"
+                    i === 0 ? "text-grey-900" : i === 1 ? "text-white" : "text-grey-900"
                   }`}
                 >
                   {block.title}
@@ -419,7 +417,7 @@ export default function ProductPage() {
                       ? "text-grey-700"
                       : i === 1
                       ? "text-white/90"
-                      : "text-grey-300"
+                      : "text-grey-700"
                   }`}
                 >
                   {block.summary}
@@ -439,19 +437,19 @@ export default function ProductPage() {
             ))}
 
             {/* 2e — Platform capabilities strip */}
-            <div className="lg:col-span-12 bg-grey-900 p-8 sm:p-10">
+            <div className="lg:col-span-12 bg-bento-dark p-8 sm:p-10">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
-                <p className="text-[13px] font-semibold text-grey-500 uppercase tracking-[0.15em] flex-shrink-0">
+                <p className="text-[13px] font-semibold text-grey-600 uppercase tracking-[0.15em] flex-shrink-0">
                   Platform Capabilities
                 </p>
                 <div className="flex flex-wrap gap-4">
                   {platformCapabilities.map((cap) => (
                     <div
                       key={cap.label}
-                      className="flex items-center gap-2 px-4 py-2 bg-white/[0.06] border border-white/10 rounded-full"
+                      className="flex items-center gap-2 px-4 py-2 bg-grey-200 border border-grey-300 rounded-full"
                     >
                       <cap.icon size={14} className="text-primary" />
-                      <span className="text-[13px] text-grey-300 font-medium">
+                      <span className="text-[13px] text-grey-700 font-medium">
                         {cap.label}
                       </span>
                     </div>
@@ -519,11 +517,11 @@ export default function ProductPage() {
           <div className="grid lg:grid-cols-12 gap-px bg-grey-200">
 
             {/* Header */}
-            <div className="lg:col-span-12 bg-grey-900 p-10 sm:p-14 lg:px-16 lg:pt-16 lg:pb-8">
+            <div className="lg:col-span-12 bg-bento-dark p-10 sm:p-14 lg:px-16 lg:pt-16 lg:pb-8">
               <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                 Trust &amp; Compliance
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight max-w-2xl">
+              <h2 className="text-3xl sm:text-4xl font-bold text-grey-900 leading-tight max-w-2xl">
                 Security and compliance
               </h2>
             </div>
@@ -532,19 +530,19 @@ export default function ProductPage() {
             {securityPillars.map((pillar) => (
               <div
                 key={pillar.title}
-                className="lg:col-span-6 bg-grey-900 p-10 sm:p-14"
+                className="lg:col-span-6 bg-bento-dark p-10 sm:p-14"
               >
                 <div className="flex flex-col sm:flex-row gap-8 items-start">
                   <div className="w-full sm:w-[200px] flex-shrink-0">
-                    <div className="aspect-square w-full rounded-2xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 flex items-center justify-center">
+                    <div className="aspect-square w-full rounded-2xl bg-gradient-to-br from-grey-200 to-grey-100 border border-grey-300 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="w-12 h-12 rounded-xl mx-auto mb-3 flex items-center justify-center bg-white/10">
+                        <div className="w-12 h-12 rounded-xl mx-auto mb-3 flex items-center justify-center bg-grey-300">
                           <svg
                             width="20"
                             height="20"
                             viewBox="0 0 24 24"
                             fill="none"
-                            stroke="rgba(255,255,255,0.4)"
+                            stroke="#717171"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -554,17 +552,17 @@ export default function ProductPage() {
                             <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
                           </svg>
                         </div>
-                        <p className="text-[11px] font-medium text-white/25">
+                        <p className="text-[11px] font-medium text-grey-500">
                           {pillar.title}
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold text-grey-900 mb-3">
                       {pillar.title}
                     </h3>
-                    <p className="text-[15px] text-grey-400 leading-relaxed">
+                    <p className="text-[15px] text-grey-600 leading-relaxed">
                       {pillar.description}
                     </p>
                   </div>

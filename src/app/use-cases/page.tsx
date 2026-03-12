@@ -121,29 +121,29 @@ export default function UseCasesPage() {
               </div>
             </div>
 
-            {/* ── P&L Scenario Modeling — dark tile, problem/solution + stats ── */}
-            <div className="lg:col-span-5 bg-grey-900 p-10 sm:p-14 flex flex-col justify-between min-h-[520px]">
+            {/* ── P&L Scenario Modeling — bento-dark tile, problem/solution + stats ── */}
+            <div className="lg:col-span-5 bg-bento-dark p-10 sm:p-14 flex flex-col justify-between min-h-[520px]">
               <div>
                 <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                   FP&A &middot; Leadership
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-5">
+                <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-5">
                   P&L Scenario Modeling
                 </h2>
-                <p className="text-[15px] text-grey-400 leading-relaxed mb-4">
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
                   P&L scenario analysis is a bottleneck for FP&A teams.
                   Assumptions live across planning tools and spreadsheets, and
                   answering leadership&apos;s &ldquo;what if&rdquo; questions
                   often requires rebuilding models, reconciling inputs, and
                   waiting days for analysis.
                 </p>
-                <p className="text-[15px] text-grey-400 leading-relaxed mb-6">
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-6">
                   Cimba integrates with your existing planning and financial
                   systems to turn scenario modeling into an on-demand, trusted
                   workflow&mdash;empowering leadership to explore scenarios and
                   evaluate tradeoffs.
                 </p>
-                <ul className="space-y-2.5 text-[14px] text-grey-400">
+                <ul className="space-y-2.5 text-[14px] text-grey-600">
                   <li className="flex items-start gap-2.5">
                     <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                     Instantly models P&L impact of pricing changes, headcount shifts, and large deals without rebuilding underlying models
@@ -158,20 +158,20 @@ export default function UseCasesPage() {
                   </li>
                 </ul>
               </div>
-              <div className="mt-10 flex gap-10 border-t border-white/10 pt-8">
+              <div className="mt-10 flex gap-10 border-t border-grey-300 pt-8">
                 <div>
-                  <p className="text-[40px] font-bold text-white leading-none">
+                  <p className="text-[40px] font-bold text-grey-900 leading-none">
                     10&times;
                   </p>
-                  <p className="text-[13px] text-grey-500 mt-1">
+                  <p className="text-[13px] text-grey-600 mt-1">
                     faster scenario turnaround
                   </p>
                 </div>
                 <div>
-                  <p className="text-[40px] font-bold text-white leading-none">
+                  <p className="text-[40px] font-bold text-grey-900 leading-none">
                     0
                   </p>
-                  <p className="text-[13px] text-grey-500 mt-1">
+                  <p className="text-[13px] text-grey-600 mt-1">
                     models to rebuild
                   </p>
                 </div>
@@ -249,21 +249,21 @@ export default function UseCasesPage() {
               </div>
             </div>
 
-            {/* ── T&E Expense — dark compact tile with full story ── */}
-            <div className="lg:col-span-4 bg-grey-900 p-10 sm:p-14 flex flex-col justify-between min-h-[420px]">
+            {/* ── T&E Expense — bento-dark compact tile with full story ── */}
+            <div className="lg:col-span-4 bg-bento-dark p-10 sm:p-14 flex flex-col justify-between min-h-[420px]">
               <div>
                 <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                   Expense &middot; Monitoring
                 </p>
-                <h2 className="text-xl sm:text-2xl font-bold text-white leading-tight mb-5">
+                <h2 className="text-xl sm:text-2xl font-bold text-grey-900 leading-tight mb-5">
                   T&E Expense Analysis
                 </h2>
-                <p className="text-[15px] text-grey-400 leading-relaxed mb-6">
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-6">
                   Expenses, budgets, and forecasts stored across different
                   systems with no central monitoring make most actions
                   reactive&mdash;issues surface only after the damage is done.
                 </p>
-                <ul className="space-y-2.5 text-[14px] text-grey-400">
+                <ul className="space-y-2.5 text-[14px] text-grey-600">
                   <li className="flex items-start gap-2.5">
                     <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                     Proactive monitoring and alerting rather than reactive follow-up
@@ -279,8 +279,8 @@ export default function UseCasesPage() {
                 </ul>
               </div>
               <div className="mt-8 flex items-center gap-3">
-                <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-                <p className="text-[13px] text-grey-500">
+                <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                <p className="text-[13px] text-grey-600">
                   Always-on alerting
                 </p>
               </div>
@@ -370,15 +370,15 @@ export default function UseCasesPage() {
               </div>
             </div>
 
-            {/* ── Other High-Impact — dark list tile ── */}
-            <div className="lg:col-span-7 bg-grey-900 p-10 sm:p-14 flex flex-col justify-center min-h-[420px]">
+            {/* ── Other High-Impact — bento-dark list tile ── */}
+            <div className="lg:col-span-7 bg-bento-dark p-10 sm:p-14 flex flex-col justify-center min-h-[420px]">
               <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                 More workflows
               </p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-4">
                 Other high-impact use cases
               </h2>
-              <p className="text-[15px] text-grey-400 leading-relaxed mb-8 max-w-lg">
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-8 max-w-lg">
                 Cimba extends across finance, ops, and go-to-market&mdash;wherever
                 teams need governed, repeatable intelligence.
               </p>
@@ -406,8 +406,8 @@ export default function UseCasesPage() {
                   },
                 ].map((item) => (
                   <div key={item.title}>
-                    <p className="font-semibold text-white">{item.title}</p>
-                    <p className="text-grey-500 text-[14px] mt-0.5">
+                    <p className="font-semibold text-grey-900">{item.title}</p>
+                    <p className="text-grey-600 text-[14px] mt-0.5">
                       {item.desc}
                     </p>
                   </div>

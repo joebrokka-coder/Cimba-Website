@@ -220,28 +220,28 @@ export default function Home() {
               </div>
               <div className="relative border-t border-grey-200 bg-gradient-to-br from-grey-100 via-grey-50 to-grey-200">
                 <div className="aspect-video flex items-center justify-center">
-                  <button className="group flex items-center justify-center w-20 h-20 rounded-full bg-grey-900 shadow-xl hover:scale-105 transition-transform">
-                    <Play size={28} className="text-white ml-1" fill="white" />
+                  <button className="group flex items-center justify-center w-20 h-20 rounded-full bg-bento-dark shadow-xl hover:scale-105 transition-transform">
+                    <Play size={28} className="text-grey-800 ml-1" fill="currentColor" />
                   </button>
                 </div>
               </div>
             </div>
 
             {/* Why Cimba summary */}
-            <div className="lg:col-span-5 bg-grey-900 p-6 sm:p-8 flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-bento-dark p-6 sm:p-8 flex flex-col justify-between">
               <div>
                 <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
                   Why Cimba
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-4">
                   AI that goes beyond dashboards
                 </h2>
-                <p className="text-[15px] text-grey-400 leading-relaxed mb-6">
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-6">
                   Operational intelligence built for Finance, CS, and Ops teams
                   that need AI they can actually audit.
                 </p>
               </div>
-              <ul className="space-y-3 text-[14px] text-grey-300">
+              <ul className="space-y-3 text-[14px] text-grey-700">
                 <li className="flex items-start gap-2">
                   <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary" />
                   <span>Agents that execute end-to-end workflows.</span>
@@ -258,20 +258,20 @@ export default function Home() {
             </div>
 
             {/* Value props tile */}
-            <div className="lg:col-span-4 bg-grey-900 p-6 sm:p-8 flex flex-col gap-4">
-              <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em]">
+            <div className="lg:col-span-4 bg-bento-dark p-8 sm:p-10 flex flex-col gap-6 min-h-[320px] sm:min-h-[360px]">
+              <p className="text-sm font-semibold text-primary uppercase tracking-[0.15em]">
                 Decision workflows
               </p>
               {valueProps.slice(0, 2).map((prop) => (
-                <div key={prop.title} className="flex gap-4">
-                  <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <prop.icon size={18} className="text-white" />
+                <div key={prop.title} className="flex gap-5">
+                  <div className="w-11 h-11 rounded-xl bg-grey-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <prop.icon size={22} className="text-grey-700" />
                   </div>
                   <div>
-                    <h3 className="text-[15px] font-semibold text-white mb-1">
+                    <h3 className="text-lg font-bold text-grey-900 mb-2 leading-tight">
                       {prop.title}
                     </h3>
-                    <p className="text-[13px] text-grey-300 leading-relaxed">
+                    <p className="text-[15px] text-grey-600 leading-relaxed">
                       {prop.description}
                     </p>
                   </div>
@@ -280,16 +280,16 @@ export default function Home() {
             </div>
 
             {/* Platform capabilities compact */}
-            <div className="lg:col-span-4 bg-white p-6 sm:p-8 flex flex-col justify-between">
+            <div className="lg:col-span-4 bg-white p-8 sm:p-10 flex flex-col justify-between min-h-[320px] sm:min-h-[360px]">
               <div>
-                <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-3">
+                <p className="text-sm font-semibold text-primary uppercase tracking-[0.15em] mb-4">
                   Platform
                 </p>
-                <h3 className="text-[18px] font-semibold text-grey-900 mb-4">
+                <h3 className="text-xl font-bold text-grey-900 mb-5 leading-tight">
                   One surface for agents, workflows, and governance
                 </h3>
               </div>
-              <div className="grid grid-cols-2 gap-3 text-[13px] text-grey-600 mt-2">
+              <div className="grid grid-cols-2 gap-4 text-[15px] text-grey-600 mt-2">
                 {capabilities.slice(0, 4).map((cap) => (
                   <div key={cap.title} className="flex gap-2 items-start">
                     <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary/70" />
@@ -300,18 +300,18 @@ export default function Home() {
             </div>
 
             {/* Use cases ribbon */}
-            <div className="lg:col-span-4 bg-primary p-6 sm:p-8 flex flex-col justify-between">
+            <div className="lg:col-span-4 bg-primary p-8 sm:p-10 flex flex-col justify-between min-h-[320px] sm:min-h-[360px]">
               <div>
-                <p className="text-[13px] font-semibold text-white/90 uppercase tracking-[0.15em] mb-4">
+                <p className="text-sm font-semibold text-white/90 uppercase tracking-[0.15em] mb-4">
                   Use cases
                 </p>
-                <h3 className="text-[18px] font-semibold text-white mb-4">
+                <h3 className="text-xl font-bold text-white mb-5 leading-tight">
                   Built for accounting & revenue teams
                 </h3>
-                <ul className="space-y-2 text-[14px] text-white">
+                <ul className="space-y-3 text-[15px] text-white">
                   {useCases.map((uc) => (
                     <li key={uc.title} className="flex items-center gap-2">
-                      <uc.icon size={16} className="text-white" />
+                      <uc.icon size={18} className="text-white" />
                       <span>{uc.title}</span>
                     </li>
                   ))}

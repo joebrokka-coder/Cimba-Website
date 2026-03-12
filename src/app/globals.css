@@ -17,6 +17,7 @@
   --grey-100: #F2F2F2;
   --grey-50: #FAFAFA;
   --white: #FFFFFF;
+  --bento-dark: #e1e1e1;
 }
 
 @theme inline {
@@ -35,6 +36,7 @@
   --color-grey-200: var(--grey-200);
   --color-grey-100: var(--grey-100);
   --color-grey-50: var(--grey-50);
+  --color-bento-dark: var(--bento-dark);
   --font-sans: "Archivo", sans-serif;
 }
 
