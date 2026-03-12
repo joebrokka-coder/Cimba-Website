@@ -27,12 +27,12 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-grey-50">
-      <div className="w-full px-6 lg:px-8 pt-10 pb-12">
-        {/* Logo - brand color */}
+    <footer className="bg-[#0d1b2a]">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-8 pt-10 pb-12">
+        {/* Logo - white for contrast */}
         <Link href="/" className="inline-block mb-8">
           <Image
-            src="/cimba-logo.svg"
+            src="/cimba-logo-white.svg"
             alt="Cimba"
             width={960}
             height={360}
@@ -44,7 +44,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-[12px] font-semibold text-grey-900 uppercase tracking-[0.15em] mb-5">
+              <h3 className="text-[12px] font-semibold text-white uppercase tracking-[0.15em] mb-5">
                 {category}
               </h3>
               <ul className="space-y-3">
@@ -52,7 +52,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[14px] text-grey-700 hover:text-grey-900 transition-colors"
+                      className="text-[14px] text-white/85 hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -64,20 +64,20 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-grey-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[13px] text-grey-600">
+        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[13px] text-white/80">
             &copy; {new Date().getFullYear()} Cimba. All rights reserved.
           </p>
           <div className="flex gap-8">
             <Link
               href="/privacy"
-              className="text-[13px] text-grey-600 hover:text-grey-900 transition-colors"
+              className="text-[13px] text-white/80 hover:text-white transition-colors"
             >
               Privacy
             </Link>
             <Link
               href="/terms"
-              className="text-[13px] text-grey-600 hover:text-grey-900 transition-colors"
+              className="text-[13px] text-white/80 hover:text-white transition-colors"
             >
               Terms
             </Link>

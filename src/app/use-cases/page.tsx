@@ -54,8 +54,8 @@ export default function UseCasesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-grey-50 py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="bg-grey-50 pt-32 pb-20 lg:pt-44 lg:pb-28">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
             Use Cases
           </p>
@@ -69,13 +69,13 @@ export default function UseCasesPage() {
         </div>
       </section>
 
-      {/* Bento grid */}
-      <section className="bg-grey-50">
-        <div className="w-full">
-          <div className="grid lg:grid-cols-12 gap-px bg-grey-200">
+      {/* Cards grid */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-6">
 
             {/* ── Flux Analysis — hero tile, text left / image right ── */}
-            <div className="lg:col-span-12 bg-white p-10 sm:p-14 lg:p-16">
+            <div className="lg:col-span-12 rounded-2xl border border-grey-200 bg-white p-8">
               <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
                 <div className="lg:w-1/2">
                   <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
@@ -122,7 +122,7 @@ export default function UseCasesPage() {
             </div>
 
             {/* ── P&L Scenario Modeling — bento-dark tile, problem/solution + stats ── */}
-            <div className="lg:col-span-5 bg-bento-dark p-10 sm:p-14 flex flex-col justify-between min-h-[520px]">
+            <div className="lg:col-span-5 rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col justify-between min-h-[520px]">
               <div>
                 <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                   FP&A &middot; Leadership
@@ -130,20 +130,20 @@ export default function UseCasesPage() {
                 <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-5">
                   P&L Scenario Modeling
                 </h2>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
+                <p className="text-[15px] text-grey-700 leading-relaxed mb-4">
                   P&L scenario analysis is a bottleneck for FP&A teams.
                   Assumptions live across planning tools and spreadsheets, and
                   answering leadership&apos;s &ldquo;what if&rdquo; questions
                   often requires rebuilding models, reconciling inputs, and
                   waiting days for analysis.
                 </p>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-6">
+                <p className="text-[15px] text-grey-700 leading-relaxed mb-6">
                   Cimba integrates with your existing planning and financial
                   systems to turn scenario modeling into an on-demand, trusted
                   workflow&mdash;empowering leadership to explore scenarios and
                   evaluate tradeoffs.
                 </p>
-                <ul className="space-y-2.5 text-[14px] text-grey-600">
+                <ul className="space-y-2.5 text-[14px] text-grey-700">
                   <li className="flex items-start gap-2.5">
                     <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                     Instantly models P&L impact of pricing changes, headcount shifts, and large deals without rebuilding underlying models
@@ -163,7 +163,7 @@ export default function UseCasesPage() {
                   <p className="text-[40px] font-bold text-grey-900 leading-none">
                     10&times;
                   </p>
-                  <p className="text-[13px] text-grey-600 mt-1">
+                  <p className="text-[13px] text-grey-700 mt-1">
                     faster scenario turnaround
                   </p>
                 </div>
@@ -171,7 +171,7 @@ export default function UseCasesPage() {
                   <p className="text-[40px] font-bold text-grey-900 leading-none">
                     0
                   </p>
-                  <p className="text-[13px] text-grey-600 mt-1">
+                  <p className="text-[13px] text-grey-700 mt-1">
                     models to rebuild
                   </p>
                 </div>
@@ -179,7 +179,7 @@ export default function UseCasesPage() {
             </div>
 
             {/* ── Accounting — image top, problem/solution below ── */}
-            <div className="lg:col-span-7 bg-primary p-10 sm:p-14 flex flex-col min-h-[520px]">
+            <div className="lg:col-span-7 rounded-2xl border border-primary/30 bg-primary p-8 flex flex-col min-h-[520px]">
               <div className="flex-1 mb-8">
                 <ImagePlaceholder label="Reconciliation dashboard" dark />
               </div>
@@ -207,7 +207,7 @@ export default function UseCasesPage() {
             </div>
 
             {/* ── Risk Monitoring — text left, image right ── */}
-            <div className="lg:col-span-8 bg-white p-10 sm:p-14">
+            <div className="lg:col-span-8 rounded-2xl border border-grey-200 bg-white p-8">
               <div className="flex flex-col lg:flex-row gap-10 items-start h-full">
                 <div className="lg:w-1/2">
                   <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
@@ -250,7 +250,7 @@ export default function UseCasesPage() {
             </div>
 
             {/* ── T&E Expense — bento-dark compact tile with full story ── */}
-            <div className="lg:col-span-4 bg-bento-dark p-10 sm:p-14 flex flex-col justify-between min-h-[420px]">
+            <div className="lg:col-span-4 rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col justify-between min-h-[420px]">
               <div>
                 <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                   Expense &middot; Monitoring
@@ -258,12 +258,12 @@ export default function UseCasesPage() {
                 <h2 className="text-xl sm:text-2xl font-bold text-grey-900 leading-tight mb-5">
                   T&E Expense Analysis
                 </h2>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-6">
+                <p className="text-[15px] text-grey-700 leading-relaxed mb-6">
                   Expenses, budgets, and forecasts stored across different
                   systems with no central monitoring make most actions
                   reactive&mdash;issues surface only after the damage is done.
                 </p>
-                <ul className="space-y-2.5 text-[14px] text-grey-600">
+                <ul className="space-y-2.5 text-[14px] text-grey-700">
                   <li className="flex items-start gap-2.5">
                     <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                     Proactive monitoring and alerting rather than reactive follow-up
@@ -280,14 +280,14 @@ export default function UseCasesPage() {
               </div>
               <div className="mt-8 flex items-center gap-3">
                 <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                <p className="text-[13px] text-grey-600">
+                <p className="text-[13px] text-grey-700">
                   Always-on alerting
                 </p>
               </div>
             </div>
 
             {/* ── AI for Account Managers — full-width case study, image left ── */}
-            <div className="lg:col-span-12 bg-white p-10 sm:p-14 lg:p-16">
+            <div className="lg:col-span-12 rounded-2xl border border-grey-200 bg-white p-8">
               <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
                 <div className="lg:w-5/12">
                   <ImagePlaceholder label="AM intelligence dashboard" />
@@ -352,7 +352,7 @@ export default function UseCasesPage() {
             </div>
 
             {/* ── BOM Misalignment — blue, image top, story below ── */}
-            <div className="lg:col-span-5 bg-primary p-10 sm:p-14 flex flex-col min-h-[420px]">
+            <div className="lg:col-span-5 rounded-2xl border border-primary/30 bg-primary p-8 flex flex-col min-h-[420px]">
               <div className="flex-1 mb-8">
                 <ImagePlaceholder label="BOM comparison view" dark />
               </div>
@@ -371,14 +371,14 @@ export default function UseCasesPage() {
             </div>
 
             {/* ── Other High-Impact — bento-dark list tile ── */}
-            <div className="lg:col-span-7 bg-bento-dark p-10 sm:p-14 flex flex-col justify-center min-h-[420px]">
+            <div className="lg:col-span-7 rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col justify-center min-h-[420px]">
               <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                 More workflows
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-4">
                 Other high-impact use cases
               </h2>
-              <p className="text-[15px] text-grey-600 leading-relaxed mb-8 max-w-lg">
+              <p className="text-[15px] text-grey-700 leading-relaxed mb-8 max-w-lg">
                 Cimba extends across finance, ops, and go-to-market&mdash;wherever
                 teams need governed, repeatable intelligence.
               </p>
@@ -407,7 +407,7 @@ export default function UseCasesPage() {
                 ].map((item) => (
                   <div key={item.title}>
                     <p className="font-semibold text-grey-900">{item.title}</p>
-                    <p className="text-grey-600 text-[14px] mt-0.5">
+                    <p className="text-grey-700 text-[14px] mt-0.5">
                       {item.desc}
                     </p>
                   </div>
@@ -420,29 +420,31 @@ export default function UseCasesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-white py-24 lg:py-28">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-grey-900 leading-tight mb-5">
-            See these workflows in action
-          </h2>
-          <p className="text-lg text-grey-500 max-w-xl mx-auto mb-10">
-            Book a demo and we&apos;ll walk through how Cimba automates your
-            specific use case.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/demo"
-              className="btn-primary px-8 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md"
-            >
-              See Demo
-              <ArrowRight size={16} className="ml-2" />
-            </Link>
-            <Link
-              href="/product"
-              className="btn-secondary px-8 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md"
-            >
-              Explore Product
-            </Link>
+      <section className="bg-grey-50 py-20 lg:py-28">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-grey-900 leading-tight mb-5">
+              See these workflows in action
+            </h2>
+            <p className="text-lg text-grey-500 max-w-xl mx-auto mb-10">
+              Book a demo and we&apos;ll walk through how Cimba automates your
+              specific use case.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/demo"
+                className="btn-primary px-8 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md"
+              >
+                See Demo
+                <ArrowRight size={16} className="ml-2" />
+              </Link>
+              <Link
+                href="/product"
+                className="btn-secondary px-8 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md"
+              >
+                Explore Product
+              </Link>
+            </div>
           </div>
         </div>
       </section>

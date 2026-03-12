@@ -58,19 +58,30 @@ export default function CimbaDifferenceCarousel() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-3">
-        {items.map((item) => (
+      {/* Pipeline tabs — same style as product page, below the card */}
+      <div className="flex flex-wrap items-stretch gap-0 justify-center overflow-x-auto pt-2 pb-1">
+        {items.map((item, i) => (
           <button
             key={item.id}
             type="button"
             onClick={() => setActiveId(item.id)}
-            className={`h-2.5 rounded-full transition-all ${
+            className={`flex items-center gap-2 pl-4 pr-6 py-3 text-left transition-colors min-w-0 max-w-[180px] sm:max-w-none ${
               activeId === item.id
-                ? "w-8 bg-white"
-                : "w-2.5 bg-white/40 hover:bg-white/70"
+                ? "bg-black text-white font-bold"
+                : "bg-white text-primary border border-grey-200 hover:bg-grey-50"
             }`}
+            style={{
+              clipPath:
+                "polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%)",
+              marginLeft: i > 0 ? -10 : 0,
+              zIndex: activeId === item.id ? 10 : 1,
+            }}
             aria-label={item.title}
-          />
+          >
+            <span className="text-[12px] font-semibold uppercase tracking-wide truncate">
+              {item.title}
+            </span>
+          </button>
         ))}
       </div>
     </div>

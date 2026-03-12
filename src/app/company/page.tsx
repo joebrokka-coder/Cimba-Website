@@ -69,23 +69,25 @@ export default function CompanyPage() {
   return (
     <>
       {/* Hero — Who We Are */}
-      <section className="bg-grey-50 py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-grey-900 tracking-tight leading-tight mb-6">
-            Building the future of{" "}
-            <span className="text-primary">operational intelligence</span>
-          </h1>
-          <p className="text-lg text-grey-600 leading-relaxed max-w-3xl mx-auto">
-            Cimba was founded with a simple belief: enterprise teams deserve AI
-            they can trust, audit, and scale. We&apos;re building the platform that
-            makes that possible.
-          </p>
+      <section className="bg-grey-50 pt-32 pb-20 lg:pt-44 lg:pb-28">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-grey-900 tracking-tight leading-tight mb-6">
+              Building the future of{" "}
+              <span className="text-primary">operational intelligence</span>
+            </h1>
+            <p className="text-lg text-grey-600 leading-relaxed max-w-3xl mx-auto">
+              Cimba was founded with a simple belief: enterprise teams deserve AI
+              they can trust, audit, and scale. We&apos;re building the platform that
+              makes that possible.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Mission */}
       <section className="bg-white py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center mb-6">
@@ -117,7 +119,7 @@ export default function CompanyPage() {
 
       {/* Culture */}
       <section id="culture" className="bg-grey-50 py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center mb-6 mx-auto">
               <Heart size={24} className="text-primary" />
@@ -150,7 +152,7 @@ export default function CompanyPage() {
 
       {/* Careers */}
       <section id="careers" className="bg-white py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center mb-6 mx-auto">
               <Briefcase size={24} className="text-primary" />
@@ -167,7 +169,7 @@ export default function CompanyPage() {
             {openRoles.map((role) => (
               <div
                 key={role.title}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-xl bg-grey-50 border border-grey-200 hover:border-primary/30 hover:shadow-md transition-all group"
+                className="flex flex-col sm:flex-row sm:items-center justify-between p-8 rounded-2xl bg-grey-50 border border-grey-200 hover:border-primary/30 hover:shadow-md transition-all group"
               >
                 <div>
                   <h3 className="text-lg font-semibold text-grey-900 group-hover:text-primary transition-colors">
@@ -198,22 +200,24 @@ export default function CompanyPage() {
 
       {/* CTA */}
       <section className="bg-primary py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
-            Let&apos;s build the future together
-          </h2>
-          <p className="text-lg text-blue-200 max-w-2xl mx-auto mb-10">
-            Whether you&apos;re a customer, a partner, or a future team member
-            — we&apos;d love to hear from you.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/demo"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold text-grey-900 bg-white rounded-full hover:bg-grey-50 transition-all"
-            >
-              See Demo
-              <ArrowRight size={18} />
-            </Link>
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
+              Let&apos;s build the future together
+            </h2>
+            <p className="text-lg text-blue-200 max-w-2xl mx-auto mb-10">
+              Whether you&apos;re a customer, a partner, or a future team member
+              — we&apos;d love to hear from you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/demo"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold text-grey-900 bg-white rounded-full hover:bg-grey-50 transition-all"
+              >
+                See Demo
+                <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

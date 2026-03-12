@@ -62,8 +62,8 @@ export default function CTASection() {
         />
       )}
 
-      {/* Content - high contrast for readability */}
-      <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      {/* Content */}
+      <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight mb-5">
           Ready to operationalize intelligence?
         </h2>

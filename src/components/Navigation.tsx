@@ -32,7 +32,7 @@ export default function Navigation() {
           : "bg-white/80 backdrop-blur-md"
       }`}
     >
-      <div className="w-full px-6 lg:px-8">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px]">
           <Link href="/" className="flex items-center">
             <Image

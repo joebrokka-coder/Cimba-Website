@@ -133,3 +133,42 @@ nextjs-portal {
 h1, h2, h3 {
   letter-spacing: -0.025em;
 }
+
+/* Why Cimba cell: list block rises from bottom to top on scroll into view */
+@keyframes why-cimba-bullet-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.why-cimba-spacer {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.why-cimba-list-wrap {
+  transform: translateY(100%);
+  transition: transform 0.7s ease-out;
+}
+
+.why-cimba-list-wrap.in-view {
+  transform: translateY(0);
+}
+
+.why-cimba-list-wrap li {
+  opacity: 0;
+}
+
+.why-cimba-list-wrap.in-view li {
+  animation: why-cimba-bullet-rise 0.5s ease-out forwards;
+}
+
+.why-cimba-list-wrap.in-view li:nth-child(1) { animation-delay: 0.15s; }
+.why-cimba-list-wrap.in-view li:nth-child(2) { animation-delay: 0.45s; }
+.why-cimba-list-wrap.in-view li:nth-child(3) { animation-delay: 0.75s; }
