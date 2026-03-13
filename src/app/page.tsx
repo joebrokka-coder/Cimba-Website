@@ -127,12 +127,11 @@ export default function Home() {
                 key={prop.title}
                 className="group relative rounded-2xl overflow-hidden bg-grey-50 min-h-[400px] flex flex-col border border-grey-100"
               >
-                <div className="relative flex-1" />
-                <div className="relative p-8">
-                  <h3 className="text-xl font-bold text-grey-900 leading-tight mb-3">
+                <div className="relative p-8 flex flex-col gap-3 h-full">
+                  <h2 className="text-[40px] font-normal text-grey-900 leading-tight">
                     {prop.title}
-                  </h3>
-                  <p className="text-[15px] text-grey-600 leading-relaxed">
+                  </h2>
+                  <p className="mt-auto text-[15px] text-grey-600 leading-relaxed">
                     {prop.description}
                   </p>
                 </div>
@@ -182,20 +181,9 @@ export default function Home() {
       <UseCasesCarousel />
 
       {/* ── The Cimba Difference ── */}
-      <section className="bg-white py-20 lg:py-28">
+      <section className="bg-grey-50 py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="rounded-2xl border border-grey-200 bg-primary p-8 mb-6 overflow-hidden">
-            <p className="text-[13px] font-semibold text-white/80 uppercase tracking-[0.15em] mb-4">
-              The solution
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-normal text-white leading-tight max-w-2xl">
-              The Cimba difference
-            </h2>
-          </div>
-
-          <div className="rounded-2xl border border-grey-200 overflow-hidden">
-            <CimbaDifferenceCarousel />
-          </div>
+          <CimbaDifferenceCarousel />
         </div>
       </section>
 
@@ -248,102 +236,65 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Data & Analytics */}
-            <div className="rounded-2xl border border-grey-200 bg-white p-8 flex flex-col gap-8">
-              <div className="w-full">
-                <div className="aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-grey-100 to-grey-50 border border-grey-200 flex items-center justify-center">
-                  <Database size={32} className="text-grey-400" />
-                </div>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-normal text-grey-900 mb-3">
-                  Data &amp; Analytics Teams
-                </h3>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
-                  Scale insight delivery without building endless dashboards.
-                  Cimba allows data teams to encode business logic and analytical
-                  workflows once so the rest of the organization can run them
-                  safely.
-                </p>
-                <p className="text-[14px] text-grey-500 leading-relaxed">
-                  Cimba allows data teams to encode business logic and analytical
-                  workflows once so the rest of the organization can run them
-                  safely.
-                </p>
-              </div>
+            <div className="rounded-2xl border border-grey-200 bg-white p-8">
+              <h3 className="text-xl font-normal text-grey-900 mb-3">
+                Data &amp; Analytics Teams
+              </h3>
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                Scale insight delivery without building endless dashboards.
+              </p>
+              <p className="text-[14px] text-grey-500 leading-relaxed">
+                Cimba allows data teams to encode business logic and analytical
+                workflows once so the rest of the organization can run them
+                safely.
+              </p>
             </div>
 
             {/* Finance & FP&A */}
             <div className="rounded-2xl border border-grey-200 bg-white p-8">
-              <div className="flex flex-col sm:flex-row gap-8 items-start">
-                <div className="w-full sm:w-[180px] flex-shrink-0">
-                  <div className="aspect-square w-full rounded-2xl bg-gradient-to-br from-grey-100 to-grey-50 border border-grey-200 flex items-center justify-center">
-                    <TrendingUp size={28} className="text-grey-400" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-normal text-grey-900 mb-3">
-                    Finance &amp; FP&amp;A
-                  </h3>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
-                    Analyze revenue drivers, investigate variance, and answer
-                    executive questions faster.
-                  </p>
-                  <p className="text-[14px] text-grey-500 leading-relaxed">
-                    Cimba helps finance teams run repeatable analyses, generate
-                    scenario models, and deliver consistent answers grounded in
-                    trusted data.
-                  </p>
-                </div>
-              </div>
+              <h3 className="text-xl font-normal text-grey-900 mb-3">
+                Finance &amp; FP&amp;A
+              </h3>
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                Analyze revenue drivers, investigate variance, and answer
+                executive questions faster.
+              </p>
+              <p className="text-[14px] text-grey-500 leading-relaxed">
+                Cimba helps finance teams run repeatable analyses, generate
+                scenario models, and deliver consistent answers grounded in
+                trusted data.
+              </p>
             </div>
 
             {/* Customer Success */}
             <div className="rounded-2xl border border-grey-200 bg-white p-8">
-              <div className="flex flex-col sm:flex-row gap-8 items-start">
-                <div className="w-full sm:w-[180px] flex-shrink-0">
-                  <div className="aspect-square w-full rounded-2xl bg-gradient-to-br from-grey-100 to-grey-50 border border-grey-200 flex items-center justify-center">
-                    <HeartHandshake size={28} className="text-grey-400" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-normal text-grey-900 mb-3">
-                    Customer Success
-                  </h3>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
-                    Understand customer health, identify risks, and prioritize
-                    actions.
-                  </p>
-                  <p className="text-[14px] text-grey-500 leading-relaxed">
-                    Cimba can analyze product usage, support data, and account
-                    signals to surface insights that help CS teams stay ahead of
-                    issues.
-                  </p>
-                </div>
-              </div>
+              <h3 className="text-xl font-normal text-grey-900 mb-3">
+                Customer Success
+              </h3>
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                Understand customer health, identify risks, and prioritize
+                actions.
+              </p>
+              <p className="text-[14px] text-grey-500 leading-relaxed">
+                Cimba can analyze product usage, support data, and account
+                signals to surface insights that help CS teams stay ahead of
+                issues.
+              </p>
             </div>
 
             {/* Operations */}
             <div className="rounded-2xl border border-grey-200 bg-white p-8">
-              <div className="flex flex-col sm:flex-row gap-8 items-start">
-                <div className="w-full sm:w-[180px] flex-shrink-0">
-                  <div className="aspect-square w-full rounded-2xl bg-gradient-to-br from-grey-100 to-grey-50 border border-grey-200 flex items-center justify-center">
-                    <Wrench size={28} className="text-grey-400" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-normal text-grey-900 mb-3">
-                    Operations
-                  </h3>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
-                    Monitor business performance and quickly investigate
-                    operational issues.
-                  </p>
-                  <p className="text-[14px] text-grey-500 leading-relaxed">
-                    Teams use Cimba to analyze operational data, identify
-                    anomalies, and support decision-making across departments.
-                  </p>
-                </div>
-              </div>
+              <h3 className="text-xl font-normal text-grey-900 mb-3">
+                Operations
+              </h3>
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                Monitor business performance and quickly investigate operational
+                issues.
+              </p>
+              <p className="text-[14px] text-grey-500 leading-relaxed">
+                Teams use Cimba to analyze operational data, identify anomalies,
+                and support decision-making across departments.
+              </p>
             </div>
           </div>
         </div>

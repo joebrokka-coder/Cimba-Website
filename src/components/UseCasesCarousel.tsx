@@ -87,56 +87,65 @@ export default function UseCasesCarousel() {
   return (
     <section className="bg-grey-50 py-20 lg:py-28">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-stretch">
           {/* Left: Use Cases nav */}
-          <div className="flex-shrink-0 lg:w-[240px]">
+          <div className="flex-shrink-0 lg:w-[260px]">
             <h2 className="text-2xl sm:text-3xl font-bold text-primary leading-tight mb-6">
               Use Cases
             </h2>
-            <nav className="flex flex-col gap-1.5" aria-label="Use cases">
-              {useCases.map((u) => (
-                <button
-                  key={u.id}
-                  type="button"
-                  onClick={() => setActiveId(u.id)}
-                  className={`text-left px-5 py-3 rounded-xl text-[15px] font-medium transition-colors ${
-                    activeId === u.id
-                      ? "bg-primary text-white shadow-md"
-                      : "bg-white text-grey-700 hover:bg-grey-100 border border-grey-200"
-                  }`}
-                >
-                  {u.label}
-                </button>
-              ))}
+            <nav
+              className="rounded-2xl border border-grey-200 bg-white p-1 shadow-sm"
+              aria-label="Use cases"
+            >
+              <div className="flex flex-col">
+                {useCases.map((u, index) => {
+                  const isActive = activeId === u.id;
+                  const isFirst = index === 0;
+                  const isLast = index === useCases.length - 1;
+
+                  return (
+                    <button
+                      key={u.id}
+                      type="button"
+                      onClick={() => setActiveId(u.id)}
+                      className={`text-left px-4 py-3 text-[15px] font-medium transition-colors border-transparent ${
+                        isActive
+                          ? "bg-primary text-white rounded-xl shadow-sm"
+                          : "text-grey-700 hover:bg-grey-50"
+                      } ${!isFirst ? "mt-1" : ""} ${
+                        !isLast && !isActive ? "border-b border-grey-100" : ""
+                      }`}
+                    >
+                      {u.label}
+                    </button>
+                  );
+                })}
+              </div>
             </nav>
           </div>
 
           {/* Right: Content + image */}
-          <div className="flex-1 min-w-0 bg-white rounded-2xl border border-grey-200 shadow-sm overflow-hidden">
-            <div className="flex flex-col lg:flex-row">
-              <div className="flex-1 p-8 sm:p-10 lg:p-12 flex items-center">
-                <div className="w-full">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-5">
-                    {active.title}
-                  </h2>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
-                    {active.paragraphs[0]}
-                  </p>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-8">
-                    {active.paragraphs[1]}
-                  </p>
-                  <ul className="space-y-2.5 text-[14px] text-grey-700">
-                    {active.bullets.map((b, i) => (
-                      <li key={i} className="flex items-start gap-2.5">
-                        <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="lg:w-[340px] flex-shrink-0 min-h-[280px] bg-grey-100" />
+          <div className="flex-1 min-w-0 bg-white rounded-2xl border border-grey-200 shadow-sm overflow-hidden flex flex-col lg:flex-row">
+            <div className="flex-1 p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
+              <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-5">
+                {active.title}
+              </h2>
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
+                {active.paragraphs[0]}
+              </p>
+              <p className="text-[15px] text-grey-600 leading-relaxed mb-8">
+                {active.paragraphs[1]}
+              </p>
+              <ul className="space-y-2.5 text-[14px] text-grey-700">
+                {active.bullets.map((b, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </div>
+            <div className="lg:w-[360px] flex-shrink-0 min-h-[280px] bg-grey-100" />
           </div>
         </div>
       </div>
