@@ -112,15 +112,15 @@ export default function HowItWorksPipeline() {
   const isCapabilities = "isCapabilities" in step && step.isCapabilities;
 
   return (
-    <section className="bg-primary py-20 lg:py-28">
+    <section className="bg-grey-50 py-20 lg:py-28">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-        <p className="text-[13px] font-semibold text-white uppercase tracking-[0.15em] mb-3">
+        <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-3">
           How It Works
         </p>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-2">
+        <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-2">
           From data to decisions
         </h2>
-        <p className="text-[15px] text-white leading-relaxed max-w-2xl mb-10">
+        <p className="text-[15px] text-grey-600 leading-relaxed max-w-2xl mb-10">
           Connect your data, add business context, build agents and playbooks,
           then run workflows that deliver governed, repeatable intelligence.
         </p>

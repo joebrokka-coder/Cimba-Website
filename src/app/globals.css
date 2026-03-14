@@ -172,3 +172,19 @@ h1, h2, h3 {
 .why-cimba-list-wrap.in-view li:nth-child(1) { animation-delay: 0.15s; }
 .why-cimba-list-wrap.in-view li:nth-child(2) { animation-delay: 0.45s; }
 .why-cimba-list-wrap.in-view li:nth-child(3) { animation-delay: 0.75s; }
+
+/* Value props cards: subtle rise and appear on scroll into view */
+.value-card-rise {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+.value-props-rise.in-view .value-card-rise {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.value-props-rise.in-view .value-card-rise:nth-child(1) { transition-delay: 0s; }
+.value-props-rise.in-view .value-card-rise:nth-child(2) { transition-delay: 0.08s; }
+.value-props-rise.in-view .value-card-rise:nth-child(3) { transition-delay: 0.16s; }

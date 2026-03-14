@@ -16,6 +16,7 @@ import RotatingSpotlight from "@/components/RotatingSpotlight";
 import RotatingText from "@/components/RotatingText";
 import UseCasesCarousel from "@/components/UseCasesCarousel";
 import CimbaDifferenceCarousel from "@/components/CimbaDifferenceCarousel";
+import ValuePropsSection from "@/components/ValuePropsSection";
 
 const customerLogos = [
   { name: "Airbnb", src: "/logos/airbnb.png" },
@@ -119,13 +120,13 @@ export default function Home() {
       </section>
 
       {/* ── Value Props ── */}
-      <section className="bg-white py-20 lg:py-28">
+      <ValuePropsSection>
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {valueProps.map((prop) => (
               <div
                 key={prop.title}
-                className="group relative rounded-2xl overflow-hidden bg-grey-50 min-h-[400px] flex flex-col border border-grey-100"
+                className="value-card-rise group relative rounded-2xl overflow-hidden bg-grey-50 min-h-[400px] flex flex-col border border-grey-100"
               >
                 <div className="relative p-8 flex flex-col gap-3 h-full">
                   <h2 className="text-[40px] font-normal text-grey-900 leading-tight">
@@ -139,7 +140,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </ValuePropsSection>
 
       {/* ── Trusted By ── */}
       <section className="bg-grey-50 py-14">
@@ -225,11 +226,11 @@ export default function Home() {
       {/* ── Who Uses Cimba ── */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="rounded-2xl border border-grey-200 bg-primary p-8 mb-6 overflow-hidden">
-            <p className="text-[13px] font-semibold text-white/80 uppercase tracking-[0.15em] mb-4">
+          <div className="rounded-2xl border border-grey-200 bg-grey-100 p-8 mb-6 overflow-hidden">
+            <p className="text-[13px] font-semibold text-grey-600 uppercase tracking-[0.15em] mb-4">
               Built for your team
             </p>
-            <h2 className="text-3xl sm:text-4xl font-normal text-white leading-tight max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight max-w-2xl">
               Who uses Cimba
             </h2>
           </div>
