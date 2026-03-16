@@ -219,65 +219,117 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Data & Analytics */}
-            <div className="rounded-2xl border border-grey-200 bg-white p-8">
-              <h3 className="text-xl font-normal text-grey-900 mb-3">
-                Data &amp; Analytics Teams
-              </h3>
-              <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
-                Scale insight delivery without building endless dashboards.
-              </p>
-              <p className="text-[14px] text-grey-500 leading-relaxed">
-                Cimba allows data teams to encode business logic and analytical
-                workflows once so the rest of the organization can run them
-                safely.
-              </p>
+            <div className="rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
+              <div className="flex-shrink-0 w-[45%] min-w-[140px] max-w-[220px] p-4 flex items-center justify-center">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden">
+                  <Image
+                    src="/who-uses-data.png"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="220px"
+                  />
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 p-6 flex flex-col justify-center">
+                <h3 className="text-xl font-normal text-grey-900 mb-3">
+                  Data &amp; Analytics Teams
+                </h3>
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                  Scale insight delivery without building endless dashboards.
+                </p>
+                <p className="text-[14px] text-grey-500 leading-relaxed">
+                  Cimba allows data teams to encode business logic and analytical
+                  workflows once so the rest of the organization can run them
+                  safely.
+                </p>
+              </div>
             </div>
 
             {/* Finance & FP&A */}
-            <div className="rounded-2xl border border-grey-200 bg-white p-8">
-              <h3 className="text-xl font-normal text-grey-900 mb-3">
-                Finance &amp; FP&amp;A
-              </h3>
-              <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
-                Analyze revenue drivers, investigate variance, and answer
-                executive questions faster.
-              </p>
-              <p className="text-[14px] text-grey-500 leading-relaxed">
-                Cimba helps finance teams run repeatable analyses, generate
-                scenario models, and deliver consistent answers grounded in
-                trusted data.
-              </p>
+            <div className="rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
+              <div className="flex-shrink-0 w-[45%] min-w-[140px] max-w-[220px] p-4 flex items-center justify-center">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden">
+                  <Image
+                    src="/who-uses-finance.png"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="220px"
+                  />
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 p-6 flex flex-col justify-center">
+                <h3 className="text-xl font-normal text-grey-900 mb-3">
+                  Finance &amp; FP&amp;A
+                </h3>
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                  Analyze revenue drivers, investigate variance, and answer
+                  executive questions faster.
+                </p>
+                <p className="text-[14px] text-grey-500 leading-relaxed">
+                  Cimba helps finance teams run repeatable analyses, generate
+                  scenario models, and deliver consistent answers grounded in
+                  trusted data.
+                </p>
+              </div>
             </div>
 
             {/* Customer Success */}
-            <div className="rounded-2xl border border-grey-200 bg-white p-8">
-              <h3 className="text-xl font-normal text-grey-900 mb-3">
-                Customer Success
-              </h3>
-              <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
-                Understand customer health, identify risks, and prioritize
-                actions.
-              </p>
-              <p className="text-[14px] text-grey-500 leading-relaxed">
-                Cimba can analyze product usage, support data, and account
-                signals to surface insights that help CS teams stay ahead of
-                issues.
-              </p>
+            <div className="rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
+              <div className="flex-shrink-0 w-[45%] min-w-[140px] max-w-[220px] p-4 flex items-center justify-center">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden">
+                  <Image
+                    src="/who-uses-customer-success.png"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="220px"
+                  />
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 p-6 flex flex-col justify-center">
+                <h3 className="text-xl font-normal text-grey-900 mb-3">
+                  Customer Success
+                </h3>
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                  Understand customer health, identify risks, and prioritize
+                  actions.
+                </p>
+                <p className="text-[14px] text-grey-500 leading-relaxed">
+                  Cimba can analyze product usage, support data, and account
+                  signals to surface insights that help CS teams stay ahead of
+                  issues.
+                </p>
+              </div>
             </div>
 
             {/* Operations */}
-            <div className="rounded-2xl border border-grey-200 bg-white p-8">
-              <h3 className="text-xl font-normal text-grey-900 mb-3">
-                Operations
-              </h3>
-              <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
-                Monitor business performance and quickly investigate operational
-                issues.
-              </p>
-              <p className="text-[14px] text-grey-500 leading-relaxed">
-                Teams use Cimba to analyze operational data, identify anomalies,
-                and support decision-making across departments.
-              </p>
+            <div className="rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
+              <div className="flex-shrink-0 w-[45%] min-w-[140px] max-w-[220px] p-4 flex items-center justify-center">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden">
+                  <Image
+                    src="/who-uses-operations.png"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="220px"
+                  />
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 p-6 flex flex-col justify-center">
+                <h3 className="text-xl font-normal text-grey-900 mb-3">
+                  Operations
+                </h3>
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                  Monitor business performance and quickly investigate operational
+                  issues.
+                </p>
+                <p className="text-[14px] text-grey-500 leading-relaxed">
+                  Teams use Cimba to analyze operational data, identify anomalies,
+                  and support decision-making across departments.
+                </p>
+              </div>
             </div>
           </div>
         </div>

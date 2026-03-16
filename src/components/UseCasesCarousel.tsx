@@ -92,10 +92,10 @@ export default function UseCasesCarousel() {
                     }
                   >
                     <span
-                      className={`block font-bold transition-all duration-300 ease-out ${
+                      className={`block transition-all duration-300 ease-out ${
                         isActive
-                          ? "text-primary text-2xl"
-                          : "text-grey-900 text-[17px]"
+                          ? "font-bold text-primary text-2xl"
+                          : "font-normal text-grey-900 text-[17px]"
                       }`}
                     >
                       {u.label}
