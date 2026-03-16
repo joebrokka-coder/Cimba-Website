@@ -81,7 +81,7 @@ export default function UseCasesPage() {
                   <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                     Finance &middot; FP&A
                   </p>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-grey-900 leading-tight mb-5">
+                  <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-5">
                     Flux Analysis
                   </h2>
                   <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
@@ -127,7 +127,7 @@ export default function UseCasesPage() {
                 <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                   FP&A &middot; Leadership
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-5">
+                <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
                   P&L Scenario Modeling
                 </h2>
                 <p className="text-[15px] text-grey-700 leading-relaxed mb-4">
@@ -160,7 +160,7 @@ export default function UseCasesPage() {
               </div>
               <div className="mt-10 flex gap-10 border-t border-grey-300 pt-8">
                 <div>
-                  <p className="text-[40px] font-bold text-grey-900 leading-none">
+                  <p className="text-[40px] font-normal text-grey-900 leading-none">
                     10&times;
                   </p>
                   <p className="text-[13px] text-grey-700 mt-1">
@@ -168,7 +168,7 @@ export default function UseCasesPage() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-[40px] font-bold text-grey-900 leading-none">
+                  <p className="text-[40px] font-normal text-grey-900 leading-none">
                     0
                   </p>
                   <p className="text-[13px] text-grey-700 mt-1">
@@ -184,7 +184,7 @@ export default function UseCasesPage() {
                 <ImagePlaceholder label="Reconciliation dashboard" dark />
               </div>
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl font-normal text-white leading-tight mb-4">
                   Close & Reconciliation
                 </h2>
                 <p className="text-[15px] text-white/85 leading-relaxed mb-4">
@@ -213,7 +213,7 @@ export default function UseCasesPage() {
                   <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                     Risk &middot; Analytics
                   </p>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-5">
+                  <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
                     Risk Monitoring & Write-Off Analysis
                   </h2>
                   <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
@@ -255,7 +255,7 @@ export default function UseCasesPage() {
                 <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                   Expense &middot; Monitoring
                 </p>
-                <h2 className="text-xl sm:text-2xl font-bold text-grey-900 leading-tight mb-5">
+                <h2 className="text-xl sm:text-2xl font-normal text-grey-900 leading-tight mb-5">
                   T&E Expense Analysis
                 </h2>
                 <p className="text-[15px] text-grey-700 leading-relaxed mb-6">
@@ -296,7 +296,7 @@ export default function UseCasesPage() {
                   <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                     Customer Success &middot; Operations
                   </p>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-5">
+                  <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
                     AI for Account Managers
                   </h2>
                   <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
@@ -323,7 +323,7 @@ export default function UseCasesPage() {
                   </p>
                   <div className="grid grid-cols-3 gap-8 border-t border-grey-200 pt-8">
                     <div>
-                      <p className="text-[32px] font-bold text-grey-900 leading-none">
+                      <p className="text-[32px] font-normal text-grey-900 leading-none">
                         10
                       </p>
                       <p className="text-[13px] text-grey-500 mt-1">
@@ -331,7 +331,7 @@ export default function UseCasesPage() {
                       </p>
                     </div>
                     <div>
-                      <p className="text-[32px] font-bold text-grey-900 leading-none">
+                      <p className="text-[32px] font-normal text-grey-900 leading-none">
                         2,200
                       </p>
                       <p className="text-[13px] text-grey-500 mt-1">
@@ -339,7 +339,7 @@ export default function UseCasesPage() {
                       </p>
                     </div>
                     <div>
-                      <p className="text-[32px] font-bold text-grey-900 leading-none">
+                      <p className="text-[32px] font-normal text-grey-900 leading-none">
                         3 mo
                       </p>
                       <p className="text-[13px] text-grey-500 mt-1">
@@ -357,7 +357,7 @@ export default function UseCasesPage() {
                 <ImagePlaceholder label="BOM comparison view" dark />
               </div>
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white leading-tight mb-4">
+                <h2 className="text-xl sm:text-2xl font-normal text-white leading-tight mb-4">
                   BOM Misalignment in Maintenance Operations
                 </h2>
                 <p className="text-[15px] text-white/85 leading-relaxed">
@@ -375,7 +375,7 @@ export default function UseCasesPage() {
               <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                 More workflows
               </p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-4">
+              <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                 Other high-impact use cases
               </h2>
               <p className="text-[15px] text-grey-700 leading-relaxed mb-8 max-w-lg">
@@ -423,7 +423,7 @@ export default function UseCasesPage() {
       <section className="bg-grey-50 py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-grey-900 leading-tight mb-5">
+            <h2 className="text-3xl md:text-4xl font-normal text-grey-900 leading-tight mb-5">
               See these workflows in action
             </h2>
             <p className="text-lg text-grey-500 max-w-xl mx-auto mb-10">

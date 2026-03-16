@@ -22,7 +22,7 @@ export default function DemoPage() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-grey-900 tracking-tight leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl font-normal text-grey-900 tracking-tight leading-tight mb-6">
                 See Cimba{" "}
                 <span className="text-primary">in action</span>
               </h1>
@@ -73,7 +73,7 @@ export default function DemoPage() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-grey-900 tracking-tight mb-4">
+              <h2 className="text-3xl font-normal text-grey-900 tracking-tight mb-4">
                 Book a personalized demo
               </h2>
               <p className="text-grey-600">

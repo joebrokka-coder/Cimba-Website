@@ -87,7 +87,7 @@ export default function Home() {
             </h1>
             <p className="text-lg md:text-xl text-grey-600 leading-relaxed max-w-2xl mb-12">
               Cimba builds governed AI workflows that turn complex questions
-              into trusted, repeatable decisions.
+              into repeatable, trusted decision making.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -169,17 +169,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Testimonials ── */}
-      <section className="bg-white py-20 lg:py-24">
+      {/* ── The Problem ── */}
+      <section className="bg-white py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <RotatingSpotlight items={testimonials} fullWidth />
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-4">
+                Most tools help you analyze data.
+                <br />
+                Cimba helps you operationalize it.
+              </h2>
+            </div>
+            <div className="lg:w-1/2 space-y-4">
+              <p className="text-[15px] text-grey-600 leading-relaxed">
+                Modern organizations have more data and AI tools than ever. Yet most
+                teams still struggle to turn questions into{" "}
+                <span className="font-semibold">reliable</span> answers and decisions.
+              </p>
+              <p className="text-[15px] text-grey-600 leading-relaxed">
+                Cimba was built to bridge that gap by combining trusted data, business
+                context, and structured workflows into a single operational system.
+              </p>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* ── Use Cases ── */}
-      <UseCasesCarousel />
 
       {/* ── The Cimba Difference ── */}
       <section className="bg-grey-50 py-20 lg:py-28">
@@ -188,52 +202,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── How Cimba Fits ── */}
-      <section className="bg-grey-50 py-20 lg:py-28">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="rounded-2xl border border-grey-200 bg-white p-8">
-            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-              <div className="lg:w-1/2">
-                <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
-                  Your ecosystem
-                </p>
-                <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-6">
-                  How Cimba fits into your stack
-                </h2>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
-                  Cimba is designed to work alongside the tools organizations already
-                  use. BI platforms remain valuable for dashboards and reporting,
-                  while AI tools are often used for exploration and experimentation.
-                </p>
-                <p className="text-[15px] text-grey-600 leading-relaxed">
-                  Cimba sits between these systems and operational teams,
-                  enabling structured workflows that turn questions into consistent
-                  insights and actions.
-                </p>
-              </div>
-              <div className="lg:w-1/2">
-                <div className="w-full min-h-[320px] rounded-2xl bg-gradient-to-br from-grey-100 to-grey-50 border border-grey-200 flex items-center justify-center">
-                  <span className="text-[13px] text-grey-400 font-medium">
-                    Data Sources → Cimba → Teams
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── Who Uses Cimba ── */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="rounded-2xl border border-grey-200 bg-grey-100 p-8 mb-6 overflow-hidden">
-            <p className="text-[13px] font-semibold text-grey-600 uppercase tracking-[0.15em] mb-4">
-              Built for your team
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight max-w-2xl">
-              Who uses Cimba
-            </h2>
-          </div>
+          <p className="text-[13px] font-semibold text-grey-600 uppercase tracking-[0.15em] mb-4">
+            Built for your team
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight max-w-2xl mb-6">
+            Who uses Cimba
+          </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Data & Analytics */}
@@ -297,6 +274,18 @@ export default function Home() {
                 and support decision-making across departments.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Use Cases ── */}
+      <UseCasesCarousel />
+
+      {/* ── Testimonials ── */}
+      <section className="bg-white py-20 lg:py-24">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <RotatingSpotlight items={testimonials} fullWidth />
           </div>
         </div>
       </section>

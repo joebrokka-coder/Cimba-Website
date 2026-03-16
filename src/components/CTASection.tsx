@@ -64,7 +64,7 @@ export default function CTASection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-tight mb-5">
+        <h2 className="text-3xl md:text-4xl lg:text-[44px] font-normal text-white leading-tight mb-5">
           Ready to operationalize intelligence?
         </h2>
         <p className="text-lg text-white/90 max-w-xl mx-auto mb-10">

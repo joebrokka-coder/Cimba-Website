@@ -93,7 +93,7 @@ export default function CompanyPage() {
               <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center mb-6">
                 <Users size={24} className="text-primary" />
               </div>
-              <h2 className="text-3xl font-bold text-grey-900 tracking-tight mb-6">
+              <h2 className="text-3xl font-normal text-grey-900 tracking-tight mb-6">
                 Who we are
               </h2>
               <p className="text-grey-600 leading-relaxed text-lg mb-6">
@@ -124,7 +124,7 @@ export default function CompanyPage() {
             <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center mb-6 mx-auto">
               <Heart size={24} className="text-primary" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-grey-900 tracking-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-normal text-grey-900 tracking-tight mb-4">
               Our culture
             </h2>
             <p className="text-lg text-grey-500 max-w-2xl mx-auto">
@@ -157,7 +157,7 @@ export default function CompanyPage() {
             <div className="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center mb-6 mx-auto">
               <Briefcase size={24} className="text-primary" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-grey-900 tracking-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-normal text-grey-900 tracking-tight mb-4">
               Work with us
             </h2>
             <p className="text-lg text-grey-500 max-w-2xl mx-auto">
@@ -202,7 +202,7 @@ export default function CompanyPage() {
       <section className="bg-primary py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-normal text-white tracking-tight mb-4">
               Let&apos;s build the future together
             </h2>
             <p className="text-lg text-blue-200 max-w-2xl mx-auto mb-10">

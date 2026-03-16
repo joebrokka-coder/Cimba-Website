@@ -69,7 +69,7 @@ export default function LearnPage() {
       <section className="bg-grey-50 pt-32 pb-20 lg:pt-44 lg:pb-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-grey-900 tracking-tight leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl font-normal text-grey-900 tracking-tight leading-tight mb-6">
               Learn with <span className="text-primary">Cimba</span>
             </h1>
             <p className="text-lg text-grey-600 leading-relaxed max-w-3xl mx-auto">
@@ -109,7 +109,7 @@ export default function LearnPage() {
       {/* Blog */}
       <section id="blog" className="bg-grey-50 py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-grey-900 mb-12">
+          <h2 className="text-2xl md:text-3xl font-normal text-grey-900 mb-12">
             Latest from the Blog
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -144,7 +144,7 @@ export default function LearnPage() {
       {/* Tutorials */}
       <section id="tutorials" className="bg-white py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-grey-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-normal text-grey-900 mb-4">
             Tutorials
           </h2>
           <p className="text-grey-600 mb-12 max-w-2xl">
@@ -174,7 +174,7 @@ export default function LearnPage() {
       {/* Press */}
       <section id="press" className="bg-grey-50 py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-grey-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-normal text-grey-900 mb-4">
             Press Releases
           </h2>
           <p className="text-grey-600 mb-12 max-w-2xl">
@@ -196,7 +196,7 @@ export default function LearnPage() {
       {/* Events */}
       <section id="events" className="bg-white py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-grey-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-normal text-grey-900 mb-4">
             Annual Meetings & Events
           </h2>
           <p className="text-grey-600 mb-12 max-w-2xl">

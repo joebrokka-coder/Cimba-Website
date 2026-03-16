@@ -117,7 +117,7 @@ export default function HowItWorksPipeline() {
         <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-3">
           How It Works
         </p>
-        <h2 className="text-2xl sm:text-3xl font-bold text-grey-900 leading-tight mb-2">
+        <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-2">
           From data to decisions
         </h2>
         <p className="text-[15px] text-grey-600 leading-relaxed max-w-2xl mb-10">
@@ -174,7 +174,7 @@ export default function HowItWorksPipeline() {
                 >
                   <step.icon size={20} />
                 </div>
-                <h3 className="text-xl font-bold text-grey-900 leading-tight">
+                <h3 className="text-xl font-normal text-grey-900 leading-tight">
                   {step.title}
                 </h3>
               </div>

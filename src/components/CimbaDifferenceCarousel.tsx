@@ -43,11 +43,12 @@ export default function CimbaDifferenceCarousel() {
     <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-stretch">
       {/* Left: nav stack (mirrors UseCasesCarousel style) */}
       <div className="flex-shrink-0 lg:w-[260px]">
-        <h2 className="text-2xl sm:text-3xl font-bold text-primary leading-tight mb-2">
-          The Cimba difference
+        <h2 className="text-2xl sm:text-3xl font-normal text-primary leading-tight mb-2">
+          The Cimba Solution
         </h2>
         <p className="text-[14px] text-grey-600 mb-6">
-          How Cimba goes beyond dashboards and generic AI tools.
+          Four core capabilities that help teams turn data and AI into
+          operational intelligence.
         </p>
         <nav
           className="rounded-2xl border border-grey-200 bg-white p-1 shadow-sm"

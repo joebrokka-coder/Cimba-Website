@@ -38,7 +38,7 @@ export default function WhyCimbaCell() {
         <p className="text-[13px] font-semibold text-white/90 uppercase tracking-[0.15em] mb-4">
           Why Cimba
         </p>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">
+        <h2 className="text-2xl sm:text-3xl font-normal text-white leading-tight mb-4">
           AI that goes beyond dashboards
         </h2>
         <p className="text-[15px] text-white/90 leading-relaxed mb-6">
@@ -50,7 +50,7 @@ export default function WhyCimbaCell() {
         <div
           className={`why-cimba-list-wrap ${inView ? "in-view" : ""}`}
         >
-          <ul className="space-y-3 text-xl font-bold text-white leading-tight">
+          <ul className="space-y-3 text-xl font-normal text-white leading-tight">
           <li className="flex items-start gap-3">
             <span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-white flex-shrink-0" />
             <span>Agents that execute end-to-end workflows.</span>

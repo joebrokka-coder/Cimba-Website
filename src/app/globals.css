@@ -52,6 +52,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Transparent PNGs: prevent black background from img or Next.js Image wrapper */
+img {
+  background-color: transparent;
+}
+span:has(> img[data-nimg]) {
+  background-color: transparent !important;
+}
+
 nextjs-portal {
   display: none !important;
 }
@@ -127,6 +135,26 @@ nextjs-portal {
 
 .animate-shimmer-dots {
   animation: shimmer-dots 4s ease-in-out infinite;
+}
+
+/* Net background subtle drift */
+@keyframes net-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(4px, 4px); }
+}
+
+.animate-net-drift {
+  animation: net-drift 8s ease-in-out infinite;
+}
+
+/* Gradient stroke: one-shot fill on scroll into view */
+@keyframes gradient-stroke-fill-in {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-gradient-stroke-fill-in {
+  animation: gradient-stroke-fill-in 1.4s ease-out forwards;
 }
 
 /* Heading tracking */
