@@ -166,17 +166,9 @@ export default function CorePrimitivesCarousel() {
             </div>
           </div>
 
-          {/* Right: gradient glow + hero image (max 654×551, no border) */}
+          {/* Right: hero image (max 654×551, no border) on pure white */}
           <div className="flex-1 min-w-0 relative min-h-[320px] flex items-center justify-center">
-            {/* Soft blue / blue-green gradient behind content */}
-            <div
-              className="absolute inset-0 rounded-3xl opacity-40 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(ellipse 80% 70% at 60% 40%, rgba(7, 112, 227, 0.12), transparent 60%), radial-gradient(ellipse 70% 60% at 70% 70%, rgba(20, 184, 166, 0.08), transparent 50%)",
-              }}
-            />
-            <div className="relative w-full max-w-[654px] max-h-[551px] aspect-[654/551] overflow-hidden">
+            <div className="relative w-full max-w-[654px] max-h-[551px] aspect-[654/551] overflow-hidden bg-white">
               {leavingItem && nextItem ? (
                 <>
                   <div
