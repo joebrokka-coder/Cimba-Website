@@ -157,16 +157,14 @@ export default function ProductPage() {
               <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                 What is Cimba
               </p>
-              <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-6">
-                Turn data and AI into operational intelligence
-              </h2>
-              <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
-                Cimba is a platform that helps teams turn data and AI into
-                operational intelligence. Instead of relying on dashboards,
-                manual analysis, or one-off AI answers, Cimba enables teams to
-                run structured workflows that deliver consistent insights and
-                decisions.
-              </p>
+             <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-6">
+               Cimba helps teams turn data and AI into operational intelligence.
+             </h2>
+             <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
+               Instead of relying on dashboards, manual analysis, or one-off AI
+               answers, Cimba enables teams to run structured workflows that
+               deliver consistent insights and decisions.
+             </p>
               <p className="text-[15px] text-grey-600 leading-relaxed">
                 Using agents, playbooks, and business context, Cimba allows
                 organizations to answer complex questions, automate analysis,
@@ -182,11 +180,11 @@ export default function ProductPage() {
         </div>
       </section>
 
-      {/* ── How It Works ── */}
-      <HowItWorksPipeline />
-
       {/* ── Building Blocks (Core Primitives carousel) ── */}
       <CorePrimitivesCarousel />
+
+      {/* ── How It Works ── */}
+      <HowItWorksPipeline />
 
       {/* ── Integrations ── */}
       <IntegrationsSection dataCategories={dataCategories} />
