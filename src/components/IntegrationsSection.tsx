@@ -131,32 +131,23 @@ export default function IntegrationsSection({ dataCategories }: Props) {
             />
           </div>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8 mb-10">
-          {dataCategories.map((cat) => (
-            <div key={cat.category}>
-              <p className="text-[12px] font-semibold text-grey-400 uppercase tracking-[0.15em] mb-4">
-                {cat.category}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {cat.items.map((item) => (
-                  <div
-                    key={item.name}
-                    className="flex items-center gap-2.5 px-3.5 py-0 bg-white border border-grey-200 rounded-xl transition-transform transition-shadow duration-200 ease-out hover:scale-[1.02] hover:shadow-md"
-                  >
-                    <Image
-                      src={item.icon}
-                      alt={item.name}
-width={40}
-                        height={40}
-                      className="object-contain flex-shrink-0"
-                      unoptimized
-                    />
-                    <span className="text-[14px] font-medium text-grey-700 whitespace-nowrap">
-                      {item.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
+        <div className="flex flex-wrap gap-2 mb-10">
+          {dataCategories.flatMap((cat) => cat.items).map((item) => (
+            <div
+              key={item.name}
+              className="flex items-center gap-2.5 px-3.5 py-0 bg-white border border-grey-200 rounded-xl transition-transform transition-shadow duration-200 ease-out hover:scale-[1.02] hover:shadow-md"
+            >
+              <Image
+                src={item.icon}
+                alt={item.name}
+                width={40}
+                height={40}
+                className="object-contain flex-shrink-0"
+                unoptimized
+              />
+              <span className="text-[14px] font-medium text-grey-700 whitespace-nowrap">
+                {item.name}
+              </span>
             </div>
           ))}
         </div>

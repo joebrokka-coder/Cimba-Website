@@ -31,22 +31,16 @@ const valueProps = [
   {
     icon: CheckCircle,
     title: "Trusted answers grounded in your data",
-    description:
-      "Every insight is sourced, traceable, and grounded in your actual operational data — never hallucinated, never assumed.",
     image: "/Frame_4-78aae2e1-e10d-4115-9ecf-31a029ee6ebd.png",
   },
   {
     icon: GitBranch,
     title: "Repeatable decision workflows",
-    description:
-      "Build governed AI workflows that run the same way every time — auditable, compliant, and ready for enterprise scrutiny.",
     image: "/Frame_3-2eb57c44-fa43-4d4f-945c-22f234285a1f.png",
   },
   {
     icon: Users,
-    title: "Intelligence that scales across teams",
-    description:
-      "From Finance to CS to Ops, Cimba delivers consistent operational intelligence wherever your teams need it.",
+    title: "Governed agents that scale across teams",
     image: "/Frame_5-dcfcf873-2b0f-4746-acc3-dea40f2ca5a2.png",
   },
 ];
