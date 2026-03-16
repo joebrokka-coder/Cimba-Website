@@ -28,7 +28,13 @@ const customerLogos = [
   { name: "Skan AI", src: "/logos/skanai.png" },
 ];
 
-const valueProps = [
+const valueProps: {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  image: string;
+  background: string;
+  description?: string;
+}[] = [
   {
     icon: CheckCircle,
     title: "Trusted answers grounded in your data",
