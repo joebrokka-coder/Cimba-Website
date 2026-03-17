@@ -1,15 +1,33 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 type Props = {
   children: React.ReactNode;
   className?: string;
+  riseOnScroll?: boolean;
 };
 
-export default function CursorGradientSection({ children, className = "" }: Props) {
+const riseObserverOptions: IntersectionObserverInit = {
+  rootMargin: "0px 0px -12% 0px",
+  threshold: 0.2,
+};
+
+export default function CursorGradientSection({ children, className = "", riseOnScroll = false }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    if (!riseOnScroll) return;
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry?.isIntersecting) setInView(true);
+    }, riseObserverOptions);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [riseOnScroll]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
     const el = sectionRef.current;
@@ -30,7 +48,7 @@ export default function CursorGradientSection({ children, className = "" }: Prop
       ref={sectionRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`bg-grey-50 relative overflow-hidden ${className}`}
+      className={`bg-grey-50 relative overflow-hidden ${riseOnScroll ? "cursor-gradient-rise-section" : ""} ${riseOnScroll && inView ? "in-view" : ""} ${className}`}
     >
       {/* Base gradient – matches Integrations section */}
       <div

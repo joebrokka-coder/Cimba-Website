@@ -18,6 +18,7 @@ import UseCasesCarousel from "@/components/UseCasesCarousel";
 import CimbaDifferenceCarousel from "@/components/CimbaDifferenceCarousel";
 import ValuePropsSection from "@/components/ValuePropsSection";
 import CursorGradientSection from "@/components/CursorGradientSection";
+import WhoUsesRiseSection from "@/components/WhoUsesRiseSection";
 
 const customerLogos = [
   { name: "Airbnb", src: "/logos/airbnb.png" },
@@ -181,10 +182,10 @@ export default function Home() {
       </section>
 
       {/* ── The Problem ── */}
-      <CursorGradientSection className="py-20 lg:py-28">
+      <CursorGradientSection className="py-20 lg:py-28" riseOnScroll>
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 relative">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
-            <div className="lg:w-1/2 group cursor-default">
+            <div className="problem-rise-item lg:w-1/2 group cursor-default">
               <div className="relative">
                 <h2 className="text-5xl md:text-6xl lg:text-[60px] font-normal text-grey-900 leading-tight mb-4 transition-opacity duration-1000 group-hover:opacity-0">
                   Most tools help you analyze data.
@@ -192,7 +193,7 @@ export default function Home() {
                   Cimba helps you operationalize it.
                 </h2>
                 <h2
-                  className="absolute inset-0 text-5xl md:text-6xl lg:text-[60px] font-normal leading-tight bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 bg-clip-text text-transparent opacity-0 transition-opacity duration-1000 group-hover:opacity-100"
+                  className="absolute inset-0 text-5xl md:text-6xl lg:text-[60px] font-normal leading-tight bg-gradient-to-r from-blue-500 via-purple-700 to-teal-500 bg-clip-text text-transparent opacity-0 transition-opacity duration-1000 group-hover:opacity-100"
                   aria-hidden
                 >
                   Most tools help you analyze data.
@@ -201,7 +202,7 @@ export default function Home() {
                 </h2>
               </div>
             </div>
-            <div className="lg:w-1/2 space-y-4">
+            <div className="problem-rise-item lg:w-1/2 space-y-4">
               <p className="text-[24px] font-light text-grey-900 leading-relaxed">
                 Modern organizations have more data and AI tools than ever. Yet most
                 teams still struggle to turn questions into{" "}
@@ -224,18 +225,20 @@ export default function Home() {
       </section>
 
       {/* ── Who Uses Cimba ── */}
-      <section className="bg-white py-20 lg:py-28">
+      <WhoUsesRiseSection className="bg-white py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <p className="text-[13px] font-semibold text-grey-600 uppercase tracking-[0.15em] mb-4">
-            Built for your team
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight max-w-2xl mb-6">
-            Who uses Cimba
-          </h2>
+          <div className="who-uses-rise-header">
+            <p className="who-uses-rise-item text-[13px] font-semibold text-grey-600 uppercase tracking-[0.15em] mb-4">
+              Built for your team
+            </p>
+            <h2 className="who-uses-rise-item text-3xl sm:text-4xl font-normal text-grey-900 leading-tight max-w-2xl mb-6">
+              Who uses Cimba
+            </h2>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Data & Analytics */}
-            <div className="rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
+            <div className="who-uses-rise-item rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
               <div className="flex-shrink-0 w-[45%] min-w-[140px] max-w-[220px] p-4 flex items-center justify-center">
                 <div className="relative w-full aspect-square rounded-xl overflow-hidden">
                   <Image
@@ -263,7 +266,7 @@ export default function Home() {
             </div>
 
             {/* Finance & FP&A */}
-            <div className="rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
+            <div className="who-uses-rise-item rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
               <div className="flex-shrink-0 w-[45%] min-w-[140px] max-w-[220px] p-4 flex items-center justify-center">
                 <div className="relative w-full aspect-square rounded-xl overflow-hidden">
                   <Image
@@ -292,7 +295,7 @@ export default function Home() {
             </div>
 
             {/* Customer Success */}
-            <div className="rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
+            <div className="who-uses-rise-item rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
               <div className="flex-shrink-0 w-[45%] min-w-[140px] max-w-[220px] p-4 flex items-center justify-center">
                 <div className="relative w-full aspect-square rounded-xl overflow-hidden">
                   <Image
@@ -321,7 +324,7 @@ export default function Home() {
             </div>
 
             {/* Operations */}
-            <div className="rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
+            <div className="who-uses-rise-item rounded-2xl border border-grey-200 bg-white overflow-hidden flex">
               <div className="flex-shrink-0 w-[45%] min-w-[140px] max-w-[220px] p-4 flex items-center justify-center">
                 <div className="relative w-full aspect-square rounded-xl overflow-hidden">
                   <Image
@@ -349,7 +352,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </WhoUsesRiseSection>
 
       {/* ── Use Cases ── */}
       <UseCasesCarousel />
