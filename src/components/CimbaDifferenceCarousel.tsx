@@ -44,7 +44,7 @@ export default function CimbaDifferenceCarousel() {
       {/* Left: stepper (Core Primitives style) */}
       <div className="flex-shrink-0 lg:w-[380px]">
         <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-8 max-w-xl">
-          How Teams Use Cimba
+          The Cimba Solution
         </h2>
         <div className="flex flex-col gap-3" role="group" aria-label="Cimba Solution">
           {items.map((item) => {
