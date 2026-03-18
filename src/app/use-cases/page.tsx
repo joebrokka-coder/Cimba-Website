@@ -87,19 +87,19 @@ export default function UseCasesPage() {
             <div className="lg:col-span-12 rounded-2xl border border-grey-200 bg-white p-8">
               <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
                 <div className="lg:w-1/2">
-                  <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
+                  <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                     Finance &middot; FP&A
                   </p>
                   <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-5">
                     Flux Analysis
                   </h2>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
+                  <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
                     Each close cycle, finance teams spend days manually
                     investigating period-over-period variances across multiple
                     systems. The process is repetitive, difficult to scale, and
                     often delays clear explanations for leadership.
                   </p>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-8">
+                  <p className="text-[16px] text-grey-600 leading-relaxed mb-8">
                     Cimba automates flux analysis by connecting directly to
                     source systems and applying explainable, repeatable
                     logic&mdash;turning variance analysis into a fast, reliable
@@ -133,20 +133,20 @@ export default function UseCasesPage() {
             {/* ── P&L Scenario Modeling — bento-dark tile, problem/solution + stats ── */}
             <div className="lg:col-span-5 rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col justify-between min-h-[520px]">
               <div>
-                <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
+                <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                   FP&A &middot; Leadership
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
                   P&L Scenario Modeling
                 </h2>
-                <p className="text-[15px] text-grey-700 leading-relaxed mb-4">
+                <p className="text-[16px] text-grey-700 leading-relaxed mb-4">
                   P&L scenario analysis is a bottleneck for FP&A teams.
                   Assumptions live across planning tools and spreadsheets, and
                   answering leadership&apos;s &ldquo;what if&rdquo; questions
                   often requires rebuilding models, reconciling inputs, and
                   waiting days for analysis.
                 </p>
-                <p className="text-[15px] text-grey-700 leading-relaxed mb-6">
+                <p className="text-[16px] text-grey-700 leading-relaxed mb-6">
                   Cimba integrates with your existing planning and financial
                   systems to turn scenario modeling into an on-demand, trusted
                   workflow&mdash;empowering leadership to explore scenarios and
@@ -172,7 +172,7 @@ export default function UseCasesPage() {
                   <p className="text-[40px] font-normal text-grey-900 leading-none">
                     10&times;
                   </p>
-                  <p className="text-[13px] text-grey-700 mt-1">
+                  <p className="text-[16px] text-grey-700 mt-1">
                     faster scenario turnaround
                   </p>
                 </div>
@@ -180,7 +180,7 @@ export default function UseCasesPage() {
                   <p className="text-[40px] font-normal text-grey-900 leading-none">
                     0
                   </p>
-                  <p className="text-[13px] text-grey-700 mt-1">
+                  <p className="text-[16px] text-grey-700 mt-1">
                     models to rebuild
                   </p>
                 </div>
@@ -204,14 +204,14 @@ export default function UseCasesPage() {
                 <h2 className="text-2xl sm:text-3xl font-normal text-white leading-tight mb-4">
                   Close & Reconciliation
                 </h2>
-                <p className="text-[15px] text-white/85 leading-relaxed mb-4">
+                <p className="text-[16px] text-white/85 leading-relaxed mb-4">
                   Accounting teams rely on manual, spreadsheet-driven processes
                   for reconciliations, validations, and anomaly
                   detection&mdash;often under tight close timelines. Frequent
                   data changes increase risk, create rework, and make it
                   difficult to explain discrepancies when they matter most.
                 </p>
-                <p className="text-[15px] text-white/85 leading-relaxed">
+                <p className="text-[16px] text-white/85 leading-relaxed">
                   Cimba automates core accounting workflows using explainable,
                   repeatable logic that mirrors existing close
                   processes&mdash;without introducing black boxes. It
@@ -240,13 +240,13 @@ export default function UseCasesPage() {
                 <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
                   Risk Monitoring & Write-Off Analysis
                 </h2>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
+                <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
                   Risk and analytics teams operate in data-rich environments but remain
                   constrained by slow analysis cycles, fragile logic, inconsistent
                   metrics, and limited confidence in outputs&mdash;leading to delayed
                   actions, inconsistent decisions, and elevated risk exposure.
                 </p>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-6">
+                <p className="text-[16px] text-grey-600 leading-relaxed mb-6">
                   Cimba transforms risk analysis into a governed, repeatable workflow
                   that delivers timely insight without sacrificing accuracy or
                   explainability.
@@ -274,13 +274,13 @@ export default function UseCasesPage() {
             {/* ── T&E Expense — bento-dark compact tile with full story ── */}
             <div className="lg:col-span-4 lg:self-start rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col gap-8">
               <div className="flex-1">
-                <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
+                <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                   Expense &middot; Monitoring
                 </p>
                 <h2 className="text-xl sm:text-2xl font-normal text-grey-900 leading-tight mb-5">
                   T&E Expense Analysis
                 </h2>
-                <p className="text-[15px] text-grey-700 leading-relaxed mb-6">
+                <p className="text-[16px] text-grey-700 leading-relaxed mb-6">
                   Expenses, budgets, and forecasts stored across different
                   systems with no central monitoring make most actions
                   reactive&mdash;issues surface only after the damage is done.
@@ -302,7 +302,7 @@ export default function UseCasesPage() {
               </div>
               <div className="flex items-center gap-3">
                 <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                <p className="text-[13px] text-grey-700">
+                <p className="text-[16px] text-grey-700">
                   Always-on alerting
                 </p>
               </div>
@@ -324,20 +324,20 @@ export default function UseCasesPage() {
                   </div>
                 </div>
                 <div className="lg:w-7/12">
-                  <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
+                  <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                     Customer Success &middot; Operations
                   </p>
                   <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
                     AI for Account Managers
                   </h2>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
+                  <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
                     Swiggy account managers oversee 50–100 restaurant partners
                     each and must answer performance and growth questions in
                     real time. However, key data often requires analyst support,
                     creating delays that limit impact in live partner meetings
                     and slow upsell opportunities.
                   </p>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-6">
+                  <p className="text-[16px] text-grey-600 leading-relaxed mb-6">
                     Cimba powers Swiggy&apos;s &ldquo;AI for AM&rdquo; agent,
                     enabling real-time, self-service insights and repeatable
                     workflows&mdash;degrowth analysis, performance trends,
@@ -357,7 +357,7 @@ export default function UseCasesPage() {
                       <p className="text-[32px] font-normal text-grey-900 leading-none">
                         10
                       </p>
-                      <p className="text-[13px] text-grey-500 mt-1">
+                      <p className="text-[16px] text-grey-500 mt-1">
                         business units
                       </p>
                     </div>
@@ -365,7 +365,7 @@ export default function UseCasesPage() {
                       <p className="text-[32px] font-normal text-grey-900 leading-none">
                         2,200
                       </p>
-                      <p className="text-[13px] text-grey-500 mt-1">
+                      <p className="text-[16px] text-grey-500 mt-1">
                         active users
                       </p>
                     </div>
@@ -373,7 +373,7 @@ export default function UseCasesPage() {
                       <p className="text-[32px] font-normal text-grey-900 leading-none">
                         3 mo
                       </p>
-                      <p className="text-[13px] text-grey-500 mt-1">
+                      <p className="text-[16px] text-grey-500 mt-1">
                         to full scale
                       </p>
                     </div>
@@ -399,7 +399,7 @@ export default function UseCasesPage() {
                 <h2 className="text-xl sm:text-2xl font-normal text-white leading-tight mb-4">
                   BOM Misalignment in Maintenance Operations
                 </h2>
-                <p className="text-[15px] text-white/85 leading-relaxed">
+                <p className="text-[16px] text-white/85 leading-relaxed">
                   Instead of sifting through thousands of work orders, teams
                   see a focused list of misaligned material combinations with
                   recommended actions. Cimba automatically compares planned
@@ -411,17 +411,17 @@ export default function UseCasesPage() {
 
             {/* ── Other High-Impact — bento-dark list tile ── */}
             <div className="lg:col-span-7 rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col justify-center min-h-[420px]">
-              <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
+              <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                 More workflows
               </p>
               <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                 Other high-impact use cases
               </h2>
-              <p className="text-[15px] text-grey-700 leading-relaxed mb-8 max-w-lg">
+              <p className="text-[16px] text-grey-700 leading-relaxed mb-8 max-w-lg">
                 Cimba extends across finance, ops, and go-to-market&mdash;wherever
                 teams need governed, repeatable intelligence.
               </p>
-              <div className="grid sm:grid-cols-2 gap-x-12 gap-y-5 text-[15px]">
+              <div className="grid sm:grid-cols-2 gap-x-12 gap-y-5 text-[16px]">
                 {[
                   {
                     title: "Repeatable board questions",
@@ -472,14 +472,14 @@ export default function UseCasesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/demo"
-                className="btn-primary px-8 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md"
+                className="btn-primary px-8 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md"
               >
                 See Demo
                 <ArrowRight size={16} className="ml-2" />
               </Link>
               <Link
                 href="/product"
-                className="btn-secondary px-8 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md"
+                className="btn-secondary px-8 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md"
               >
                 Explore Product
               </Link>

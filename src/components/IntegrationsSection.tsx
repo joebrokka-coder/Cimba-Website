@@ -88,7 +88,7 @@ export default function IntegrationsSection({ dataCategories }: Props) {
         />
       )}
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8 relative">
-        <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
+        <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
           Integrations
         </p>
         <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-3 max-w-2xl">

@@ -80,7 +80,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/demo"
-                className="btn-primary px-10 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
+                className="btn-primary px-10 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
               >
                 See Demo
                 <ArrowRight size={16} />
@@ -110,7 +110,7 @@ export default function Home() {
       {/* ── Trusted By ── */}
       <section className="bg-grey-50 py-14">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <p className="text-center text-[13px] font-medium text-grey-400 uppercase tracking-[0.15em] mb-8">
+          <p className="text-center text-[16px] font-medium text-grey-400 uppercase tracking-[0.15em] mb-8">
             Trusted by industry leaders
           </p>
           <div className="overflow-hidden">
@@ -184,7 +184,7 @@ export default function Home() {
                 <h3 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                   AI Enablement, Not Dashboards
                 </h3>
-                <p className="text-[15px] text-grey-600 leading-relaxed">
+                <p className="text-[16px] text-grey-600 leading-relaxed">
                   Cimba is designed to help teams operationalize intelligence. Instead of
                   building static reports, teams create agents and workflows that
                   actively analyze data and answer questions.
@@ -210,7 +210,7 @@ export default function Home() {
                 <h3 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                   Repeatable Workflows
                 </h3>
-                <p className="text-[15px] text-grey-600 leading-relaxed">
+                <p className="text-[16px] text-grey-600 leading-relaxed">
                   Complex analyses can be turned into structured workflows that run the
                   same way every time. This ensures teams receive consistent answers
                   without rebuilding analysis from scratch.
@@ -235,7 +235,7 @@ export default function Home() {
                 <h3 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                   Business Context Built In
                 </h3>
-                <p className="text-[15px] text-grey-600 leading-relaxed">
+                <p className="text-[16px] text-grey-600 leading-relaxed">
                   Cimba allows organizations to define the metrics, logic, and context
                   that shape how questions should be answered. This ensures insights
                   reflect how the business actually operates.
@@ -260,7 +260,7 @@ export default function Home() {
                 <h3 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                   Operational Delivery
                 </h3>
-                <p className="text-[15px] text-grey-600 leading-relaxed">
+                <p className="text-[16px] text-grey-600 leading-relaxed">
                   Insights are delivered through workflows that teams can run when
                   needed. This moves analytics from passive reporting toward active
                   decision support.
@@ -310,7 +310,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-grey-900 mb-3">
                   Data &amp; Analytics Teams
                 </h3>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                <p className="text-[16px] text-grey-600 leading-relaxed mb-3">
                   Scale insight delivery without building endless dashboards.
                 </p>
                 <p className="text-[16px] text-grey-500 leading-relaxed">
@@ -339,7 +339,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-grey-900 mb-3">
                   Finance &amp; FP&amp;A
                 </h3>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                <p className="text-[16px] text-grey-600 leading-relaxed mb-3">
                   Analyze revenue drivers, investigate variance, and answer
                   executive questions faster.
                 </p>
@@ -369,7 +369,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-grey-900 mb-3">
                   Customer Success
                 </h3>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                <p className="text-[16px] text-grey-600 leading-relaxed mb-3">
                   Understand customer health, identify risks, and prioritize
                   actions.
                 </p>
@@ -399,7 +399,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-grey-900 mb-3">
                   Operations
                 </h3>
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-3">
+                <p className="text-[16px] text-grey-600 leading-relaxed mb-3">
                   Monitor business performance and quickly investigate operational
                   issues.
                 </p>

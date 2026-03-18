@@ -55,19 +55,19 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[13px] text-white/80">
+          <p className="text-[16px] text-white/80">
             &copy; {new Date().getFullYear()} Cimba. All rights reserved.
           </p>
           <div className="flex gap-8">
             <Link
               href="/privacy"
-              className="text-[13px] text-white/80 hover:text-white transition-colors"
+              className="text-[16px] text-white/80 hover:text-white transition-colors"
             >
               Privacy
             </Link>
             <Link
               href="/terms"
-              className="text-[13px] text-white/80 hover:text-white transition-colors"
+              className="text-[16px] text-white/80 hover:text-white transition-colors"
             >
               Terms
             </Link>

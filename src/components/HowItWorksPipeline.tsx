@@ -54,13 +54,13 @@ export default function HowItWorksPipeline() {
   return (
     <section className="bg-grey-50 py-16 lg:py-20">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-        <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-3">
+        <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-3">
           How It Works
         </p>
         <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-2">
           From data to decisions
         </h2>
-        <p className="text-[15px] text-grey-600 leading-relaxed max-w-2xl mb-10">
+        <p className="text-[16px] text-grey-600 leading-relaxed max-w-2xl mb-10">
           Connect your data, add business context, build agents and playbooks,
           then run workflows that deliver governed, repeatable intelligence.
         </p>
@@ -110,7 +110,7 @@ export default function HowItWorksPipeline() {
                   {step.title}
                 </h3>
               </div>
-              <p className="text-[15px] text-grey-700 leading-relaxed">
+              <p className="text-[16px] text-grey-700 leading-relaxed">
                 {step.description}
               </p>
             </div>

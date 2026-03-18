@@ -35,13 +35,13 @@ export default function WhyCimbaCell() {
       }}
     >
       <div className="flex-shrink-0">
-        <p className="text-[13px] font-semibold text-white/90 uppercase tracking-[0.15em] mb-4">
+        <p className="text-[16px] font-semibold text-white/90 uppercase tracking-[0.15em] mb-4">
           Why Cimba
         </p>
         <h2 className="text-2xl sm:text-3xl font-normal text-white leading-tight mb-4">
           AI that goes beyond dashboards
         </h2>
-        <p className="text-[15px] text-white/90 leading-relaxed mb-6">
+        <p className="text-[16px] text-white/90 leading-relaxed mb-6">
           Operational intelligence built for Finance, CS, and Ops teams that
           need AI they can actually audit.
         </p>

@@ -145,7 +145,7 @@ export default function ProductPage() {
             </p>
             <Link
               href="/demo"
-              className="btn-primary px-10 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
+              className="btn-primary px-10 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
             >
               See Demo
               <ArrowRight size={16} />
@@ -159,18 +159,18 @@ export default function ProductPage() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <div className="lg:w-1/2">
-              <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
+              <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                 What is Cimba
               </p>
              <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-6">
                Cimba helps teams turn data and AI into operational intelligence.
              </h2>
-             <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
+             <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
                Instead of relying on dashboards, manual analysis, or one-off AI
                answers, Cimba enables teams to run structured workflows that
                deliver consistent insights and decisions.
              </p>
-              <p className="text-[15px] text-grey-600 leading-relaxed">
+              <p className="text-[16px] text-grey-600 leading-relaxed">
                 Using agents, playbooks, and business context, Cimba allows
                 organizations to answer complex questions, automate analysis,
                 and operationalize intelligence across teams.
@@ -178,7 +178,7 @@ export default function ProductPage() {
             </div>
             <div className="lg:w-1/2">
               <div className="w-full min-h-[320px] rounded-2xl bg-gradient-to-br from-grey-100 to-grey-50 border border-grey-200 flex items-center justify-center">
-                <span className="text-[13px] text-grey-400 font-medium">Product diagram</span>
+                <span className="text-[16px] text-grey-400 font-medium">Product diagram</span>
               </div>
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function ProductPage() {
       <section className="bg-grey-50 py-16 lg:py-20 border-t border-grey-200">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
-              <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
+              <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
                 Where It Fits
               </p>
             <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight max-w-2xl mx-auto">
@@ -207,8 +207,8 @@ export default function ProductPage() {
               <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-grey-100">
                 <Database size={22} className="text-grey-600" />
               </div>
-              <h3 className="text-[15px] font-semibold text-grey-900 mb-1">Data Sources</h3>
-              <p className="text-[13px] text-grey-500 leading-relaxed">
+              <h3 className="text-[16px] font-semibold text-grey-900 mb-1">Data Sources</h3>
+              <p className="text-[16px] text-grey-500 leading-relaxed">
                 Databases, warehouses, spreadsheets, and APIs
               </p>
             </div>
@@ -231,7 +231,7 @@ export default function ProductPage() {
                 <Image src="/cimba-logo.svg" alt="Cimba" width={24} height={24} />
               </div>
               <h3 className="text-[16px] font-bold text-primary mb-1">Cimba</h3>
-              <p className="text-[13px] text-grey-600 leading-relaxed">
+              <p className="text-[16px] text-grey-600 leading-relaxed">
                 Operational intelligence through governed agents and structured workflows
               </p>
             </div>
@@ -246,8 +246,8 @@ export default function ProductPage() {
               <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-grey-100">
                 <Users size={22} className="text-grey-600" />
               </div>
-              <h3 className="text-[15px] font-semibold text-grey-900 mb-1">Teams</h3>
-              <p className="text-[13px] text-grey-500 leading-relaxed">
+              <h3 className="text-[16px] font-semibold text-grey-900 mb-1">Teams</h3>
+              <p className="text-[16px] text-grey-500 leading-relaxed">
                 Finance, Data, Ops, and Customer Success
               </p>
             </div>
@@ -259,24 +259,24 @@ export default function ProductPage() {
               <div className="flex-1 rounded-xl border border-grey-200 bg-white p-5">
                 <div className="flex items-center gap-2.5 mb-2">
                   <BarChart3 size={18} className="text-grey-400" />
-                  <span className="text-[13px] font-semibold text-grey-700">BI Tools</span>
+                  <span className="text-[16px] font-semibold text-grey-700">BI Tools</span>
                 </div>
-                <p className="text-[13px] text-grey-500 leading-relaxed">
+                <p className="text-[16px] text-grey-500 leading-relaxed">
                   Remain valuable for dashboards and reporting
                 </p>
               </div>
               <div className="flex-1 rounded-xl border border-grey-200 bg-white p-5">
                 <div className="flex items-center gap-2.5 mb-2">
                   <Sparkles size={18} className="text-grey-400" />
-                  <span className="text-[13px] font-semibold text-grey-700">AI Tools</span>
+                  <span className="text-[16px] font-semibold text-grey-700">AI Tools</span>
                 </div>
-                <p className="text-[13px] text-grey-500 leading-relaxed">
+                <p className="text-[16px] text-grey-500 leading-relaxed">
                   Often used for exploration and experimentation
                 </p>
               </div>
             </div>
             <div className="flex-1 flex flex-col justify-center">
-              <p className="text-[15px] text-grey-600 leading-relaxed">
+              <p className="text-[16px] text-grey-600 leading-relaxed">
                 Cimba is designed to work alongside the tools organizations already use.
                 It sits between data systems and operational teams, enabling structured
                 workflows that turn questions into consistent insights and actions.
@@ -320,7 +320,7 @@ export default function ProductPage() {
                       <h3 className="text-2xl font-bold text-grey-900 mb-2">
                         {pillar.title}
                       </h3>
-                      <p className="text-[15px] text-grey-600 leading-relaxed">
+                      <p className="text-[16px] text-grey-600 leading-relaxed">
                         {pillar.description}
                       </p>
                     </div>
@@ -330,7 +330,7 @@ export default function ProductPage() {
                     <h2 className="text-2xl font-bold text-grey-900 mb-2">
                       {pillar.title}
                     </h2>
-                    <p className="text-[15px] text-grey-600 leading-relaxed">
+                    <p className="text-[16px] text-grey-600 leading-relaxed">
                       {pillar.description}
                     </p>
                   </>
@@ -355,14 +355,14 @@ export default function ProductPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/demo"
-              className="btn-primary px-8 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
+              className="btn-primary px-8 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
             >
               See Demo
               <ArrowRight size={16} />
             </Link>
             <Link
               href="/use-cases"
-              className="btn-secondary px-8 py-0 text-[15px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
+              className="btn-secondary px-8 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
             >
               Explore Use Cases
             </Link>

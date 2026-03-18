@@ -46,7 +46,7 @@ export default function RotatingSpotlight({
       }
     >
       <div className="flex items-center justify-between gap-4 mb-6">
-        <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em]">
+        <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em]">
           Customer spotlight
         </p>
       </div>

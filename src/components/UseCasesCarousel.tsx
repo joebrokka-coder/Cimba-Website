@@ -116,11 +116,11 @@ export default function UseCasesCarousel() {
               <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
                 {active.title}
               </h2>
-              <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
+              <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
                 {active.paragraphs[0]}
               </p>
               {active.paragraphs[1] && active.paragraphs[1].trim().length > 0 && (
-                <p className="text-[15px] text-grey-600 leading-relaxed mb-8">
+                <p className="text-[16px] text-grey-600 leading-relaxed mb-8">
                   {active.paragraphs[1]}
                 </p>
               )}

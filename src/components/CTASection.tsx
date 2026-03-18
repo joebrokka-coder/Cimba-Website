@@ -74,14 +74,14 @@ export default function CTASection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/demo"
-            className="btn-primary px-8 py-0 text-[15px] font-semibold rounded-full transition-all shadow-lg"
+            className="btn-primary px-8 py-0 text-[16px] font-semibold rounded-full transition-all shadow-lg"
           >
             See Demo
             <ArrowRight size={16} className="ml-2" />
           </Link>
           <Link
             href="/product"
-            className="inline-flex items-center justify-center gap-2 px-8 py-0 h-[42px] text-[15px] font-semibold rounded-full bg-white text-primary hover:bg-grey-100 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-0 h-[42px] text-[16px] font-semibold rounded-full bg-white text-primary hover:bg-grey-100 transition-all"
           >
             Explore Product
           </Link>

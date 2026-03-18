@@ -107,7 +107,7 @@ export default function CorePrimitivesCarousel() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch min-h-[520px] lg:min-h-[620px]">
           {/* Left: CORE PRIMITIVES + tabs (selected expands with focus text) */}
           <div className="flex-shrink-0 lg:w-[380px]">
-            <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-2">
+            <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-2">
               Core Primitives
             </p>
             <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-8 max-w-xl">
@@ -153,7 +153,7 @@ export default function CorePrimitivesCarousel() {
                     >
                       <div className="min-h-0">
                         <p
-                          className="mt-3 text-[15px] text-grey-700 leading-relaxed pt-px transition-opacity duration-300 ease-out"
+                          className="mt-3 text-[16px] text-grey-700 leading-relaxed pt-px transition-opacity duration-300 ease-out"
                           style={{ opacity: isActive ? 1 : 0 }}
                         >
                           {item.focusText}
