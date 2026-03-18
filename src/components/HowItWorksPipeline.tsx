@@ -72,7 +72,7 @@ export default function HowItWorksPipeline() {
               key={s.id}
               type="button"
               onClick={() => goTo(i)}
-              className={`flex-none w-[250px] flex items-center gap-2 pl-4 pr-6 py-3 text-left transition-colors rounded-xl min-w-0 ${
+              className={`flex-none w-[150px] flex items-center justify-center py-3 text-center transition-colors min-w-0 ${
                 i === selectedIndex
                   ? "bg-black text-white font-bold border border-black"
                   : "bg-white text-primary border border-grey-200 hover:bg-grey-50"
