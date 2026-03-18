@@ -57,7 +57,7 @@ export default function RotatingSpotlight({
         <p className="text-2xl sm:text-3xl font-medium text-grey-700 leading-snug mb-6 italic max-w-3xl mx-auto text-center h-[6.5rem] sm:h-[8rem] overflow-hidden line-clamp-3">
           &ldquo;{item.quote}&rdquo;
         </p>
-        <div className="flex items-center justify-center gap-6 text-[13px] text-grey-500">
+        <div className="flex items-center justify-center gap-6 text-[16px] text-grey-500">
           <span className="font-medium text-grey-700">{item.author}</span>
           <span className="hidden sm:inline">{item.company}</span>
         </div>
