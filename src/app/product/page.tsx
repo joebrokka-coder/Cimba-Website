@@ -134,8 +134,9 @@ export default function ProductPage() {
         <div className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-32 pb-20 lg:pt-44 lg:pb-28">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-grey-900 leading-tight mb-6">
-              The platform for{" "}
-              <span className="text-primary">operational intelligence</span>
+              The platform for
+              <br />
+              <span className="text-primary block">operational intelligence</span>
             </h1>
             <p className="text-lg md:text-xl text-grey-500 leading-relaxed max-w-2xl mb-10">
               Governed agents. Repeatable workflows. Auditable execution. Cimba
@@ -154,7 +155,7 @@ export default function ProductPage() {
       </section>
 
       {/* ── What is Cimba ── */}
-      <section className="bg-white py-20 lg:py-28">
+      <section className="bg-white py-16 lg:py-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <div className="lg:w-1/2">
@@ -188,7 +189,7 @@ export default function ProductPage() {
       <HowItWorksPipeline />
 
       {/* ── How Cimba Fits Into Your Stack ── */}
-      <section className="bg-grey-50 py-20 lg:py-28 border-t border-grey-200">
+      <section className="bg-grey-50 py-16 lg:py-20 border-t border-grey-200">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
               <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
@@ -289,7 +290,7 @@ export default function ProductPage() {
       <IntegrationsSection dataCategories={dataCategories} />
 
       {/* ── Security ── */}
-      <section className="bg-white py-20 lg:py-28">
+      <section className="bg-white py-16 lg:py-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-12 max-w-2xl">
             Security and compliance
@@ -341,7 +342,7 @@ export default function ProductPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative bg-grey-50 py-24 lg:py-28 overflow-hidden">
+      <section className="relative bg-grey-50 py-20 lg:py-24 overflow-hidden">
         <NetBackground />
         <div className="relative max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-normal text-grey-900 leading-tight mb-5">

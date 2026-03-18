@@ -144,17 +144,13 @@ export default function Home() {
             <div className="problem-rise-item lg:w-1/2 group cursor-default">
               <div className="relative">
                 <h2 className="text-5xl md:text-6xl lg:text-[60px] font-normal text-grey-900 leading-tight mb-4 transition-opacity duration-1000 group-hover:opacity-0">
-                  Cimba helps you operationalize data,
-                  <br />
-                  instead of only analyze it.
+                  Cimba helps you operationalize data, instead of only analyze it.
                 </h2>
                 <h2
                   className="absolute inset-0 text-5xl md:text-6xl lg:text-[60px] font-normal leading-tight bg-gradient-to-r from-blue-500 via-purple-700 to-teal-500 bg-clip-text text-transparent opacity-0 transition-opacity duration-1000 group-hover:opacity-100"
                   aria-hidden
                 >
-                  Cimba helps you operationalize data,
-                  <br />
-                  instead of only analyze it.
+                  Cimba helps you operationalize data, instead of only analyze it.
                 </h2>
               </div>
             </div>

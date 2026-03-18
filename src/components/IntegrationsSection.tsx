@@ -68,7 +68,7 @@ export default function IntegrationsSection({ dataCategories }: Props) {
       ref={sectionRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="bg-grey-50 py-20 lg:py-28 relative overflow-hidden"
+      className="bg-grey-50 py-16 lg:py-20 relative overflow-hidden"
     >
       {/* Base gradient – more visible */}
       <div
