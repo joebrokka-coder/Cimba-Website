@@ -50,7 +50,6 @@ export default function HowItWorksPipeline() {
   }, []);
 
   const step = pipelineSteps[selectedIndex];
-  const isCapabilities = "isCapabilities" in step && (step as any).isCapabilities;
 
   return (
     <section className="bg-grey-50 py-16 lg:py-20">
@@ -99,7 +98,7 @@ export default function HowItWorksPipeline() {
           <div className="flex flex-col lg:flex-row gap-8 p-8 sm:p-10 lg:p-12">
             <div className="lg:w-2/5 flex-shrink-0">
               <ImagePlaceholderSmall
-                label={isCapabilities ? "Platform" : step.title}
+                label={step.title}
               />
             </div>
             <div className="flex-1 min-w-0">
@@ -117,23 +116,9 @@ export default function HowItWorksPipeline() {
                   {step.title}
                 </h3>
               </div>
-              {isCapabilities && "capabilities" in step ? (
-                <div className="flex flex-wrap gap-3">
-                  {step.capabilities.map((cap) => (
-                    <span
-                      key={cap.label}
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-grey-100 border border-grey-200 rounded-full text-[13px] font-medium text-grey-700"
-                    >
-                      <cap.icon size={14} className="text-primary" />
-                      {cap.label}
-                    </span>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-[15px] text-grey-700 leading-relaxed">
-                  {step.description}
-                </p>
-              )}
+              <p className="text-[15px] text-grey-700 leading-relaxed">
+                {step.description}
+              </p>
             </div>
           </div>
         </div>
