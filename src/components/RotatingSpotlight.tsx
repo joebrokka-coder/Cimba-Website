@@ -49,9 +49,6 @@ export default function RotatingSpotlight({
         <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em]">
           Customer spotlight
         </p>
-        <span className="text-[12px] text-grey-400 whitespace-nowrap">
-          Enterprise finance leader
-        </span>
       </div>
       <div
         className="transition-opacity duration-500 ease-in-out"
