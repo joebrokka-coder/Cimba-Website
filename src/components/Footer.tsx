@@ -13,16 +13,6 @@ const footerLinks = {
     { label: "Marketing", href: "/use-cases#marketing" },
     { label: "AI for Account Managers", href: "/use-cases#account-managers" },
   ],
-  Company: [
-    { label: "About Us", href: "/company" },
-    { label: "Culture", href: "/company#culture" },
-    { label: "Careers", href: "/company#careers" },
-  ],
-  Resources: [
-    { label: "Blog", href: "/learn" },
-    { label: "Tutorials", href: "/learn#tutorials" },
-    { label: "Press", href: "/learn#press" },
-  ],
 };
 
 export default function Footer() {

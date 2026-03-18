@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -54,11 +56,18 @@ export default function UseCasesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-grey-50 pt-32 pb-20 lg:pt-44 lg:pb-28">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
-            Use Cases
-          </p>
+      <section
+        className="relative overflow-hidden bg-grey-50"
+        style={{
+          backgroundImage: "url('/use-cases-hero.svg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Bottom fade-out for background image */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-grey-50" />
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-32 pb-20 lg:pt-44 lg:pb-28">
           <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-grey-900 leading-tight mb-6 max-w-3xl">
             Trusted AI for the workflows that matter most
           </h1>
@@ -72,7 +81,7 @@ export default function UseCasesPage() {
       {/* Cards grid */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-6">
+          <div className="grid lg:grid-cols-12 gap-6 items-start">
 
             {/* ── Flux Analysis — hero tile, text left / image right ── */}
             <div className="lg:col-span-12 rounded-2xl border border-grey-200 bg-white p-8">
@@ -181,7 +190,15 @@ export default function UseCasesPage() {
             {/* ── Accounting — image top, problem/solution below ── */}
             <div className="lg:col-span-7 rounded-2xl border border-primary/30 bg-primary p-8 flex flex-col min-h-[520px]">
               <div className="flex-1 mb-8">
-                <ImagePlaceholder label="Reconciliation dashboard" dark />
+                <div className="relative w-full aspect-[728/371] rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02]">
+                  <Image
+                    src="/close-reconciliation.png"
+                    alt="Close & Reconciliation dashboard"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 55vw, 100vw"
+                  />
+                </div>
               </div>
               <div>
                 <h2 className="text-2xl sm:text-3xl font-normal text-white leading-tight mb-4">
@@ -206,52 +223,57 @@ export default function UseCasesPage() {
               </div>
             </div>
 
-            {/* ── Risk Monitoring — text left, image right ── */}
-            <div className="lg:col-span-8 rounded-2xl border border-grey-200 bg-white p-8">
-              <div className="flex flex-col lg:flex-row gap-10 items-start h-full">
-                <div className="lg:w-1/2">
-                  <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
-                    Risk &middot; Analytics
-                  </p>
-                  <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
-                    Risk Monitoring & Write-Off Analysis
-                  </h2>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
-                    Risk and analytics teams operate in data-rich environments
-                    but remain constrained by slow analysis cycles, fragile
-                    logic, inconsistent metrics, and limited confidence in
-                    outputs&mdash;leading to delayed actions, inconsistent
-                    decisions, and elevated risk exposure.
-                  </p>
-                  <p className="text-[15px] text-grey-600 leading-relaxed mb-6">
-                    Cimba transforms risk analysis into a governed, repeatable
-                    workflow that delivers timely insight without sacrificing
-                    accuracy or explainability.
-                  </p>
-                  <ul className="space-y-2.5 text-[14px] text-grey-700">
-                    <li className="flex items-start gap-2.5">
-                      <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                      Continuously monitors risk signals and portfolio performance, surfacing emerging issues before they become write-offs
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                      Applies consistent, approved logic across analyses, eliminating one-off models and metric drift
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                      Generates clear, explainable outputs that support faster decisions, reviews, and regulatory scrutiny
-                    </li>
-                  </ul>
+            {/* ── Risk Monitoring — image top, story below (matches Close & Reconciliation layout) ── */}
+            <div className="lg:col-span-8 rounded-2xl border border-grey-200 bg-white p-8 flex flex-col">
+              <div className="mb-8">
+                <div className="relative w-full max-w-[380px] aspect-[1024/737] rounded-2xl overflow-hidden border border-grey-200 bg-grey-50">
+                  <Image
+                    src="/use-cases-risk-v2.png"
+                    alt="Risk monitoring dashboard"
+                    fill
+                    className="object-contain"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                  />
                 </div>
-                <div className="lg:w-1/2">
-                  <ImagePlaceholder label="Risk monitoring view" />
-                </div>
+              </div>
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
+                  Risk Monitoring & Write-Off Analysis
+                </h2>
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-4">
+                  Risk and analytics teams operate in data-rich environments but remain
+                  constrained by slow analysis cycles, fragile logic, inconsistent
+                  metrics, and limited confidence in outputs&mdash;leading to delayed
+                  actions, inconsistent decisions, and elevated risk exposure.
+                </p>
+                <p className="text-[15px] text-grey-600 leading-relaxed mb-6">
+                  Cimba transforms risk analysis into a governed, repeatable workflow
+                  that delivers timely insight without sacrificing accuracy or
+                  explainability.
+                </p>
+                <ul className="space-y-2.5 text-[14px] text-grey-700">
+                  <li className="flex items-start gap-2.5">
+                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    Continuously monitors risk signals and portfolio performance,
+                    surfacing emerging issues before they become write-offs
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    Applies consistent, approved logic across analyses, eliminating
+                    one-off models and metric drift
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    Generates clear, explainable outputs that support faster decisions,
+                    reviews, and regulatory scrutiny
+                  </li>
+                </ul>
               </div>
             </div>
 
             {/* ── T&E Expense — bento-dark compact tile with full story ── */}
-            <div className="lg:col-span-4 rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col justify-between min-h-[420px]">
-              <div>
+            <div className="lg:col-span-4 lg:self-start rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col gap-8">
+              <div className="flex-1">
                 <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                   Expense &middot; Monitoring
                 </p>
@@ -278,7 +300,7 @@ export default function UseCasesPage() {
                   </li>
                 </ul>
               </div>
-              <div className="mt-8 flex items-center gap-3">
+              <div className="flex items-center gap-3">
                 <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
                 <p className="text-[13px] text-grey-700">
                   Always-on alerting
@@ -290,7 +312,16 @@ export default function UseCasesPage() {
             <div className="lg:col-span-12 rounded-2xl border border-grey-200 bg-white p-8">
               <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
                 <div className="lg:w-5/12">
-                  <ImagePlaceholder label="AM intelligence dashboard" />
+                  
+                  <div className="relative w-full aspect-[1024/737] rounded-2xl overflow-hidden border border-grey-200 bg-grey-50">
+                    <Image
+                      src="/use-cases-am.png"
+                      alt="AI for Account Managers dashboard"
+                      fill
+                      className="object-contain"
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                    />
+                  </div>
                 </div>
                 <div className="lg:w-7/12">
                   <p className="text-[13px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
@@ -354,7 +385,15 @@ export default function UseCasesPage() {
             {/* ── BOM Misalignment — blue, image top, story below ── */}
             <div className="lg:col-span-5 rounded-2xl border border-primary/30 bg-primary p-8 flex flex-col min-h-[420px]">
               <div className="flex-1 mb-8">
-                <ImagePlaceholder label="BOM comparison view" dark />
+                <div className="relative w-full aspect-[488/266] rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02]">
+                  <Image
+                    src="/bom-misalignment.png"
+                    alt="BOM comparison view"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                  />
+                </div>
               </div>
               <div>
                 <h2 className="text-xl sm:text-2xl font-normal text-white leading-tight mb-4">
