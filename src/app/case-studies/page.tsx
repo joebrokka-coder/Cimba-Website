@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useCallback, useRef, useEffect } from "react";
 import CTASection from "@/components/CTASection";
 import AnimatedGradientStroke from "@/components/AnimatedGradientStroke";
+import CursorGradientSection from "@/components/CursorGradientSection";
 
 type CaseStudy = {
   id: string;
@@ -419,16 +420,16 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="bg-grey-50 pb-20 lg:pb-28">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+      {/* Case Studies — same cursor gradient treatment as Integrations */}
+      <CursorGradientSection className="pb-20 lg:pb-28">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="space-y-6">
             {caseStudies.map((study) => (
               <ExpandableCard key={study.id} study={study} />
             ))}
           </div>
         </div>
-      </section>
+      </CursorGradientSection>
 
       <CTASection />
     </>
