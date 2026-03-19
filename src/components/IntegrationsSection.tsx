@@ -11,6 +11,13 @@ type StrokePhase = "empty" | "filling" | "full" | "pulling-back";
 type Props = { dataCategories: DataCategory[] };
 
 export default function IntegrationsSection({ dataCategories }: Props) {
+  const mcpServerIntegrations: IntegrationItem[] = [
+    { name: "Glean", icon: "/integrations/glean.png" },
+    { name: "Notion", icon: "/integrations/notion-mcp.png" },
+    { name: "Cloudflare", icon: "/integrations/cloudflare.png" },
+    { name: "GitHub", icon: "/integrations/github.png" },
+  ];
+
   const sectionRef = useRef<HTMLElement>(null);
   const strokeTrackRef = useRef<HTMLDivElement>(null);
   const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
@@ -151,6 +158,37 @@ export default function IntegrationsSection({ dataCategories }: Props) {
               </span>
             </div>
           ))}
+        </div>
+
+        <div className="mb-10">
+          <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-3">
+            MPC SERVER
+          </h3>
+          <p className="text-[16px] text-grey-600 leading-relaxed max-w-4xl mb-4">
+            Cimba provides an MCP server that exposes agents, workflows, and
+            data connections through a structured interface. This allows
+            interoperability with external AI systems, agents, and tools.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {mcpServerIntegrations.map((item) => (
+              <div
+                key={item.name}
+                className="flex items-center gap-2.5 px-5 py-1.5 bg-white border border-grey-200 rounded-xl transition-transform transition-shadow duration-200 ease-out hover:scale-[1.02] hover:shadow-md"
+              >
+                <Image
+                  src={item.icon}
+                  alt={item.name}
+                  width={40}
+                  height={40}
+                  className="object-contain flex-shrink-0"
+                  unoptimized
+                />
+                <span className="text-[16px] font-medium text-grey-700 whitespace-nowrap">
+                  {item.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
