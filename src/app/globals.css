@@ -37,6 +37,7 @@
   --color-grey-100: var(--grey-100);
   --color-grey-50: var(--grey-50);
   --color-bento-dark: var(--bento-dark);
+  --color-blue-500: #3b82f6;
   --font-sans: "Instrument Sans", sans-serif;
 }
 

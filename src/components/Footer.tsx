@@ -13,6 +13,11 @@ const footerLinks = {
     { label: "Marketing", href: "/use-cases#marketing" },
     { label: "AI for Account Managers", href: "/use-cases#account-managers" },
   ],
+  "Case Studies": [
+    { label: "AI for AMs", href: "/case-studies#ai-for-ams" },
+    { label: "FinOps", href: "/case-studies#finops" },
+    { label: "Risk Monitoring", href: "/case-studies#risk-monitoring" },
+  ],
 };
 
 export default function Footer() {
