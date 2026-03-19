@@ -219,7 +219,7 @@ export default function ProductPage() {
             />
           </div>
 
-          <p className="text-center text-[16px] text-grey-600 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-center text-[16px] lg:text-[18px] text-grey-600 leading-relaxed max-w-3xl mx-auto">
             Cimba is designed to work alongside the tools organizations already use.
             It sits between data systems and operational teams, enabling structured
             workflows that turn questions into consistent insights and actions.
