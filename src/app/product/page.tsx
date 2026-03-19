@@ -263,7 +263,7 @@ export default function ProductPage() {
                         />
                       </div>
                     </div>
-                    <div className="min-w-0 flex-1">
+                    <div className="min-w-0 flex-1 flex flex-col justify-center">
                       <h3
                         className={`text-2xl font-bold text-grey-900 mb-2 ${
                           "titleAlign" in pillar && pillar.titleAlign === "right"
