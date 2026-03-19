@@ -179,7 +179,7 @@ export default function Home() {
 
           <div className="space-y-16">
             {/* Row 1: AI Enablement, Not Dashboards */}
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-10 items-center">
               <div className="flex-1 min-w-[260px]">
                 <h3 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                   AI Enablement, Not Dashboards
@@ -191,7 +191,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 min-w-[260px]">
-                <div className="group relative w-full max-w-[480px] mx-auto rounded-2xl overflow-hidden shadow-lg">
+                <div className="group relative w-full max-w-[480px] mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/cimba-solution-3.png"
                     alt="AI Enablement, Not Dashboards"
@@ -205,7 +205,7 @@ export default function Home() {
             </div>
 
             {/* Row 2: Repeatable Workflows */}
-            <div className="flex flex-col lg:flex-row-reverse gap-10 lg:gap-20 items-center">
+            <div className="flex flex-col lg:flex-row-reverse gap-10 lg:gap-10 items-center">
               <div className="flex-1 min-w-[260px]">
                 <h3 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                   Repeatable Workflows
@@ -217,7 +217,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 min-w-[260px]">
-                <div className="group relative w-full max-w-[480px] mx-auto rounded-2xl overflow-hidden shadow-lg">
+                <div className="group relative w-full max-w-[480px] mx-auto lg:ml-auto lg:mr-0 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/cimba-solution-1.png"
                     alt="Repeatable Workflows"
@@ -230,7 +230,7 @@ export default function Home() {
             </div>
 
             {/* Row 3: Business Context Built In */}
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-10 items-center">
               <div className="flex-1 min-w-[260px]">
                 <h3 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                   Business Context Built In
@@ -242,7 +242,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 min-w-[260px]">
-                <div className="group relative w-full max-w-[480px] mx-auto rounded-2xl overflow-hidden shadow-lg">
+                <div className="group relative w-full max-w-[480px] mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/cimba-solution-2.png"
                     alt="Business Context Built In"
@@ -255,7 +255,7 @@ export default function Home() {
             </div>
 
             {/* Row 4: Operational Delivery */}
-            <div className="flex flex-col lg:flex-row-reverse gap-10 lg:gap-20 items-center">
+            <div className="flex flex-col lg:flex-row-reverse gap-10 lg:gap-10 items-center">
               <div className="flex-1 min-w-[260px]">
                 <h3 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
                   Operational Delivery
@@ -267,7 +267,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 min-w-[260px]">
-                <div className="group relative w-full max-w-[480px] mx-auto rounded-2xl overflow-hidden shadow-lg">
+                <div className="group relative w-full max-w-[480px] mx-auto lg:ml-auto lg:mr-0 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/cimba-solution-4.png"
                     alt="Operational Delivery"

@@ -233,6 +233,9 @@ export default function ProductPage() {
       {/* ── Security ── */}
       <section className="bg-white py-16 lg:py-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+          <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
+            Enterprise Ready
+          </p>
           <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-12 max-w-2xl">
             Security and compliance
           </h2>
