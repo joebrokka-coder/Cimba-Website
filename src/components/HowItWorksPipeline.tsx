@@ -34,29 +34,6 @@ const pipelineSteps = [
   },
 ];
 
-function ImagePlaceholderSmall({ label, src }: { label: string; src: string }) {
-  return (
-    <div
-      className="group w-full aspect-video max-h-[200px] rounded-xl border-2 border-transparent flex-shrink-0"
-      style={{
-        background:
-          "linear-gradient(white, white) padding-box, linear-gradient(to right, rgba(31, 151, 211, 0.4), rgba(116, 20, 218, 0.4) 47%, rgba(7, 112, 227, 0.4)) border-box",
-        backgroundClip: "padding-box, border-box",
-      }}
-    >
-      <div className="relative w-full h-full rounded-[10px] overflow-hidden bg-white">
-        <Image
-          src={src}
-          alt={label}
-          fill
-          className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-          unoptimized
-        />
-      </div>
-    </div>
-  );
-}
-
 export default function HowItWorksPipeline() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -106,14 +83,17 @@ export default function HowItWorksPipeline() {
         <div
           className="bg-white border border-grey-200 rounded-2xl overflow-hidden shadow-sm"
         >
-          <div className="flex flex-col lg:flex-row gap-8 p-8 sm:p-10 lg:p-12">
-            <div className="lg:w-2/5 flex-shrink-0">
-              <ImagePlaceholderSmall
-                label={step.title}
+          <div className="flex flex-col lg:flex-row h-auto lg:h-[270px]">
+            <div className="relative w-full lg:w-[600px] h-[270px] flex-shrink-0 border-r border-grey-200 overflow-hidden">
+              <Image
                 src={step.imageSrc}
+                alt={step.title}
+                fill
+                className="object-cover"
+                unoptimized
               />
             </div>
-            <div className="flex-1 min-w-0 flex flex-col justify-center">
+            <div className="min-w-0 flex flex-col justify-center p-8 sm:p-10 lg:p-12">
               <div className="mb-4">
                 <h3 className="text-2xl font-normal text-grey-900 leading-tight">
                   {step.title}
