@@ -136,7 +136,7 @@ export default function IntegrationsSection({ dataCategories }: Props) {
           {dataCategories.flatMap((cat) => cat.items).map((item) => (
             <div
               key={item.name}
-              className="flex items-center gap-2.5 px-3.5 py-0 bg-white border border-grey-200 rounded-xl transition-transform transition-shadow duration-200 ease-out hover:scale-[1.02] hover:shadow-md"
+              className="flex items-center gap-2.5 px-5 py-1.5 bg-white border border-grey-200 rounded-xl transition-transform transition-shadow duration-200 ease-out hover:scale-[1.02] hover:shadow-md"
             >
               <Image
                 src={item.icon}

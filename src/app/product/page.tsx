@@ -20,65 +20,34 @@ export const metadata: Metadata = {
 
 const dataCategories = [
   {
-    category: "Data Warehouses",
+    category: "Integrations",
     items: [
-      { name: "Snowflake", icon: "/integrations/snowflake.png" },
-      { name: "BigQuery", icon: "/integrations/bigquery.png" },
-      { name: "Redshift", icon: "/integrations/redshift.png" },
       { name: "Databricks", icon: "/integrations/databricks.png" },
-      { name: "ClickHouse", icon: "/integrations/clickhouse.png" },
+      { name: "Snowflake", icon: "/integrations/snowflake.png" },
+      { name: "Postgress Sql", icon: "/integrations/postgresql.png" },
       { name: "Trino", icon: "/integrations/trino.png" },
-      { name: "Timestream", icon: "/integrations/timestream.png" },
-      { name: "Fabric", icon: "/integrations/fabric.png" },
-    ],
-  },
-  {
-    category: "Databases",
-    items: [
-      { name: "PostgreSQL", icon: "/integrations/postgresql.png" },
+      { name: "Minerva", icon: "/integrations/minerva.png" },
+      { name: "MySql", icon: "/integrations/mysql.png" },
+      { name: "Tableau", icon: "/integrations/tableau.png" },
+      { name: "Snowflake RSA", icon: "/integrations/snowflake-rsa.png" },
+      {
+        name: "Azure Data Lake Storage",
+        icon: "/integrations/azure-datalake-storage.png",
+      },
+      { name: "HubSpot", icon: "/integrations/hubspot.png" },
+      { name: "Druid", icon: "/integrations/druid.png" },
+      {
+        name: "Amazon Timestream",
+        icon: "/integrations/timestream.png",
+      },
+      {
+        name: "Azure SQL Database",
+        icon: "/integrations/azure-sql-database.png",
+      },
+      { name: "Google Sheets", icon: "/integrations/google-sheets.png" },
+      { name: "Elasticsearch", icon: "/integrations/elasticsearch.png" },
       { name: "Oracle DB", icon: "/integrations/oracle-db.png" },
-      { name: "SAP", icon: "/integrations/sap.png" },
-      { name: "dbt", icon: "/integrations/dbt.png" },
-    ],
-  },
-  {
-    category: "Business Systems",
-    items: [
-      { name: "Salesforce", icon: "/integrations/salesforce.png" },
-      { name: "Zendesk", icon: "/integrations/zendesk.png" },
-      { name: "Product Board", icon: "/integrations/product-board.png" },
-      { name: "Lattice", icon: "/integrations/lattice.png" },
-      { name: "Meta", icon: "/integrations/meta.png" },
-      { name: "AWS", icon: "/integrations/aws.png" },
-      { name: "Azure", icon: "/integrations/azure.png" },
-    ],
-  },
-  {
-    category: "Analytics & BI",
-    items: [
-      { name: "Looker", icon: "/integrations/looker.png" },
-      { name: "Mixpanel", icon: "/integrations/mixpanel.png" },
-      { name: "Sigma", icon: "/integrations/sigma.png" },
-      { name: "Purview", icon: "/integrations/purview.png" },
-    ],
-  },
-  {
-    category: "Files & Documents",
-    items: [
-      { name: "Google Drive", icon: "/integrations/google-drive.png" },
-      { name: "Notion", icon: "/integrations/notion.png" },
-      { name: "Dropbox", icon: "/integrations/dropbox.png" },
-      { name: "Office", icon: "/integrations/office.png" },
-      { name: "PDF", icon: "/integrations/pdf.png" },
-      { name: "Knowledge Base", icon: "/integrations/knowledge-base.png" },
-    ],
-  },
-  {
-    category: "Collaboration",
-    items: [
-      { name: "Slack", icon: "/integrations/slack.png" },
-      { name: "Teams", icon: "/integrations/teams.png" },
-      { name: "Atlassian", icon: "/integrations/atlassian.png" },
+      { name: "Superset", icon: "/integrations/superset.png" },
     ],
   },
 ];
