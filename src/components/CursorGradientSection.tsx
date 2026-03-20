@@ -17,6 +17,7 @@ export default function CursorGradientSection({ children, className = "", riseOn
   const sectionRef = useRef<HTMLElement>(null);
   const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
   const [inView, setInView] = useState(false);
+  const hoverCursorRef = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     if (!riseOnScroll) return;
@@ -33,14 +34,57 @@ export default function CursorGradientSection({ children, className = "", riseOn
     const el = sectionRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
-    setCursor({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    const next = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    hoverCursorRef.current = next;
+    setCursor(next);
   }, []);
 
   const handleMouseLeave = useCallback(() => {
-    setCursor(null);
+    hoverCursorRef.current = null;
+  }, []);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    let rafId = 0;
+    let running = true;
+    const start = performance.now();
+    let lastUpdate = 0;
+
+    const animate = (now: number) => {
+      if (!running) return;
+      const rect = el.getBoundingClientRect();
+      const t = (now - start) / 1000;
+
+      // Slow figure-eight drift so mobile has a subtle moving glow.
+      const xNorm = 0.5 + 0.28 * Math.sin(t * 0.22);
+      const yNorm = 0.5 + 0.18 * Math.sin(t * 0.35 + 0.9);
+
+      // Throttle updates to reduce unnecessary re-renders.
+      if (now - lastUpdate > 33) {
+        lastUpdate = now;
+        const hover = hoverCursorRef.current;
+
+        // If hovering, keep the glow following the pointer but add a tiny drift.
+        if (hover) {
+          const driftX = rect.width * 0.01 * Math.sin(t * 0.9);
+          const driftY = rect.height * 0.01 * Math.cos(t * 0.8);
+          setCursor({ x: hover.x + driftX, y: hover.y + driftY });
+        } else {
+          setCursor({ x: rect.width * xNorm, y: rect.height * yNorm });
+        }
+      }
+
+      rafId = window.requestAnimationFrame(animate);
+    };
+
+    rafId = window.requestAnimationFrame(animate);
+
+    return () => {
+      running = false;
+      window.cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (

@@ -78,6 +78,16 @@ export default function DemoPage() {
         </div>
       </section>
 
+      <div className="pointer-events-none relative z-10 -mt-1">
+        <div
+          className="mx-auto h-px w-[min(1280px,92vw)]"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(31,151,211,0) 0%, rgba(31,151,211,0.9) 22%, rgba(116,20,218,0.9) 50%, rgba(7,112,227,0.9) 78%, rgba(7,112,227,0) 100%)",
+          }}
+        />
+      </div>
+
       {/* Demo Request Form */}
       <CursorGradientSection className="py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
@@ -86,7 +96,7 @@ export default function DemoPage() {
               <h2 className="text-3xl font-normal text-grey-900 tracking-tight mb-4">
                 Book a personalized demo
               </h2>
-              <p className="text-grey-600">
+              <p className="text-[18px] text-grey-600">
                 Fill out the form below and our team will schedule a personalized
                 walkthrough tailored to your use case.
               </p>
@@ -202,6 +212,7 @@ export default function DemoPage() {
           </div>
         </div>
       </CursorGradientSection>
+
     </>
   );
 }
