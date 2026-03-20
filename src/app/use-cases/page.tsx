@@ -1,52 +1,540 @@
-import Link from "next/link";
+"use client";
+
 import Image from "next/image";
+import {
+  useState,
+  useCallback,
+  useRef,
+  useLayoutEffect,
+} from "react";
+import CTASection from "@/components/CTASection";
+import AnimatedGradientStroke from "@/components/AnimatedGradientStroke";
+import CursorGradientSection from "@/components/CursorGradientSection";
+import PlScenarioCloseBento from "@/components/PlScenarioCloseBento";
+import BomAndMoreWorkflowsBento from "@/components/BomAndMoreWorkflowsBento";
 
-import { ArrowRight } from "lucide-react";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Use Cases — Cimba",
-  description:
-    "Explore how Cimba powers critical workflows in accounting, finance, risk, and operations with AI-driven intelligence.",
+type CaseStudy = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  hook: string;
+  imageSrc: string;
+  stats?: { value: string; label: string }[];
+  challenge: string[];
+  solution: string[];
+  solutionBullets?: string[];
+  /** Paragraph immediately after solution bullets */
+  solutionAfterBullets?: string;
+  howTheyUseIt: string[];
+  howBullets?: string[];
+  /** Paragraph immediately after how-they-use bullets */
+  howAfterBullets?: string;
+  outcomes?: string[];
+  /** Paragraph immediately after outcomes bullets */
+  outcomesAfter?: string;
+  quote: { text: string; author?: string };
+  companyBlurb?: string;
+  /** Shown at top of company blurb card (e.g. partner logo) */
+  companyLogoSrc?: string;
+  companyLogoAlt?: string;
 };
 
-function ImagePlaceholder({ label, dark }: { label: string; dark?: boolean }) {
+const caseStudies: CaseStudy[] = [
+  {
+    id: "ai-for-ams",
+    eyebrow: "Business Operations",
+    title: "AI for Account Managers and Merchants",
+    subtitle:
+      "How Swiggy Scaled Real-Time Merchant Intelligence Across 2,200 Users",
+    hook: "Marketplace platforms rely on account managers to help merchants grow — but critical insights typically require analyst support. Cimba changed that.",
+    imageSrc: "/case-studies/ai-for-ams.png",
+    stats: [
+      { value: "2,200", label: "Users onboarded in < 3 months" },
+      { value: "10", label: "Business units" },
+      { value: "< 1 week", label: "Time to launch new workflows" },
+    ],
+    challenge: [
+      "Marketplace platforms rely heavily on account managers (AMs) to help merchants grow their business. At Swiggy, AMs each manage 50–100 restaurant partners and answer performance questions during live partner meetings.",
+      "However, critical insights — such as why orders dropped, which promotions work, or which menu items drive growth — typically require analyst support. This creates delays that reduce the effectiveness of partner conversations and slow upsell opportunities.",
+      "As the number of merchants grows into the tens of thousands, this gap between merchant data and merchant decisions becomes a major operational bottleneck.",
+    ],
+    solution: [
+      "Swiggy deployed Cimba's \"AI for AM\" agent, enabling account managers to access real-time merchant intelligence directly from production data.",
+      "The agent allows AMs to ask natural-language questions and run repeatable workflows such as:",
+    ],
+    solutionBullets: [
+      "Degrowth analysis and root cause investigation",
+      "Merchant performance diagnostics",
+      "Growth opportunity identification",
+      "Campaign and promotion performance analysis",
+      "Next-best-action recommendations for merchant partners",
+    ],
+    howTheyUseIt: [
+      "Swiggy's account managers use the AI for AM agent to analyze merchant performance and make data-driven decisions in real time.",
+    ],
+    howBullets: [
+      "Why is a restaurant's order volume declining?",
+      "What promotions drove the highest ROI for similar restaurants?",
+      "Which cuisines are trending in a specific city?",
+      "How did a merchant perform during a particular holiday period?",
+    ],
+    solutionAfterBullets:
+      "Cimba integrates directly with Swiggy's data infrastructure and applies enterprise governance such as row-level security and audited workflows, ensuring answers are accurate and compliant.",
+    howAfterBullets:
+      "These insights help AMs identify growth opportunities, recommend promotions, and improve merchant performance during live partner interactions.",
+    quote: {
+      text: "Cimba enables our account managers to answer complex merchant questions instantly and take action during partner conversations.",
+    },
+    companyBlurb:
+      "Swiggy is one of the largest food delivery platforms in the world, operating across 700+ cities in India and connecting millions of customers with restaurant partners.\n\nTo improve merchant performance and operational efficiency, Swiggy implemented Cimba to power AI-driven workflows for their account management organization.",
+    companyLogoSrc: "/case-studies/swiggy-logo.png",
+    companyLogoAlt: "Swiggy",
+  },
+  {
+    id: "finops",
+    eyebrow: "Financial Operations",
+    title: "Automating Complex Finance Workflows with AI",
+    subtitle: "Turning fragmented finance processes into governed, repeatable workflows",
+    hook: "Finance teams operate across fragmented systems while managing highly repetitive, time-sensitive workflows. Cimba automates these with full transparency.",
+    imageSrc: "/case-studies/finops.png",
+    challenge: [
+      "Finance teams operate across fragmented systems — ERPs, planning tools, spreadsheets, and internal databases — while managing highly repetitive, time-sensitive workflows.",
+      "Critical processes such as flux analysis, expense monitoring, month-end close, tax reporting, and software capitalization require significant manual effort, cross-system reconciliation, and constant validation. These workflows are not only time-consuming but also error-prone and difficult to scale.",
+      "As complexity grows, finance teams spend more time reconciling data and explaining discrepancies than driving insights — delaying decisions and reducing confidence in outputs.",
+    ],
+    solution: [
+      "Cimba transforms financial operations by automating complex workflows using AI-driven, auditable processes grounded in how finance teams already operate.",
+    ],
+    solutionBullets: [
+      "Automate flux analysis to identify period-over-period variances and explain key drivers with clear, repeatable logic",
+      "Monitor travel & expense spend across categories and cost centers, proactively flagging budget overruns and policy exceptions",
+      "Streamline month-end close and reconciliation, validating numbers across evolving systems and reducing manual effort",
+      "Support tax due diligence and reporting, identifying inconsistencies and maintaining accurate cost center hierarchies",
+      "Automate software capitalization workflows, ensuring consistency and compliance across financial reporting",
+    ],
+    howTheyUseIt: [
+      "Finance teams use Cimba to run both recurring workflows and ad hoc analysis across core FinOps processes.",
+    ],
+    howBullets: [
+      "Identifying and explaining drivers behind financial variances each reporting cycle",
+      "Monitoring spend against budgets and detecting anomalies in real time",
+      "Reconciling accounts and validating balances during close",
+      "Investigating inconsistencies across tax structures and reporting hierarchies",
+      "Automating classification and validation for capitalized software costs",
+    ],
+    outcomes: [
+      "Significant reduction in manual effort across reconciliation and reporting workflows",
+      "Faster close cycles and reporting timelines",
+      "Improved accuracy and consistency across financial outputs",
+      "Greater transparency and auditability for internal controls and compliance",
+      "Higher confidence in financial insights, reducing back-and-forth analysis",
+    ],
+    solutionAfterBullets:
+      "These workflows are built with full transparency – every step, assumption, and calculation is explainable, auditable, and repeatable. Cimba connects directly to source systems, applies governed logic, and generates natural language outputs that finance teams and leadership can trust.",
+    howAfterBullets:
+      "These workflows eliminate repetitive manual tasks while ensuring outputs remain consistent, governed, and ready for audit.",
+    outcomesAfter:
+      "By turning complex, fragmented processes into automated, explainable workflows, Cimba enables finance teams to shift from manual execution to strategic decision-making.",
+    quote: {
+      text: "Cimba transformed how our finance team operates. What used to take days now happens in minutes with complete auditability.",
+      author: "VP of Finance, Enterprise SaaS Company",
+    },
+  },
+  {
+    id: "risk-monitoring",
+    eyebrow: "Risk & Underwriting",
+    title: "Risk Monitoring & Write-Off Analysis",
+    subtitle: "Scaling Trusted Risk Decisions with AI",
+    hook: "Risk teams operate in data-rich environments yet remain constrained by slow analysis cycles and inconsistent outputs. Cimba makes risk analysis governed and repeatable.",
+    imageSrc: "/case-studies/risk-monitoring.png",
+    challenge: [
+      "Modern risk and underwriting teams operate in data-rich environments, yet decision-making remains constrained by slow analysis cycles and inconsistent outputs.",
+      "At fintech companies like iCreditWorks, evaluating credit performance, identifying emerging risks, and understanding drivers behind write-offs require combining multiple datasets, applying complex logic, and generating clear explanations.",
+      "In practice, this leads to fragile ad hoc analyses, inconsistent metrics, and a lack of trust in outputs — delaying decisions and increasing risk exposure.",
+    ],
+    solution: [
+      "iCreditWorks deployed Cimba to transform risk monitoring into a governed, repeatable, and scalable workflow.",
+    ],
+    solutionBullets: [
+      "Continuously monitor risk signals and portfolio performance, identifying anomalies before they become write-offs",
+      "Perform step-by-step analysis of credit applications and portfolio segments with consistent, approved logic",
+      "Break down complex risk decisions into transparent, auditable steps",
+      "Generate clear, explainable outputs that support faster decisions and regulatory scrutiny",
+    ],
+    howTheyUseIt: [
+      "Risk and analytics teams at iCreditWorks use Cimba to standardize and automate key workflows, including:",
+    ],
+    howBullets: [
+      "Analyzing credit applications with step-by-step, explainable logic",
+      "Monitoring portfolio performance and identifying emerging risk signals",
+      "Investigating drivers behind delinquencies and write-offs",
+      "Generating consistent, audit-ready narratives for internal and external stakeholders",
+    ],
+    outcomes: [
+      "Faster risk analysis cycles with real-time, on-demand insights",
+      "Consistent and governed analytical logic across teams",
+      "Improved trust in outputs through transparency and auditability",
+      "Proactive identification of risk signals, reducing potential losses",
+      "Scalable analytics workflows without increasing reliance on specialized teams",
+    ],
+    solutionAfterBullets:
+      "Cimba achieves this by decomposing analytics into distinct components – validated inputs, approved logic, execution, and narrative synthesis – ensuring both accuracy and scalability.",
+    howAfterBullets:
+      "By embedding these workflows into a single system, teams eliminate fragmented logic and ensure consistent analysis across the organization.",
+    outcomesAfter:
+      "As a result, risk teams can move from reactive analysis to proactive risk management, making faster and more confident decisions.",
+    quote: {
+      text: "We finally have AI we can audit. Cimba gave us the confidence to operationalize intelligence across our org.",
+      author: "Director of Business Operations, High-Growth Startup",
+    },
+    companyBlurb:
+      "iCreditWorks is a fintech platform focused on providing flexible financing solutions, where accurate and timely risk analysis is critical to maintaining portfolio performance and minimizing losses.\n\nTo improve decision-making and scale analytics, iCreditWorks implemented Cimba to power AI-driven risk workflows across underwriting and portfolio monitoring.",
+    companyLogoSrc: "/case-studies/icreditworks-logo.png",
+    companyLogoAlt: "iCreditWorks",
+  },
+];
+
+function ExpandableCard({ study }: { study: CaseStudy }) {
+  const [open, setOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+
+  useLayoutEffect(() => {
+    const el = contentRef.current;
+    if (!el) return;
+
+    const measure = () => {
+      setHeight(el.scrollHeight);
+    };
+
+    measure();
+
+    if (!open) return;
+
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    const raf = requestAnimationFrame(() => {
+      requestAnimationFrame(measure);
+    });
+    const t = window.setTimeout(measure, 50);
+
+    return () => {
+      ro.disconnect();
+      cancelAnimationFrame(raf);
+      window.clearTimeout(t);
+    };
+  }, [open]);
+
+  const toggle = useCallback(() => setOpen((v) => !v), []);
+  const expand = useCallback(() => setOpen(true), []);
+
   return (
     <div
-      className={`w-full h-full min-h-[220px] rounded-2xl flex items-center justify-center ${
-        dark
-          ? "bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10"
-          : "bg-gradient-to-br from-grey-100 to-grey-50 border border-grey-200"
-      }`}
+      id={study.id}
+      className="scroll-mt-24 border border-grey-200 rounded-2xl bg-white overflow-hidden transition-shadow duration-300 hover:shadow-md"
     >
-      <div className="text-center">
-        <div
-          className={`w-12 h-12 rounded-xl mx-auto mb-3 flex items-center justify-center ${
-            dark ? "bg-white/10" : "bg-grey-200"
-          }`}
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={dark ? "rgba(255,255,255,0.4)" : "#9ca3af"}
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <rect x="3" y="3" width="18" height="18" rx="2" />
-            <circle cx="9" cy="9" r="2" />
-            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-          </svg>
+      {/* Summary — always visible */}
+      <div className="p-8 sm:p-10 lg:p-12">
+        <div className="flex flex-col gap-6">
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-5">
+              <div className="group relative w-[250px] h-[250px] rounded-xl overflow-hidden border border-grey-200 flex-shrink-0">
+                <Image
+                  src={study.imageSrc}
+                  alt={`${study.title} hero image`}
+                  fill
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  sizes="250px"
+                  unoptimized
+                />
+              </div>
+              <div className="min-w-0 sm:flex-1 flex flex-col">
+                <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-3">
+                  {study.eyebrow}
+                </p>
+                <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-2">
+                  {study.title}
+                </h2>
+                <p className="text-[18px] italic text-grey-500 leading-relaxed">
+                  {study.subtitle}
+                </p>
+                <p className="text-[20px] text-grey-600 leading-relaxed mt-4 max-w-3xl">
+                  {study.hook}
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <p
-          className={`text-[12px] font-medium ${
-            dark ? "text-white/30" : "text-grey-400"
-          }`}
-        >
-          {label}
-        </p>
+
+        {/* Above-the-fold — gradient stroke on AI for AMs only; full challenge copy below the fold */}
+        <div className="mt-8 pt-2">
+          {study.id === "ai-for-ams" && (
+            <AnimatedGradientStroke className="mb-8" />
+          )}
+          <div
+            className={
+              (study.id === "ai-for-ams" && study.stats) ||
+              study.id === "finops" ||
+              study.id === "risk-monitoring"
+                ? "mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-6"
+                : "mt-6 flex justify-end"
+            }
+          >
+            {study.id === "ai-for-ams" && study.stats && (
+              <div className="grid min-w-0 flex-1 grid-cols-3 gap-2 sm:gap-3">
+                {study.stats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="min-w-0 rounded-xl border border-grey-200 bg-grey-50 px-2 py-3 sm:px-3 sm:py-4"
+                  >
+                    <p className="font-normal leading-none text-2xl text-blue-500 sm:text-3xl lg:text-[42px] xl:text-[50px]">
+                      {stat.value}
+                    </p>
+                    <p className="text-[12px] text-grey-500 mt-1.5 leading-snug sm:text-[14px] sm:mt-2 sm:leading-relaxed">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+            {(study.id === "finops" || study.id === "risk-monitoring") && (
+              <button
+                type="button"
+                onClick={expand}
+                aria-expanded={open}
+                className="group min-w-0 flex-1 rounded-xl p-[2px] text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(31, 151, 211, 0.4), rgba(116, 20, 218, 0.4) 47%, rgba(7, 112, 227, 0.4))",
+                }}
+              >
+                <div className="rounded-[10px] bg-white px-4 py-4 sm:px-5 sm:py-4 transition-shadow duration-300 group-hover:shadow-[0_10px_30px_rgba(17,24,39,0.08)]">
+                  <blockquote className="text-[18px] text-grey-700 leading-relaxed italic">
+                    &ldquo;{study.quote.text}&rdquo;
+                  </blockquote>
+                  {study.quote.author && (
+                    <p className="text-[18px] text-grey-500 mt-3">
+                      — {study.quote.author}
+                    </p>
+                  )}
+                </div>
+              </button>
+            )}
+            <div className="flex shrink-0 justify-end">
+              <button
+                type="button"
+                onClick={toggle}
+                className="inline-flex items-center justify-center rounded-full border border-grey-200 bg-white px-5 py-2 text-[16px] font-semibold text-primary transition-colors hover:bg-grey-50"
+              >
+                {open ? "View Less" : "View More"}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Expandable detail */}
+      <div
+        className="transition-[max-height] duration-500 ease-in-out overflow-hidden"
+        style={{ maxHeight: open ? `${height}px` : "0px" }}
+      >
+        <div ref={contentRef}>
+          <div className="px-8 sm:px-10 lg:px-12 pb-10 lg:pb-12">
+            <div className="border-t border-grey-200 pt-10">
+              <div className="mb-10 lg:mb-12 -mx-8 px-8 sm:-mx-10 sm:px-10 lg:-mx-12 lg:px-12 max-w-none min-w-0">
+                <div className="max-w-[80%] min-w-0">
+                  <h3 className="text-[22px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
+                    The Challenge
+                  </h3>
+                  {study.challenge.map((p, i) => (
+                    <p
+                      key={i}
+                      className="text-[20px] text-grey-600 leading-relaxed mb-4 last:mb-0 w-full"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                {/* Left column */}
+                <div>
+                  {study.companyBlurb && (
+                    <div
+                      className="mb-8 rounded-xl p-[2px]"
+                      style={{
+                        background:
+                          "linear-gradient(to right, rgba(31, 151, 211, 0.4), rgba(116, 20, 218, 0.4) 47%, rgba(7, 112, 227, 0.4))",
+                      }}
+                    >
+                      <div className="rounded-[10px] bg-white px-5 py-5">
+                        {study.companyLogoSrc && (
+                          <div className="mb-5">
+                            <Image
+                              src={study.companyLogoSrc}
+                              alt={
+                                study.companyLogoAlt ?? "Company logo"
+                              }
+                              width={280}
+                              height={80}
+                              className="h-[72px] w-auto max-w-[min(100%,400px)] object-contain object-left"
+                              unoptimized
+                            />
+                          </div>
+                        )}
+                        {study.companyBlurb
+                          .split("\n\n")
+                          .map((paragraph, i) => (
+                            <p
+                              key={i}
+                              className={`text-[18px] text-grey-600 leading-relaxed italic ${
+                                i > 0 ? "mt-4" : ""
+                              }`}
+                            >
+                              {paragraph}
+                            </p>
+                          ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
+                    The Cimba Solution
+                  </h3>
+                  {study.solution.map((p, i) => (
+                    <p
+                      key={i}
+                      className="text-[16px] text-grey-600 leading-relaxed mb-4"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                  {study.solutionBullets && (
+                    <ul
+                      className={`space-y-2.5 text-[16px] text-grey-700 ${
+                        study.solutionAfterBullets ? "mb-3" : "mb-4"
+                      }`}
+                    >
+                      {study.solutionBullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2.5">
+                          <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {study.solutionAfterBullets && (
+                    <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
+                      {study.solutionAfterBullets}
+                    </p>
+                  )}
+                </div>
+
+                {/* Right column */}
+                <div>
+                  <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
+                    How They Use Cimba
+                  </h3>
+                  {study.howTheyUseIt.map((p, i) => (
+                    <p
+                      key={i}
+                      className="text-[16px] text-grey-600 leading-relaxed mb-4"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                  {study.howBullets && (
+                    <ul
+                      className={`space-y-2.5 text-[16px] text-grey-700 ${
+                        study.howAfterBullets ? "mb-3" : "mb-4"
+                      }`}
+                    >
+                      {study.howBullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2.5">
+                          <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {study.howAfterBullets && (
+                    <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
+                      {study.howAfterBullets}
+                    </p>
+                  )}
+
+                  {study.outcomes && (
+                    <>
+                      <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4 mt-8">
+                        Outcomes
+                      </h3>
+                      <ul
+                        className={`space-y-2.5 text-[16px] text-grey-700 ${
+                          study.outcomesAfter ? "mb-3" : "mb-4"
+                        }`}
+                      >
+                        {study.outcomes.map((b, i) => (
+                          <li key={i} className="flex items-start gap-2.5">
+                            <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-green-500 flex-shrink-0" />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                      {study.outcomesAfter && (
+                        <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
+                          {study.outcomesAfter}
+                        </p>
+                      )}
+                    </>
+                  )}
+
+                  {/* Quote (FinOps & risk-monitoring show this above the fold beside View More) */}
+                  {study.id !== "finops" && study.id !== "risk-monitoring" && (
+                    <div
+                      className="mt-8 rounded-xl p-[2px]"
+                      style={{
+                        background:
+                          "linear-gradient(to right, rgba(31, 151, 211, 0.4), rgba(116, 20, 218, 0.4) 47%, rgba(7, 112, 227, 0.4))",
+                      }}
+                    >
+                      <div className="rounded-[10px] bg-white px-6 py-6">
+                        <blockquote className="text-[18px] text-grey-700 leading-relaxed italic">
+                          &ldquo;{study.quote.text}&rdquo;
+                        </blockquote>
+                        {study.quote.author && (
+                          <p className="text-[18px] text-grey-500 mt-3">
+                            — {study.quote.author}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {study.stats && study.id !== "ai-for-ams" && (
+                    <div className="mt-8 flex flex-col gap-3">
+                      {study.stats.map((stat) => (
+                        <div
+                          key={stat.label}
+                          className="rounded-xl border border-grey-200 bg-grey-50 px-5 py-4"
+                        >
+                          <p className="font-normal leading-none text-2xl text-grey-900">
+                            {stat.value}
+                          </p>
+                          <p className="text-[16px] text-grey-500 mt-2 leading-relaxed">
+                            {stat.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -65,428 +553,44 @@ export default function UseCasesPage() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Bottom fade-out for background image */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-grey-50" />
-        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-32 pb-20 lg:pt-44 lg:pb-28">
-          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-grey-900 leading-tight mb-6 max-w-3xl">
-            Trusted AI for the workflows that matter most
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-32 pb-16 lg:pt-44 lg:pb-20">
+          <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
+            Use Cases
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-grey-900 leading-tight mb-6 max-w-4xl">
+            Trusted AI for the{" "}
+            <span className="text-primary">workflows that matter most</span>
           </h1>
           <p className="text-lg md:text-xl text-grey-500 leading-relaxed max-w-2xl">
-            From close-cycle automation to real-time account intelligence,
-            Cimba turns manual processes into governed, repeatable workflows.
+            See how organizations use Cimba to turn complex, manual processes
+            into governed, repeatable intelligence.
           </p>
         </div>
       </section>
 
-      {/* Cards grid */}
-      <section className="bg-white py-20 lg:py-28">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-6 items-start">
-
-            {/* ── Flux Analysis — hero tile, text left / image right ── */}
-            <div className="lg:col-span-12 rounded-2xl border border-grey-200 bg-white p-8">
-              <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-                <div className="lg:w-1/2">
-                  <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
-                    Finance &middot; FP&A
-                  </p>
-                  <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-5">
-                    Flux Analysis
-                  </h2>
-                  <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
-                    Each close cycle, finance teams spend days manually
-                    investigating period-over-period variances across multiple
-                    systems. The process is repetitive, difficult to scale, and
-                    often delays clear explanations for leadership.
-                  </p>
-                  <p className="text-[16px] text-grey-600 leading-relaxed mb-8">
-                    Cimba automates flux analysis by connecting directly to
-                    source systems and applying explainable, repeatable
-                    logic&mdash;turning variance analysis into a fast, reliable
-                    workflow.
-                  </p>
-                  <ul className="space-y-2.5 text-[16px] text-grey-700">
-                    <li className="flex items-start gap-2.5">
-                      <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                      Instantly surfaces the true drivers of variances, reducing manual investigation and close-cycle effort
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                      Analyzes changes across accounts, entities, cost centers, and dimensions with consistent explanations every period
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                      Generates clear, natural-language narratives reusable in management reporting and leadership reviews
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                      Extends analysis beyond internal data when needed&mdash;industry or macro trends&mdash;to provide context, not just numbers
-                    </li>
-                  </ul>
-                </div>
-                <div className="lg:w-1/2">
-                  <ImagePlaceholder label="Flux analysis workflow" />
-                </div>
-              </div>
-            </div>
-
-            {/* ── P&L Scenario Modeling — bento-dark tile, problem/solution + stats ── */}
-            <div className="lg:col-span-5 rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col justify-between min-h-[520px]">
-              <div>
-                <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
-                  FP&A &middot; Leadership
-                </p>
-                <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
-                  P&L Scenario Modeling
-                </h2>
-                <p className="text-[16px] text-grey-700 leading-relaxed mb-4">
-                  P&L scenario analysis is a bottleneck for FP&A teams.
-                  Assumptions live across planning tools and spreadsheets, and
-                  answering leadership&apos;s &ldquo;what if&rdquo; questions
-                  often requires rebuilding models, reconciling inputs, and
-                  waiting days for analysis.
-                </p>
-                <p className="text-[16px] text-grey-700 leading-relaxed mb-6">
-                  Cimba integrates with your existing planning and financial
-                  systems to turn scenario modeling into an on-demand, trusted
-                  workflow&mdash;empowering leadership to explore scenarios and
-                  evaluate tradeoffs.
-                </p>
-                <ul className="space-y-2.5 text-[16px] text-grey-700">
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    Instantly models P&L impact of pricing changes, headcount shifts, and large deals without rebuilding underlying models
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    Leverages existing assumptions and drivers from systems like Anaplan, keeping scenarios grounded in approved planning logic
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    Explains outcomes in clear, natural language so leaders understand not just the result, but the drivers behind it
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-10 flex gap-10 border-t border-grey-300 pt-8">
-                <div>
-                  <p className="text-[40px] font-normal text-grey-900 leading-none">
-                    10&times;
-                  </p>
-                  <p className="text-[16px] text-grey-700 mt-1">
-                    faster scenario turnaround
-                  </p>
-                </div>
-                <div>
-                  <p className="text-[40px] font-normal text-grey-900 leading-none">
-                    0
-                  </p>
-                  <p className="text-[16px] text-grey-700 mt-1">
-                    models to rebuild
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* ── Accounting — image top, problem/solution below ── */}
-            <div className="lg:col-span-7 rounded-2xl border border-primary/30 bg-primary p-8 flex flex-col min-h-[520px]">
-              <div className="flex-1 mb-8">
-                <div className="relative w-full aspect-[728/371] rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02]">
-                  <Image
-                    src="/close-reconciliation.png"
-                    alt="Close & Reconciliation dashboard"
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 55vw, 100vw"
-                  />
-                </div>
-              </div>
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-normal text-white leading-tight mb-4">
-                  Close & Reconciliation
-                </h2>
-                <p className="text-[16px] text-white/85 leading-relaxed mb-4">
-                  Accounting teams rely on manual, spreadsheet-driven processes
-                  for reconciliations, validations, and anomaly
-                  detection&mdash;often under tight close timelines. Frequent
-                  data changes increase risk, create rework, and make it
-                  difficult to explain discrepancies when they matter most.
-                </p>
-                <p className="text-[16px] text-white/85 leading-relaxed">
-                  Cimba automates core accounting workflows using explainable,
-                  repeatable logic that mirrors existing close
-                  processes&mdash;without introducing black boxes. It
-                  continuously validates balances, flags anomalies like negative
-                  asset balances and unexpected movements before issues
-                  escalate, and explains differences in clear, natural language
-                  to accelerate review.
-                </p>
-              </div>
-            </div>
-
-            {/* ── Risk Monitoring — image top, story below (matches Close & Reconciliation layout) ── */}
-            <div className="lg:col-span-8 rounded-2xl border border-grey-200 bg-white p-8 flex flex-col">
-              <div className="mb-8">
-                <div className="relative w-full max-w-[380px] aspect-[1024/737] rounded-2xl overflow-hidden border border-grey-200 bg-grey-50">
-                  <Image
-                    src="/use-cases-risk-v2.png"
-                    alt="Risk monitoring dashboard"
-                    fill
-                    className="object-contain"
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                  />
-                </div>
-              </div>
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
-                  Risk Monitoring & Write-Off Analysis
-                </h2>
-                <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
-                  Risk and analytics teams operate in data-rich environments but remain
-                  constrained by slow analysis cycles, fragile logic, inconsistent
-                  metrics, and limited confidence in outputs&mdash;leading to delayed
-                  actions, inconsistent decisions, and elevated risk exposure.
-                </p>
-                <p className="text-[16px] text-grey-600 leading-relaxed mb-6">
-                  Cimba transforms risk analysis into a governed, repeatable workflow
-                  that delivers timely insight without sacrificing accuracy or
-                  explainability.
-                </p>
-                <ul className="space-y-2.5 text-[16px] text-grey-700">
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    Continuously monitors risk signals and portfolio performance,
-                    surfacing emerging issues before they become write-offs
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    Applies consistent, approved logic across analyses, eliminating
-                    one-off models and metric drift
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    Generates clear, explainable outputs that support faster decisions,
-                    reviews, and regulatory scrutiny
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* ── T&E Expense — bento-dark compact tile with full story ── */}
-            <div className="lg:col-span-4 lg:self-start rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col gap-8">
-              <div className="flex-1">
-                <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
-                  Expense &middot; Monitoring
-                </p>
-                <h2 className="text-xl sm:text-2xl font-normal text-grey-900 leading-tight mb-5">
-                  T&E Expense Analysis
-                </h2>
-                <p className="text-[16px] text-grey-700 leading-relaxed mb-6">
-                  Expenses, budgets, and forecasts stored across different
-                  systems with no central monitoring make most actions
-                  reactive&mdash;issues surface only after the damage is done.
-                </p>
-                <ul className="space-y-2.5 text-[16px] text-grey-700">
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    Proactive monitoring and alerting rather than reactive follow-up
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    Full transparency into workflow steps and underlying code, with natural language explanations for non-technical users
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    Complex monitoring rules created using natural language&mdash;no engineering required
-                  </li>
-                </ul>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                <p className="text-[16px] text-grey-700">
-                  Always-on alerting
-                </p>
-              </div>
-            </div>
-
-            {/* ── AI for Account Managers — full-width case study, image left ── */}
-            <div className="lg:col-span-12 rounded-2xl border border-grey-200 bg-white p-8">
-              <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-                <div className="lg:w-5/12">
-                  
-                  <div className="relative w-full aspect-[1024/737] rounded-2xl overflow-hidden border border-grey-200 bg-grey-50">
-                    <Image
-                      src="/use-cases-am.png"
-                      alt="AI for Account Managers dashboard"
-                      fill
-                      className="object-contain"
-                      sizes="(min-width: 1024px) 40vw, 100vw"
-                    />
+      {/* Use Cases — same cursor gradient treatment as Integrations */}
+      <CursorGradientSection className="pb-20 lg:pb-28">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-8">
+          <div className="space-y-6">
+            {caseStudies.map((study) => (
+              <div key={study.id} className="space-y-6">
+                {study.id === "risk-monitoring" && (
+                  <div className="grid lg:grid-cols-12 gap-6 lg:items-stretch pt-4">
+                    <PlScenarioCloseBento />
                   </div>
-                </div>
-                <div className="lg:w-7/12">
-                  <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
-                    Customer Success &middot; Operations
-                  </p>
-                  <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
-                    AI for Account Managers
-                  </h2>
-                  <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
-                    Swiggy account managers oversee 50–100 restaurant partners
-                    each and must answer performance and growth questions in
-                    real time. However, key data often requires analyst support,
-                    creating delays that limit impact in live partner meetings
-                    and slow upsell opportunities.
-                  </p>
-                  <p className="text-[16px] text-grey-600 leading-relaxed mb-6">
-                    Cimba powers Swiggy&apos;s &ldquo;AI for AM&rdquo; agent,
-                    enabling real-time, self-service insights and repeatable
-                    workflows&mdash;degrowth analysis, performance trends,
-                    growth opportunities&mdash;directly on production data.
-                    AMs now diagnose performance issues, identify growth
-                    opportunities, and act in the moment without analyst
-                    bottlenecks.
-                  </p>
-                  <p className="text-[16px] text-grey-500 leading-relaxed mb-8">
-                    This deployment replaced internal tools and competitors
-                    with a single governed AI platform, validating
-                    Cimba&apos;s ability to scale AI-driven workflows across
-                    thousands of business users in marketplace operations.
-                  </p>
-                  <div className="grid grid-cols-3 gap-8 border-t border-grey-200 pt-8">
-                    <div>
-                      <p className="text-[32px] font-normal text-grey-900 leading-none">
-                        10
-                      </p>
-                      <p className="text-[16px] text-grey-500 mt-1">
-                        business units
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[32px] font-normal text-grey-900 leading-none">
-                        2,200
-                      </p>
-                      <p className="text-[16px] text-grey-500 mt-1">
-                        active users
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[32px] font-normal text-grey-900 leading-none">
-                        3 mo
-                      </p>
-                      <p className="text-[16px] text-grey-500 mt-1">
-                        to full scale
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                )}
+                <ExpandableCard study={study} />
               </div>
-            </div>
-
-            {/* ── BOM Misalignment — blue, image top, story below ── */}
-            <div className="lg:col-span-5 rounded-2xl border border-primary/30 bg-primary p-8 flex flex-col min-h-[420px]">
-              <div className="flex-1 mb-8">
-                <div className="relative w-full aspect-[488/266] rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02]">
-                  <Image
-                    src="/bom-misalignment.png"
-                    alt="BOM comparison view"
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                  />
-                </div>
-              </div>
-              <div>
-                <h2 className="text-xl sm:text-2xl font-normal text-white leading-tight mb-4">
-                  BOM Misalignment in Maintenance Operations
-                </h2>
-                <p className="text-[16px] text-white/85 leading-relaxed">
-                  Instead of sifting through thousands of work orders, teams
-                  see a focused list of misaligned material combinations with
-                  recommended actions. Cimba automatically compares planned
-                  vs. actual BOMs, highlighting only the discrepancies that
-                  matter&mdash;so maintenance teams act on what counts.
-                </p>
-              </div>
-            </div>
-
-            {/* ── Other High-Impact — bento-dark list tile ── */}
-            <div className="lg:col-span-7 rounded-2xl border border-grey-200 bg-bento-dark p-8 flex flex-col justify-center min-h-[420px]">
-              <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
-                More workflows
-              </p>
-              <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-4">
-                Other high-impact use cases
-              </h2>
-              <p className="text-[16px] text-grey-700 leading-relaxed mb-8 max-w-lg">
-                Cimba extends across finance, ops, and go-to-market&mdash;wherever
-                teams need governed, repeatable intelligence.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-x-12 gap-y-5 text-[16px]">
-                {[
-                  {
-                    title: "Repeatable board questions",
-                    desc: "Answer leadership queries consistently every quarter",
-                  },
-                  {
-                    title: "Cross-functional workflows",
-                    desc: "Detect where Finance, Ops, and Sales data break",
-                  },
-                  {
-                    title: "Spend analysis",
-                    desc: "Tie detailed usage to revenue or cost drivers",
-                  },
-                  {
-                    title: "Pricing decisions",
-                    desc: "Explore scenarios for pricing strategies",
-                  },
-                  {
-                    title: "Marketing & customer success",
-                    desc: "Analyze customer or campaign data to drive decisions",
-                  },
-                ].map((item) => (
-                  <div key={item.title}>
-                    <p className="font-semibold text-grey-900">{item.title}</p>
-                    <p className="text-grey-700 text-[16px] mt-0.5">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-grey-50 py-20 lg:py-28">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-normal text-grey-900 leading-tight mb-5">
-              See these workflows in action
-            </h2>
-            <p className="text-lg text-grey-500 max-w-xl mx-auto mb-10">
-              Book a demo and we&apos;ll walk through how Cimba automates your
-              specific use case.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/demo"
-                className="btn-primary px-8 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md"
-              >
-                See Demo
-                <ArrowRight size={16} className="ml-2" />
-              </Link>
-              <Link
-                href="/product"
-                className="btn-secondary px-8 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md"
-              >
-                Explore Product
-              </Link>
+            ))}
+            <div className="grid lg:grid-cols-12 gap-6 lg:items-stretch">
+              <BomAndMoreWorkflowsBento />
             </div>
           </div>
         </div>
-      </section>
+      </CursorGradientSection>
+
+      <CTASection />
     </>
   );
 }

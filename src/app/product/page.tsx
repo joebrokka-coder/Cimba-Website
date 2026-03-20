@@ -294,7 +294,7 @@ export default function ProductPage() {
               href="/use-cases"
               className="btn-secondary px-8 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
             >
-              Explore Use Cases
+              View Use Cases
             </Link>
           </div>
         </div>

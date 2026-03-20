@@ -9,14 +9,9 @@ const footerLinks = {
     { label: "Integrations", href: "/product#integrations" },
   ],
   "Use Cases": [
-    { label: "Accounting", href: "/use-cases#accounting" },
-    { label: "Marketing", href: "/use-cases#marketing" },
-    { label: "AI for Account Managers", href: "/use-cases#account-managers" },
-  ],
-  "Case Studies": [
-    { label: "AI for AMs", href: "/case-studies#ai-for-ams" },
-    { label: "FinOps", href: "/case-studies#finops" },
-    { label: "Risk Monitoring", href: "/case-studies#risk-monitoring" },
+    { label: "AI for AMs", href: "/use-cases#ai-for-ams" },
+    { label: "FinOps", href: "/use-cases#finops" },
+    { label: "Risk Monitoring", href: "/use-cases#risk-monitoring" },
   ],
 };
 
@@ -36,7 +31,7 @@ export default function Footer() {
         </Link>
 
         {/* Links grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 mb-16">
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <h3 className="text-[12px] font-semibold text-white uppercase tracking-[0.15em] mb-5">
