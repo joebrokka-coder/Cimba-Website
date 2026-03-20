@@ -1,5 +1,6 @@
 import { Play, ArrowRight, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
+import CursorGradientSection from "@/components/CursorGradientSection";
 
 export const metadata: Metadata = {
   title: "See Demo — Cimba",
@@ -18,8 +19,17 @@ export default function DemoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-grey-50 pt-32 pb-20 lg:pt-44 lg:pb-28">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+      <section
+        className="relative overflow-hidden bg-grey-50 pt-32 pb-20 lg:pt-44 lg:pb-28"
+        style={{
+          backgroundImage: "url('/home-background.svg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-grey-50" />
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-normal text-grey-900 tracking-tight leading-tight mb-6">
@@ -69,7 +79,7 @@ export default function DemoPage() {
       </section>
 
       {/* Demo Request Form */}
-      <section className="bg-white py-20 lg:py-28">
+      <CursorGradientSection className="py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
@@ -94,7 +104,7 @@ export default function DemoPage() {
                   <input
                     type="text"
                     id="firstName"
-                    className="w-full px-4 py-3 rounded-lg border border-grey-300 text-grey-900 placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-white/50 bg-white/55 backdrop-blur-md text-grey-900 placeholder-grey-500 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.58)] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/60 transition-colors"
                     placeholder="Jane"
                   />
                 </div>
@@ -108,7 +118,7 @@ export default function DemoPage() {
                   <input
                     type="text"
                     id="lastName"
-                    className="w-full px-4 py-3 rounded-lg border border-grey-300 text-grey-900 placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-white/50 bg-white/55 backdrop-blur-md text-grey-900 placeholder-grey-500 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.58)] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/60 transition-colors"
                     placeholder="Smith"
                   />
                 </div>
@@ -124,7 +134,7 @@ export default function DemoPage() {
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 rounded-lg border border-grey-300 text-grey-900 placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+                  className="w-full px-4 py-3 rounded-lg border border-white/50 bg-white/55 backdrop-blur-md text-grey-900 placeholder-grey-500 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.58)] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/60 transition-colors"
                   placeholder="jane@company.com"
                 />
               </div>
@@ -139,7 +149,7 @@ export default function DemoPage() {
                 <input
                   type="text"
                   id="company"
-                  className="w-full px-4 py-3 rounded-lg border border-grey-300 text-grey-900 placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+                  className="w-full px-4 py-3 rounded-lg border border-white/50 bg-white/55 backdrop-blur-md text-grey-900 placeholder-grey-500 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.58)] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/60 transition-colors"
                   placeholder="Acme Inc."
                 />
               </div>
@@ -153,7 +163,7 @@ export default function DemoPage() {
                 </label>
                 <select
                   id="role"
-                  className="w-full px-4 py-3 rounded-lg border border-grey-300 text-grey-900 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors bg-white"
+                  className="w-full px-4 py-3 rounded-lg border border-white/50 bg-white/55 backdrop-blur-md text-grey-900 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/60 transition-colors shadow-[inset_0_1.5px_0_rgba(255,255,255,0.58)]"
                 >
                   <option value="">Select your role</option>
                   <option value="finance">Finance / FP&A</option>
@@ -176,7 +186,7 @@ export default function DemoPage() {
                 <textarea
                   id="message"
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-grey-300 text-grey-900 placeholder-grey-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-white/50 bg-white/55 backdrop-blur-md text-grey-900 placeholder-grey-500 shadow-[inset_0_1.5px_0_rgba(255,255,255,0.58)] focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/60 transition-colors resize-none"
                   placeholder="Tell us about your use case..."
                 />
               </div>
@@ -191,7 +201,7 @@ export default function DemoPage() {
             </form>
           </div>
         </div>
-      </section>
+      </CursorGradientSection>
     </>
   );
 }
