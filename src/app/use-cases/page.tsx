@@ -292,7 +292,7 @@ function ExpandableCard({ study }: { study: CaseStudy }) {
                     <p className="font-normal leading-none text-2xl text-blue-500 sm:text-3xl lg:text-[42px] xl:text-[50px]">
                       {stat.value}
                     </p>
-                    <p className="text-[12px] text-grey-500 mt-1.5 leading-snug sm:text-[14px] sm:mt-2 sm:leading-relaxed">
+                    <p className="text-[18px] text-grey-500 mt-1.5 leading-relaxed">
                       {stat.label}
                     </p>
                   </div>
@@ -362,6 +362,71 @@ function ExpandableCard({ study }: { study: CaseStudy }) {
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                 {/* Left column */}
                 <div>
+                  <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
+                    The Cimba Solution
+                  </h3>
+                  {study.solution.map((p, i) => (
+                    <p
+                      key={i}
+                      className="text-[16px] text-grey-600 leading-relaxed mb-4"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                  {study.solutionBullets && (
+                    <ul
+                      className={`space-y-2.5 text-[16px] text-grey-700 ${
+                        study.solutionAfterBullets ? "mb-3" : "mb-4"
+                      }`}
+                    >
+                      {study.solutionBullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2.5">
+                          <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {study.solutionAfterBullets && (
+                    <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
+                      {study.solutionAfterBullets}
+                    </p>
+                  )}
+
+                  <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4 mt-8">
+                    How They Use Cimba
+                  </h3>
+                  {study.howTheyUseIt.map((p, i) => (
+                    <p
+                      key={i}
+                      className="text-[16px] text-grey-600 leading-relaxed mb-4"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                  {study.howBullets && (
+                    <ul
+                      className={`space-y-2.5 text-[16px] text-grey-700 ${
+                        study.howAfterBullets ? "mb-3" : "mb-4"
+                      }`}
+                    >
+                      {study.howBullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2.5">
+                          <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {study.howAfterBullets && (
+                    <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
+                      {study.howAfterBullets}
+                    </p>
+                  )}
+                </div>
+
+                {/* Right column */}
+                <div>
                   {study.companyBlurb && (
                     <div
                       className="mb-8 rounded-xl p-[2px]"
@@ -401,74 +466,9 @@ function ExpandableCard({ study }: { study: CaseStudy }) {
                     </div>
                   )}
 
-                  <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
-                    The Cimba Solution
-                  </h3>
-                  {study.solution.map((p, i) => (
-                    <p
-                      key={i}
-                      className="text-[16px] text-grey-600 leading-relaxed mb-4"
-                    >
-                      {p}
-                    </p>
-                  ))}
-                  {study.solutionBullets && (
-                    <ul
-                      className={`space-y-2.5 text-[16px] text-grey-700 ${
-                        study.solutionAfterBullets ? "mb-3" : "mb-4"
-                      }`}
-                    >
-                      {study.solutionBullets.map((b, i) => (
-                        <li key={i} className="flex items-start gap-2.5">
-                          <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {study.solutionAfterBullets && (
-                    <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
-                      {study.solutionAfterBullets}
-                    </p>
-                  )}
-                </div>
-
-                {/* Right column */}
-                <div>
-                  <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
-                    How They Use Cimba
-                  </h3>
-                  {study.howTheyUseIt.map((p, i) => (
-                    <p
-                      key={i}
-                      className="text-[16px] text-grey-600 leading-relaxed mb-4"
-                    >
-                      {p}
-                    </p>
-                  ))}
-                  {study.howBullets && (
-                    <ul
-                      className={`space-y-2.5 text-[16px] text-grey-700 ${
-                        study.howAfterBullets ? "mb-3" : "mb-4"
-                      }`}
-                    >
-                      {study.howBullets.map((b, i) => (
-                        <li key={i} className="flex items-start gap-2.5">
-                          <span className="mt-[5px] inline-block h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {study.howAfterBullets && (
-                    <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
-                      {study.howAfterBullets}
-                    </p>
-                  )}
-
                   {study.outcomes && (
                     <>
-                      <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4 mt-8">
+                      <h3 className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
                         Outcomes
                       </h3>
                       <ul
@@ -575,12 +575,12 @@ export default function UseCasesPage() {
           <div className="space-y-6">
             {caseStudies.map((study) => (
               <div key={study.id} className="space-y-6">
+                <ExpandableCard study={study} />
                 {study.id === "risk-monitoring" && (
                   <div className="grid lg:grid-cols-12 gap-6 lg:items-stretch pt-4">
                     <PlScenarioCloseBento />
                   </div>
                 )}
-                <ExpandableCard study={study} />
               </div>
             ))}
             <div className="grid lg:grid-cols-12 gap-6 lg:items-stretch">
