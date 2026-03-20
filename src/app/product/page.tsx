@@ -98,7 +98,7 @@ export default function ProductPage() {
         />
         {/* Bottom fade-out for background image */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white" />
-        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-32 pb-20 lg:pt-44 lg:pb-28">
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-32 pb-10 lg:pt-44 lg:pb-14">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-grey-900 leading-tight mb-6">
               The platform for
@@ -122,7 +122,7 @@ export default function ProductPage() {
       </section>
 
       {/* ── What is Cimba ── */}
-      <section className="bg-white py-16 lg:py-20">
+      <section className="bg-white pt-0 pb-16 lg:pb-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <div className="lg:w-1/2">

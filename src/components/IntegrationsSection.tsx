@@ -167,7 +167,9 @@ export default function IntegrationsSection({ dataCategories }: Props) {
           <p className="text-[16px] text-grey-600 leading-relaxed max-w-4xl mb-4">
             Cimba provides an MCP server that exposes agents, workflows, and
             data connections through a structured interface. This allows
-            interoperability with external AI systems, agents, and tools.
+            interoperability with external AI systems, agents, and tools. Here
+            are just a few of the tools that users are connecting to with our
+            MCP server.
           </p>
           <div className="flex flex-wrap gap-2">
             {mcpServerIntegrations.map((item) => (
