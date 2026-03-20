@@ -22,7 +22,7 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow] duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-lg shadow-sm"
           : "bg-white/80 backdrop-blur-md"
@@ -45,7 +45,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-[16px] font-medium text-grey-600 hover:text-grey-900 rounded-lg hover:bg-grey-100 transition-all"
+                className="px-4 py-2 text-[16px] font-medium text-grey-600 hover:text-grey-900 rounded-lg hover:bg-grey-100 transition-colors duration-200 ease-out"
               >
                 {link.label}
               </Link>
@@ -55,7 +55,7 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/demo"
-              className="btn-primary px-6 py-0 text-[16px] font-semibold rounded-full transition-all"
+              className="btn-primary px-6 py-0 text-[16px] font-semibold rounded-full transition-transform duration-200 ease-out"
             >
               Book a Demo
             </Link>
@@ -78,7 +78,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-4 py-3 text-[16px] font-medium text-grey-600 hover:text-grey-900 hover:bg-grey-50 rounded-lg transition-all"
+                className="block px-4 py-3 text-[16px] font-medium text-grey-600 hover:text-grey-900 hover:bg-grey-50 rounded-lg transition-colors duration-200 ease-out"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -87,7 +87,7 @@ export default function Navigation() {
             <div className="pt-4">
               <Link
                 href="/demo"
-                className="block w-full text-center btn-primary px-6 py-0 text-[16px] font-semibold rounded-full transition-all"
+                className="block w-full text-center btn-primary px-6 py-0 text-[16px] font-semibold rounded-full transition-transform duration-200 ease-out"
                 onClick={() => setMobileOpen(false)}
               >
                 Book a Demo

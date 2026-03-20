@@ -260,7 +260,7 @@ function ExpandableCard({ study }: { study: CaseStudy }) {
                   src={study.imageSrc}
                   alt={`${study.title} hero image`}
                   fill
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 transform-gpu will-change-[transform]"
                   sizes="250px"
                   unoptimized
                 />

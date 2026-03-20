@@ -205,7 +205,7 @@ export default function Home() {
                     alt="AI Enablement, Not Dashboards"
                     width={912}
                     height={768}
-                    className="w-full h-auto transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+                    className="w-full h-auto transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04] will-change-[transform]"
                     priority
                   />
                 </div>
@@ -231,7 +231,7 @@ export default function Home() {
                     alt="Repeatable Workflows"
                     width={912}
                     height={768}
-                    className="w-full h-auto transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+                    className="w-full h-auto transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04] will-change-[transform]"
                   />
                 </div>
               </div>
@@ -254,7 +254,7 @@ export default function Home() {
                     alt="Business Context Built In"
                     width={912}
                     height={768}
-                    className="w-full h-auto transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+                    className="w-full h-auto transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04] will-change-[transform]"
                   />
                 </div>
               </div>
@@ -277,7 +277,7 @@ export default function Home() {
                     alt="Operational Delivery"
                     width={912}
                     height={768}
-                    className="w-full h-auto transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+                    className="w-full h-auto transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04] will-change-[transform]"
                   />
                 </div>
               </div>
@@ -304,7 +304,7 @@ export default function Home() {
                     src="/who-uses-data.png"
                     alt=""
                     fill
-                    className="object-cover transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+                    className="object-cover transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04] will-change-[transform]"
                     unoptimized
                     sizes="220px"
                   />
@@ -333,7 +333,7 @@ export default function Home() {
                     src="/who-uses-finance.png"
                     alt=""
                     fill
-                    className="object-cover transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+                    className="object-cover transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04] will-change-[transform]"
                     unoptimized
                     sizes="220px"
                   />
@@ -363,7 +363,7 @@ export default function Home() {
                     src="/who-uses-customer-success.png"
                     alt=""
                     fill
-                    className="object-cover transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+                    className="object-cover transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04] will-change-[transform]"
                     unoptimized
                     sizes="220px"
                   />
@@ -393,7 +393,7 @@ export default function Home() {
                     src="/who-uses-operations.png"
                     alt=""
                     fill
-                    className="object-cover transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04]"
+                    className="object-cover transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-[1.04] will-change-[transform]"
                     unoptimized
                     sizes="220px"
                   />

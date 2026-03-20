@@ -146,7 +146,7 @@ export default function UseCasesCarousel() {
                 src={active.imageSrc}
                 alt=""
                 fill
-                className="object-cover object-top object-right origin-left transition-transform duration-500 ease-out group-hover:scale-[1.12]"
+                className="object-cover object-top object-right origin-left transition-transform duration-500 ease-out group-hover:scale-[1.12] transform-gpu will-change-[transform]"
                 sizes="(max-width: 1024px) 100vw, 468px"
               />
             </div>

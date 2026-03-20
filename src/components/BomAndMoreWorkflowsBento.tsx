@@ -39,7 +39,7 @@ export default function BomAndMoreWorkflowsBento() {
               src="/bom-misalignment-v2.png"
               alt="BOM comparison view"
               fill
-              className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 transform-gpu will-change-[transform]"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 type Stroke = { x: number; y: number; t: number };
 
@@ -13,10 +13,16 @@ export default function LakeOfDataBackground() {
   const bgRef = useRef<HTMLDivElement | null>(null);
   const strokesRef = useRef<Stroke[]>([]);
   const rafRef = useRef(0);
-  const [maskImage, setMaskImage] = useState<string>("none");
+  const hoverLayerRef = useRef<HTMLDivElement | null>(null);
+  const lastMaskBuildRef = useRef<number>(0);
 
   const buildMask = useCallback(() => {
     const now = performance.now();
+
+    // Avoid doing expensive mask string work every single RAF on Chrome.
+    // 30fps (~33ms) is typically plenty for a "hover paint" background.
+    if (now - lastMaskBuildRef.current < 33) return;
+    lastMaskBuildRef.current = now;
 
     // Only strokes that are still within the fade window contribute.
     const cutoff = now - FADE_DURATION;
@@ -24,7 +30,11 @@ export default function LakeOfDataBackground() {
 
     const active = strokesRef.current;
     if (active.length === 0) {
-      setMaskImage("none");
+      const hoverEl = hoverLayerRef.current;
+      if (hoverEl) {
+        hoverEl.style.opacity = "0";
+        hoverEl.style.WebkitMaskImage = "none";
+      }
       return;
     }
 
@@ -38,7 +48,12 @@ export default function LakeOfDataBackground() {
       )}) 0%, transparent 100%)`;
     });
 
-    setMaskImage(gradients.join(", "));
+    const hoverEl = hoverLayerRef.current;
+    if (hoverEl) {
+      hoverEl.style.opacity = "1";
+      const mask = gradients.join(", ");
+      hoverEl.style.WebkitMaskImage = mask;
+    }
   }, []);
 
   const tick = useCallback(() => {
@@ -113,14 +128,13 @@ export default function LakeOfDataBackground() {
 
       {/* Hover layer — revealed by cursor mask */}
       <div
+        ref={hoverLayerRef}
         className="absolute inset-0"
         style={{
           ...svgBg("/lake-of-data1-hover.svg"),
-          opacity: maskImage === "none" ? 0 : 1,
-          WebkitMaskImage: maskImage === "none" ? "none" : maskImage,
-          maskImage: maskImage === "none" ? "none" : maskImage,
+          opacity: 0,
+          WebkitMaskImage: "none",
           WebkitMaskComposite: "source-over",
-          maskComposite: "add",
         }}
       />
     </div>

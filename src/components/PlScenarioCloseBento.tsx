@@ -72,7 +72,7 @@ export default function PlScenarioCloseBento() {
             src="/close-reconciliation-v2.png"
             alt="Close & Reconciliation dashboard"
             fill
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 transform-gpu will-change-[transform]"
             sizes="(min-width: 1024px) 55vw, 100vw"
           />
         </div>
