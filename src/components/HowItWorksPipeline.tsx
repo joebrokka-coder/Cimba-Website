@@ -71,13 +71,14 @@ export default function HowItWorksPipeline() {
 
         {/* Pipeline tabs */}
         <div className="mb-10">
-          <div className="flex flex-col gap-3 sm:inline-flex sm:flex-row sm:flex-wrap sm:justify-center sm:items-stretch">
+          {/* Mobile: stacked rounded rectangles */}
+          <div className="flex flex-col gap-3 sm:hidden">
             {pipelineSteps.map((s, i) => (
               <button
                 key={s.id}
                 type="button"
                 onClick={() => goTo(i)}
-                className={`w-full sm:w-[150px] flex items-center justify-center py-3 text-center transition-colors min-w-0 border rounded-xl ${
+                className={`w-full flex items-center justify-center py-3 text-center transition-colors min-w-0 border rounded-xl ${
                   i === selectedIndex
                     ? "bg-primary text-white font-bold border-primary"
                     : "bg-white text-primary hover:bg-grey-50 border-grey-200"
@@ -88,6 +89,28 @@ export default function HowItWorksPipeline() {
                 </span>
               </button>
             ))}
+          </div>
+
+          {/* Desktop: single segmented pill with rounded ends */}
+          <div className="hidden sm:flex justify-center">
+            <div className="inline-flex flex-shrink-0 rounded-full overflow-hidden border border-grey-200 divide-x divide-grey-200">
+              {pipelineSteps.map((s, i) => (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => goTo(i)}
+                  className={`flex-none w-[150px] flex items-center justify-center py-3 text-center transition-colors min-w-0 border-0 ${
+                    i === selectedIndex
+                      ? "bg-primary text-white font-bold"
+                      : "bg-white text-primary hover:bg-grey-50"
+                  }`}
+                >
+                  <span className="text-[12px] font-semibold uppercase tracking-wide truncate">
+                    {s.id === "connect" ? "CONNECT" : s.title}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -131,7 +154,7 @@ export default function HowItWorksPipeline() {
                   type="button"
                   onClick={goPrev}
                   aria-label="Previous step"
-                  className="inline-flex items-center justify-center rounded-lg border border-grey-200 bg-white px-3 py-2 text-[12px] font-semibold uppercase tracking-wide text-primary transition-colors hover:bg-grey-50"
+                  className="inline-flex items-center justify-center rounded-lg border border-grey-200/80 bg-white px-3 py-2 text-[12px] font-semibold uppercase tracking-wide text-primary/70 transition-colors hover:bg-grey-50/60"
                 >
                   Prev
                 </button>
@@ -155,7 +178,7 @@ export default function HowItWorksPipeline() {
                   type="button"
                   onClick={goNext}
                   aria-label="Next step"
-                  className="inline-flex items-center justify-center rounded-lg border border-grey-200 bg-white px-3 py-2 text-[12px] font-semibold uppercase tracking-wide text-primary transition-colors hover:bg-grey-50"
+                  className="inline-flex items-center justify-center rounded-lg border border-grey-200/80 bg-white px-3 py-2 text-[12px] font-semibold uppercase tracking-wide text-primary/70 transition-colors hover:bg-grey-50/60"
                 >
                   Next
                 </button>

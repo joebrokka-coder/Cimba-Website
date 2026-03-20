@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import CursorGradientSection from "@/components/CursorGradientSection";
 
 export type UseCaseSlide = {
   id: string;
@@ -58,40 +57,8 @@ export default function UseCasesCarousel() {
   const [activeId, setActiveId] = useState(useCases[0].id); // default first use case
   const active = useCases.find((u) => u.id === activeId) ?? useCases[0];
 
-  const titleRef = useRef<HTMLHeadingElement | null>(null);
-  const [titleGradient, setTitleGradient] = useState(false);
-
-  useEffect(() => {
-    // Only run this effect on mobile; desktop keeps current styling.
-    const mq = window.matchMedia("(max-width: 639px)");
-    if (!mq.matches) return;
-
-    let rafId = 0;
-    const update = () => {
-      if (!titleRef.current) return;
-      const rect = titleRef.current.getBoundingClientRect();
-      const triggerY = window.innerHeight * 0.42;
-      // Turn gradient on once the title reaches slightly above the top half.
-      setTitleGradient(rect.top <= triggerY && rect.bottom >= 0);
-    };
-
-    const onScrollOrResize = () => {
-      cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener("scroll", onScrollOrResize, { passive: true });
-    window.addEventListener("resize", onScrollOrResize);
-    return () => {
-      cancelAnimationFrame(rafId);
-      window.removeEventListener("scroll", onScrollOrResize);
-      window.removeEventListener("resize", onScrollOrResize);
-    };
-  }, []);
-
   return (
-    <CursorGradientSection className="py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-28">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-stretch">
           {/* Left: stepper (Core Primitives style) */}
@@ -147,26 +114,8 @@ export default function UseCasesCarousel() {
             }}
           >
             <div className="order-2 lg:order-1 flex-1 w-full min-w-[302px] h-[220px] sm:h-[260px] lg:h-[285px] p-8 sm:p-10 lg:p-12 flex flex-col">
-              <h2
-                ref={titleRef}
-                className="relative text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5"
-              >
-                <span
-                  className={`block transition-opacity duration-700 ${
-                    titleGradient ? "opacity-0" : "opacity-100"
-                  }`}
-                >
-                  {active.title}
-                </span>
-                <span
-                  className={`absolute inset-0 block transition-opacity duration-700 ${
-                    titleGradient
-                      ? "opacity-100 bg-gradient-to-r from-blue-500 via-purple-700 to-teal-500 bg-clip-text text-transparent"
-                      : "opacity-0"
-                  }`}
-                >
-                  {active.title}
-                </span>
+              <h2 className="text-2xl sm:text-3xl font-normal text-grey-900 leading-tight mb-5">
+                {active.title}
               </h2>
               <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
                 {active.paragraphs[0]}
@@ -204,6 +153,6 @@ export default function UseCasesCarousel() {
           </div>
         </div>
       </div>
-    </CursorGradientSection>
+    </section>
   );
 }
