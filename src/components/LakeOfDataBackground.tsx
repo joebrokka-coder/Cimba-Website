@@ -33,7 +33,7 @@ export default function LakeOfDataBackground() {
       const hoverEl = hoverLayerRef.current;
       if (hoverEl) {
         hoverEl.style.opacity = "0";
-        hoverEl.style.WebkitMaskImage = "none";
+        hoverEl.style.webkitMaskImage = "none";
       }
       return;
     }
@@ -52,7 +52,7 @@ export default function LakeOfDataBackground() {
     if (hoverEl) {
       hoverEl.style.opacity = "1";
       const mask = gradients.join(", ");
-      hoverEl.style.WebkitMaskImage = mask;
+      hoverEl.style.webkitMaskImage = mask;
     }
   }, []);
 
