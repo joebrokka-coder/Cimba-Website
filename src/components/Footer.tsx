@@ -1,19 +1,66 @@
 import Link from "next/link";
 import Image from "next/image";
+import FooterHashLink from "@/components/FooterHashLink";
+import type { ReactNode } from "react";
 
-const footerLinks = {
-  Product: [
-    { label: "What is Cimba", href: "/product" },
-    { label: "How It Works", href: "/product#how-it-works" },
-    { label: "Security", href: "/product#security" },
-    { label: "Integrations", href: "/product#integrations" },
-  ],
-  "Use Cases": [
-    { label: "AI for AMs", href: "/use-cases#ai-for-ams" },
-    { label: "FinOps", href: "/use-cases#finops" },
-    { label: "Risk Monitoring", href: "/use-cases#risk-monitoring" },
-  ],
-};
+const footerColumns: {
+  category: string;
+  links: { label: string; href: string }[];
+}[] = [
+  {
+    category: "Home",
+    links: [
+      { label: "Product demo", href: "/#home-video" },
+      { label: "Trusted by", href: "/#trusted-by" },
+      { label: "The problem", href: "/#the-problem" },
+      { label: "The Cimba solution", href: "/#cimba-solution" },
+      { label: "Who uses Cimba", href: "/#who-uses-cimba" },
+      { label: "Use cases", href: "/#use-cases" },
+      { label: "Testimonials", href: "/#testimonials" },
+      { label: "Contact", href: "/#cta" },
+    ],
+  },
+  {
+    category: "Product",
+    links: [
+      { label: "What is Cimba", href: "/product#what-is-cimba" },
+      { label: "How It Works", href: "/product#how-it-works" },
+      { label: "Security", href: "/product#security" },
+      { label: "Integrations", href: "/product#integrations" },
+    ],
+  },
+  {
+    category: "Use Cases",
+    links: [
+      { label: "AI for AMs", href: "/use-cases#ai-for-ams" },
+      { label: "FinOps", href: "/use-cases#finops" },
+      { label: "Risk Monitoring", href: "/use-cases#risk-monitoring" },
+    ],
+  },
+];
+
+function FooterLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+}) {
+  if (href.includes("#")) {
+    return (
+      <FooterHashLink href={href} className={className}>
+        {children}
+      </FooterHashLink>
+    );
+  }
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
 
 export default function Footer() {
   return (
@@ -30,22 +77,22 @@ export default function Footer() {
           />
         </Link>
 
-        {/* Links grid */}
+        {/* Links grid — Home | Product | Use Cases */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-10 mb-16">
-          {Object.entries(footerLinks).map(([category, links]) => (
+          {footerColumns.map(({ category, links }) => (
             <div key={category}>
               <h3 className="text-[12px] font-semibold text-white uppercase tracking-[0.15em] mb-5">
                 {category}
               </h3>
               <ul className="space-y-3">
                 {links.map((link) => (
-                  <li key={link.href}>
-                    <Link
+                  <li key={link.href + link.label}>
+                    <FooterLink
                       href={link.href}
                       className="text-[16px] text-white/85 hover:text-white transition-colors"
                     >
                       {link.label}
-                    </Link>
+                    </FooterLink>
                   </li>
                 ))}
               </ul>
@@ -58,7 +105,7 @@ export default function Footer() {
           <p className="text-[16px] text-white/80">
             &copy; {new Date().getFullYear()} Cimba. All rights reserved.
           </p>
-          <div className="flex gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
             <Link
               href="/privacy"
               className="text-[16px] text-white/80 hover:text-white transition-colors"
@@ -71,6 +118,22 @@ export default function Footer() {
             >
               Terms
             </Link>
+            <a
+              href="https://www.linkedin.com/company/cimba-ai/posts/?feedView=all"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center opacity-80 hover:opacity-100 transition-opacity"
+              aria-label="Cimba on LinkedIn"
+            >
+              <Image
+                src="/linkedin-logo.svg"
+                alt=""
+                width={1012}
+                height={324}
+                className="h-6 w-auto"
+                unoptimized
+              />
+            </a>
           </div>
         </div>
       </div>

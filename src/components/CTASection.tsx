@@ -4,7 +4,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef, useState, useCallback, useEffect } from "react";
 
-export default function CTASection() {
+type CTASectionProps = { id?: string };
+
+export default function CTASection({ id = "cta" }: CTASectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
 
@@ -28,9 +30,10 @@ export default function CTASection() {
   return (
     <section
       ref={sectionRef}
+      id={id}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative py-24 lg:py-32 overflow-hidden scroll-mt-24"
       style={{ backgroundColor: "#0558B8" }}
     >
       {/* Base dot grid layer */}

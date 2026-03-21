@@ -58,7 +58,10 @@ export default function UseCasesCarousel() {
   const active = useCases.find((u) => u.id === activeId) ?? useCases[0];
 
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section
+      id="use-cases"
+      className="bg-white py-20 lg:py-28 scroll-mt-24"
+    >
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-stretch">
           {/* Left: stepper (Core Primitives style) */}

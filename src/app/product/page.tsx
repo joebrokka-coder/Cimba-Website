@@ -122,7 +122,10 @@ export default function ProductPage() {
       </section>
 
       {/* ── What is Cimba ── */}
-      <section className="bg-white pt-0 pb-16 lg:pb-20">
+      <section
+        id="what-is-cimba"
+        className="bg-white pt-0 pb-16 lg:pb-20 scroll-mt-24"
+      >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <div className="lg:w-1/2">
@@ -208,7 +211,10 @@ export default function ProductPage() {
       <IntegrationsSection dataCategories={dataCategories} />
 
       {/* ── Security ── */}
-      <section className="bg-white py-16 lg:py-20">
+      <section
+        id="security"
+        className="bg-white py-16 lg:py-20 scroll-mt-24"
+      >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">
             Enterprise Ready

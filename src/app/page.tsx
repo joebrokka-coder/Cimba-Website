@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   CheckCircle,
-  Play,
   ArrowRight,
   GitBranch,
   Users,
@@ -18,6 +17,7 @@ import CursorGradientSection from "@/components/CursorGradientSection";
 import WhoUsesRiseSection from "@/components/WhoUsesRiseSection";
 import StrokeSectionTitle from "@/components/StrokeSectionTitle";
 import LakeOfDataBackground from "@/components/LakeOfDataBackground";
+import HomeHeroVideo from "@/components/HomeHeroVideo";
 
 const customerLogos = [
   { name: "SoundHound AI", src: "/logos/soundhound.png" },
@@ -51,7 +51,10 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-grey-50">
+      <section
+        id="hero"
+        className="relative overflow-hidden bg-grey-50 scroll-mt-24"
+      >
         <LakeOfDataBackground />
         {/* Bottom fade-out for background image */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-grey-50 z-10" />
@@ -84,24 +87,20 @@ export default function Home() {
       </section>
 
       {/* ── Video ── */}
-      <section className="bg-grey-50 pb-10 lg:pb-16">
+      <section
+        id="home-video"
+        className="bg-grey-50 pb-10 lg:pb-16 scroll-mt-24"
+      >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-primary shadow-xl mt-[20px]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button
-                type="button"
-                className="flex items-center justify-center w-20 h-20 rounded-full bg-white shadow-2xl hover:scale-105 transition-transform"
-                aria-label="Play video"
-              >
-                <Play size={32} className="text-primary ml-1" fill="currentColor" />
-              </button>
-            </div>
-          </div>
+          <HomeHeroVideo />
         </div>
       </section>
 
       {/* ── Trusted By ── */}
-      <section className="bg-grey-50 py-10">
+      <section
+        id="trusted-by"
+        className="bg-grey-50 py-10 scroll-mt-24"
+      >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <p className="text-center text-[16px] font-medium text-grey-400 uppercase tracking-[0.15em] mb-8">
             Trusted by industry leaders
@@ -144,6 +143,7 @@ export default function Home() {
 
       {/* ── The Problem ── */}
       <CursorGradientSection
+        id="the-problem"
         className="py-20 lg:py-28 border-b border-grey-200"
         riseOnScroll
       >
@@ -178,7 +178,10 @@ export default function Home() {
       </CursorGradientSection>
 
       {/* ── The Cimba Solution ── */}
-      <section className="bg-grey-50 py-20 lg:py-28">
+      <section
+        id="cimba-solution"
+        className="bg-grey-50 py-20 lg:py-28 scroll-mt-24"
+      >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <StrokeSectionTitle
             title="The Cimba Solution"
@@ -287,7 +290,10 @@ export default function Home() {
       </section>
 
       {/* ── Who Uses Cimba ── */}
-      <WhoUsesRiseSection className="bg-white py-20 lg:py-28">
+      <WhoUsesRiseSection
+        id="who-uses-cimba"
+        className="bg-white py-20 lg:py-28"
+      >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 overflow-x-hidden">
           <div className="who-uses-rise-header">
             <h2 className="who-uses-rise-item text-3xl sm:text-4xl font-normal text-grey-900 leading-tight max-w-2xl mb-6">
@@ -421,7 +427,10 @@ export default function Home() {
       <UseCasesCarousel />
 
       {/* ── Testimonials ── */}
-      <section className="bg-white py-20 lg:py-24">
+      <section
+        id="testimonials"
+        className="bg-white py-20 lg:py-24 scroll-mt-24"
+      >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <RotatingSpotlight items={testimonials} fullWidth />

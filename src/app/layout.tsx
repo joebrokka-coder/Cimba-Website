@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import HashScrollHandler from "@/components/HashScrollHandler";
 
 export const metadata: Metadata = {
   title: "Cimba — AI-Powered Operational Intelligence",
@@ -45,6 +46,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <HashScrollHandler />
         <Navigation />
         <main className="pt-[72px]">{children}</main>
         <Footer />

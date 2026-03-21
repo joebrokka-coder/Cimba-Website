@@ -56,7 +56,10 @@ export default function HowItWorksPipeline() {
   const step = pipelineSteps[selectedIndex];
 
   return (
-    <section className="bg-grey-50 py-16 lg:py-20">
+    <section
+      id="how-it-works"
+      className="bg-grey-50 py-16 lg:py-20 scroll-mt-24"
+    >
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-3">
           How It Works
@@ -141,7 +144,7 @@ export default function HowItWorksPipeline() {
                   <>
                     {" "}
                     <a
-                      href="#integrations-section"
+                      href="#integrations"
                       className="underline underline-offset-2 hover:text-primary transition-colors"
                     >
                       View All

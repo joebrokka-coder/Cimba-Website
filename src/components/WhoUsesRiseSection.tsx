@@ -10,9 +10,11 @@ const riseOptions: IntersectionObserverInit = {
 export default function WhoUsesRiseSection({
   children,
   className = "",
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
+  id?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
@@ -30,7 +32,8 @@ export default function WhoUsesRiseSection({
   return (
     <section
       ref={ref}
-      className={`who-uses-rise ${inView ? "in-view" : ""} ${className}`}
+      id={id}
+      className={`who-uses-rise ${inView ? "in-view" : ""} scroll-mt-24 ${className}`}
     >
       {children}
     </section>

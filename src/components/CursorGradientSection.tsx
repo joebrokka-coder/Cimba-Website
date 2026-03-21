@@ -6,6 +6,7 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   riseOnScroll?: boolean;
+  id?: string;
 };
 
 const riseObserverOptions: IntersectionObserverInit = {
@@ -13,7 +14,12 @@ const riseObserverOptions: IntersectionObserverInit = {
   threshold: 0.2,
 };
 
-export default function CursorGradientSection({ children, className = "", riseOnScroll = false }: Props) {
+export default function CursorGradientSection({
+  children,
+  className = "",
+  riseOnScroll = false,
+  id,
+}: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
   const [inView, setInView] = useState(false);
@@ -90,9 +96,10 @@ export default function CursorGradientSection({ children, className = "", riseOn
   return (
     <section
       ref={sectionRef}
+      id={id}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`bg-grey-50 relative overflow-hidden ${riseOnScroll ? "cursor-gradient-rise-section" : ""} ${riseOnScroll && inView ? "in-view" : ""} ${className}`}
+      className={`bg-grey-50 relative overflow-hidden scroll-mt-24 ${riseOnScroll ? "cursor-gradient-rise-section" : ""} ${riseOnScroll && inView ? "in-view" : ""} ${className}`}
     >
       {/* Base gradient – matches Integrations section */}
       <div

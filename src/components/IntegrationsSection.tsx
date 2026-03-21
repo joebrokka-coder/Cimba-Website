@@ -71,7 +71,7 @@ export default function IntegrationsSection({ dataCategories }: Props) {
 
   return (
     <section
-      id="integrations-section"
+      id="integrations"
       ref={sectionRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
