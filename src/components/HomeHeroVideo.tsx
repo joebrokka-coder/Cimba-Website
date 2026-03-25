@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { Play } from "lucide-react";
 
 /**
- * Home page hero video: Cimba Hero Video V2 (served from /public).
+ * Shared hero video (home + demo), served from /public.
  * No autoplay — user taps play; native controls while playing.
  */
 export default function HomeHeroVideo() {
@@ -22,7 +22,7 @@ export default function HomeHeroVideo() {
       <video
         ref={videoRef}
         className="h-full w-full object-cover"
-        src="/cimba-hero-video-v2.mp4"
+        src="/home-page-hero.mp4"
         controls={playing}
         playsInline
         preload="auto"
