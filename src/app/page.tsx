@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import HeroContent from "@/components/HeroContent";
 import {
   CheckCircle,
-  ArrowRight,
+
   GitBranch,
   Users,
   Database,
@@ -15,7 +16,6 @@ import RotatingSpotlight from "@/components/RotatingSpotlight";
 import UseCasesCarousel from "@/components/UseCasesCarousel";
 import CursorGradientSection from "@/components/CursorGradientSection";
 import WhoUsesRiseSection from "@/components/WhoUsesRiseSection";
-import StrokeSectionTitle from "@/components/StrokeSectionTitle";
 import LakeOfDataBackground from "@/components/LakeOfDataBackground";
 import HomeHeroVideo from "@/components/HomeHeroVideo";
 
@@ -60,29 +60,7 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-grey-50 z-10" />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-8 pt-32 pb-10 lg:pt-44 lg:pb-14">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal text-grey-900 leading-[1.05] mb-8">
-              <span className="block min-h-[2.4em] sm:min-h-[1.2em]">
-                <span className="text-primary inline-block">
-                  Operational intelligence
-                </span>{" "}
-                for real business decisions
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-grey-600 leading-relaxed max-w-2xl mb-12">
-              Governed AI workflows that define how your business handles
-              complexity and delivers repeatable, trusted decisions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/demo"
-                className="btn-primary px-10 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
-              >
-                See Demo
-                <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
+          <HeroContent />
         </div>
       </section>
 
@@ -92,7 +70,15 @@ export default function Home() {
         className="bg-grey-50 pb-10 lg:pb-16 scroll-mt-24"
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <HomeHeroVideo />
+          <div
+            className="rounded-2xl shadow-2xl"
+            style={{
+              boxShadow: "0 0 0 1px rgba(7,112,227,0.08), 0 24px 48px rgba(7,112,227,0.10)",
+              animation: "videoFloat 5s ease-in-out infinite",
+            }}
+          >
+            <HomeHeroVideo />
+          </div>
         </div>
       </section>
 
@@ -105,10 +91,10 @@ export default function Home() {
           <p className="text-center text-[16px] font-medium text-grey-400 uppercase tracking-[0.15em] mb-8">
             Trusted by industry leaders
           </p>
-          <div className="overflow-hidden w-full">
-            <div className="flex logo-ticker items-center md:justify-center">
+          <div className="w-full">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 mb-6">
               {customerLogos.map((logo, i) => (
-                <div key={`${logo.name}-${i}`} className="flex-shrink-0 mx-12">
+                <div key={`${logo.name}-${i}`} className="flex-shrink-0">
                   <Image
                     src={logo.src}
                     alt={logo.name}
@@ -118,25 +104,10 @@ export default function Home() {
                   />
                 </div>
               ))}
-
-              {/* Duplicate set only on mobile so the translate loop has continuity */}
-              <div className="flex md:hidden">
-                {customerLogos.map((logo, i) => (
-                  <div
-                    key={`${logo.name}-${i}-dup`}
-                    className="flex-shrink-0 mx-12"
-                  >
-                    <Image
-                      src={logo.src}
-                      alt={logo.name}
-                      width={280}
-                      height={120}
-                      className="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
-                    />
-                  </div>
-                ))}
-              </div>
             </div>
+            <p className="text-center text-sm text-grey-500">
+              (Partnering soon: Big 4 Consulting Firm, and Fortune 500 Vacation Rental Co.)
+            </p>
           </div>
         </div>
       </section>
@@ -149,7 +120,8 @@ export default function Home() {
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 relative">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start lg:items-center">
-            <div className="problem-rise-item lg:w-1/2 group cursor-default">
+              <div className="problem-rise-item lg:w-1/2 group cursor-default">
+              <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-4">WHY CIMBA</p>
               <div className="relative">
                 <h2 className="text-5xl md:text-6xl lg:text-[60px] font-normal text-grey-900 leading-tight mb-4 transition-opacity duration-1000 group-hover:opacity-0">
                   Cimba helps you operationalize data instead of only analyzing it.
@@ -183,10 +155,7 @@ export default function Home() {
         className="bg-grey-50 py-20 lg:py-28 scroll-mt-24"
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <StrokeSectionTitle
-            title="The Cimba Solution"
-            titleClassName="text-4xl sm:text-5xl font-normal text-primary leading-tight"
-          />
+          <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-12">The Cimba Solution</p>
 
           <div className="space-y-16">
             {/* Row 1: AI Enablement, Not Dashboards */}
@@ -202,7 +171,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 min-w-[260px]">
-                <div className="group relative w-full max-w-[480px] mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-lg">
+                <div className="group relative w-full max-w-[480px] mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-lg bg-[#EDF6FF]">
                   <Image
                     src="/cimba-solution-3.png"
                     alt="AI Enablement, Not Dashboards"
@@ -228,7 +197,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 min-w-[260px]">
-                <div className="group relative w-full max-w-[480px] mx-auto lg:ml-auto lg:mr-0 rounded-2xl overflow-hidden shadow-lg">
+                <div className="group relative w-full max-w-[480px] mx-auto lg:ml-auto lg:mr-0 rounded-2xl overflow-hidden shadow-lg bg-[#EDF6FF]">
                   <Image
                     src="/cimba-solution-1.png"
                     alt="Repeatable Workflows"
@@ -251,7 +220,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 min-w-[260px]">
-                <div className="group relative w-full max-w-[480px] mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-lg">
+                <div className="group relative w-full max-w-[480px] mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-lg bg-[#EDF6FF]">
                   <Image
                     src="/cimba-solution-2.png"
                     alt="Business Context Built In"
@@ -274,7 +243,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 min-w-[260px]">
-                <div className="group relative w-full max-w-[480px] mx-auto lg:ml-auto lg:mr-0 rounded-2xl overflow-hidden shadow-lg">
+                <div className="group relative w-full max-w-[480px] mx-auto lg:ml-auto lg:mr-0 rounded-2xl overflow-hidden shadow-lg bg-[#EDF6FF]">
                   <Image
                     src="/cimba-solution-4.png"
                     alt="Operational Delivery"
@@ -296,6 +265,7 @@ export default function Home() {
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 overflow-x-hidden">
           <div className="who-uses-rise-header">
+            <p className="who-uses-rise-item text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-3">WHO IS IT FOR</p>
             <h2 className="who-uses-rise-item text-3xl sm:text-4xl font-normal text-grey-900 leading-tight max-w-2xl mb-6">
               Built for Your Team
             </h2>

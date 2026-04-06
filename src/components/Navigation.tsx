@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "/product", label: "Product" },
   { href: "/use-cases", label: "Use Cases" },
+  { href: "/company", label: "Company" },
 ];
 
 export default function Navigation() {
@@ -45,7 +46,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-[16px] font-medium text-grey-600 hover:text-grey-900 rounded-lg hover:bg-grey-100 transition-colors duration-200 ease-out"
+                className="nav-link-underline px-4 py-2 text-[16px] font-medium text-grey-600 hover:text-grey-600 rounded-lg transition-colors duration-200 ease-out"
               >
                 {link.label}
               </Link>
@@ -55,7 +56,7 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/demo"
-              className="btn-primary px-6 py-0 text-[16px] font-semibold rounded-full transition-transform duration-200 ease-out"
+              className="btn-nav-demo px-6 py-0 text-[16px] font-semibold rounded-full transition-transform duration-200 ease-out"
             >
               Book a Demo
             </Link>
@@ -87,7 +88,7 @@ export default function Navigation() {
             <div className="pt-4">
               <Link
                 href="/demo"
-                className="block w-full text-center btn-primary px-6 py-0 text-[16px] font-semibold rounded-full transition-transform duration-200 ease-out"
+                className="block w-full text-center btn-nav-demo px-6 py-0 text-[16px] font-semibold rounded-full transition-transform duration-200 ease-out"
                 onClick={() => setMobileOpen(false)}
               >
                 Book a Demo

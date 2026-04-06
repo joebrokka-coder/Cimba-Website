@@ -103,7 +103,7 @@ export default function ProductPage() {
             <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-grey-900 leading-tight mb-6">
               The platform for
               <br />
-              <span className="text-primary block">operational intelligence</span>
+              <span className="text-primary block">agentic operations</span>
             </h1>
             <p className="text-lg md:text-xl text-grey-500 leading-relaxed max-w-2xl mb-10">
               Governed agents. Repeatable workflows. Auditable execution. Cimba
@@ -114,7 +114,7 @@ export default function ProductPage() {
               href="/demo"
               className="btn-primary px-10 py-0 text-[16px] font-semibold rounded-full transition-all shadow-md inline-flex items-center gap-2"
             >
-              See Demo
+              See a Demo
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -127,13 +127,13 @@ export default function ProductPage() {
         className="bg-white pt-0 pb-16 lg:pb-20 scroll-mt-24"
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-            <div className="lg:w-1/2">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+            <div className="lg:w-1/2 flex-shrink-0">
               <p className="text-[16px] font-semibold text-primary uppercase tracking-[0.15em] mb-5">
                 What is Cimba
               </p>
              <h2 className="text-3xl sm:text-4xl font-normal text-grey-900 leading-tight mb-6">
-               Cimba helps teams turn data and AI into operational intelligence.
+               Agentic command center for finance and business ops
              </h2>
              <p className="text-[16px] text-grey-600 leading-relaxed mb-4">
                Instead of relying on dashboards, manual analysis, or one-off AI
@@ -141,18 +141,17 @@ export default function ProductPage() {
                deliver consistent insights and decisions.
              </p>
               <p className="text-[16px] text-grey-600 leading-relaxed">
-                Using agents, playbooks, and business context, Cimba allows
-                organizations to answer complex questions, automate analysis,
-                and operationalize intelligence across teams.
+                Using governed agents, structured playbooks, and business context, Cimba moves organizations from answering questions to running operations – delivering consistent, auditable outcomes at the scale enterprise workflows demand.
               </p>
             </div>
             <div className="w-full lg:w-1/2">
-              <div className="relative w-full min-h-[320px] rounded-2xl border border-grey-200 overflow-hidden">
+              <div className="w-full overflow-hidden">
                 <Image
-                  src="/product-diagram.png"
-                  alt="Product diagram"
-                  fill
-                  className="object-cover"
+                  src="/Markitecture.png"
+                  alt="Cimba architecture diagram"
+                  width={700}
+                  height={467}
+                  className="w-full h-auto"
                   unoptimized
                 />
               </div>
@@ -226,7 +225,7 @@ export default function ProductPage() {
             {securityPillars.map((pillar) => (
               <div
                 key={pillar.title}
-                className={`bg-grey-50 rounded-2xl border border-grey-200 p-8 ${
+                className={`bg-grey-50 rounded-2xl border border-grey-200 p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg ${
                   "image" in pillar && pillar.image ? "flex flex-col sm:flex-row gap-6" : ""
                 }`}
               >

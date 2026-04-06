@@ -10,13 +10,6 @@ const footerColumns: {
   {
     category: "Home",
     links: [
-      { label: "Product demo", href: "/#home-video" },
-      { label: "Trusted by", href: "/#trusted-by" },
-      { label: "The problem", href: "/#the-problem" },
-      { label: "The Cimba solution", href: "/#cimba-solution" },
-      { label: "Who uses Cimba", href: "/#who-uses-cimba" },
-      { label: "Use cases", href: "/#use-cases" },
-      { label: "Testimonials", href: "/#testimonials" },
       { label: "Contact", href: "/#cta" },
     ],
   },
@@ -32,18 +25,18 @@ const footerColumns: {
   {
     category: "Use Cases",
     links: [
-      {
-        label: "Business Operations",
-        href: "/use-cases#ai-for-ams",
-      },
-      {
-        label: "Financial Operations",
-        href: "/use-cases#finops",
-      },
-      {
-        label: "Risk & Underwriting",
-        href: "/use-cases#risk-monitoring",
-      },
+      { label: "Business Operations", href: "/use-cases#ai-for-ams" },
+      { label: "Financial Operations", href: "/use-cases#finops" },
+      { label: "Risk & Underwriting", href: "/use-cases#risk-monitoring" },
+    ],
+  },
+  {
+    category: "Company",
+    links: [
+      { label: "About Us", href: "/company#about-us" },
+      { label: "Team", href: "/company#team" },
+      { label: "Careers", href: "https://www.linkedin.com/company/cimba-ai/jobs/" },
+      { label: "Newsroom", href: "/company#newsroom" },
     ],
   },
 ];
@@ -75,7 +68,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0d1b2a]">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8 pt-10 pb-12">
-        {/* Top row: brand + prominent LinkedIn */}
+        {/* Top row: brand */}
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="inline-block">
             <Image
@@ -86,26 +79,10 @@ export default function Footer() {
               className="w-full max-w-[320px] h-auto"
             />
           </Link>
-          <a
-            href="https://www.linkedin.com/company/cimba-ai/posts/?feedView=all"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-fit items-center opacity-80 hover:opacity-100 transition-opacity"
-            aria-label="Cimba on LinkedIn"
-          >
-            <Image
-              src="/linkedin-icon.png"
-              alt="LinkedIn"
-              width={512}
-              height={512}
-              className="h-9 w-9 rounded-[10px]"
-              unoptimized
-            />
-          </a>
         </div>
 
         {/* Links grid — Home | Product | Use Cases */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           {footerColumns.map(({ category, links }) => (
             <div key={category}>
               <h3 className="text-[12px] font-semibold text-white uppercase tracking-[0.15em] mb-5">
@@ -122,6 +99,26 @@ export default function Footer() {
                     </FooterLink>
                   </li>
                 ))}
+                {category === "Home" && (
+                  <li className="pt-2">
+                    <a
+                      href="https://www.linkedin.com/company/cimba-ai/posts/?feedView=all"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center opacity-80 hover:opacity-100 transition-opacity"
+                      aria-label="Cimba on LinkedIn"
+                    >
+                      <Image
+                        src="/linkedin-inbug-white.png"
+                        alt="LinkedIn"
+                        width={24}
+                        height={24}
+                        className="w-6 h-auto"
+                        unoptimized
+                      />
+                    </a>
+                  </li>
+                )}
               </ul>
             </div>
           ))}
